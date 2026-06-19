@@ -1,79 +1,94 @@
-(function(){
-  var basePath = (function(){
-    // Determine root from script src or default to /
-    var scripts = document.getElementsByTagName('script');
-    for(var i=0;i<scripts.length;i++){
-      var src = scripts[i].src || '';
-      if(src.indexOf('nav-footer-loader')!==-1){
-        return src.replace(/includes\/nav-footer-loader\.js.*/,'');
-      }
-    }
-    return '/';
-  })();
+(function () {
+  'use strict';
 
-  function fetchHTML(url, cb){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState === 4) cb(xhr.status === 200 ? xhr.responseText : '');
-    };
-    xhr.send();
+  // Resolve base path from script src
+  var scripts = document.getElementsByTagName('script');
+  var basePath = '/';
+  for (var i = 0; i < scripts.length; i++) {
+    var src = scripts[i].src || '';
+    if (src.indexOf('nav-footer-loader') !== -1) {
+      basePath = src.replace(/includes\/nav-footer-loader\.js.*/, '');
+      break;
+    }
   }
 
-  function injectNav(html){
-    if(!html) return;
-    var div = document.createElement('div');
-    div.innerHTML = html;
-    var body = document.body;
-    // Insert after GTM noscript if present
-    var noscripts = body.querySelectorAll('noscript');
-    var refNode = null;
-    noscripts.forEach(function(ns){ if(ns.innerHTML.indexOf('googletagmanager')!==-1) refNode = ns; });
-    if(refNode && refNode.nextSibling){
-      body.insertBefore(div.firstChild, refNode.nextSibling);
-    } else {
-      body.insertBefore(div.firstChild, body.firstChild);
-    }
-    // Move style tags to head
-    div.querySelectorAll('style,link').forEach(function(el){
+  function fetchInclude(url) {
+    return fetch(url, { method: 'GET', headers: { 'Accept': 'text/html' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('Failed: ' + url + ' (' + r.status + ')');
+        return r.text();
+      });
+  }
+
+  function parseStyles(html) {
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    tmp.querySelectorAll('style, link[rel="stylesheet"]').forEach(function (el) {
       document.head.appendChild(el.cloneNode(true));
     });
+  }
+
+  function injectNav(html) {
+    parseStyles(html);
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    // Remove style/link tags from the div before inserting (already moved to head)
+    tmp.querySelectorAll('style, link').forEach(function (el) { el.remove(); });
+    var nav = tmp.firstElementChild;
+    if (!nav) return;
+    var body = document.body;
+    // Insert after any GTM noscript
+    var refNode = null;
+    body.querySelectorAll('noscript').forEach(function (ns) {
+      if (ns.innerHTML.indexOf('googletagmanager') !== -1) refNode = ns;
+    });
+    body.insertBefore(nav, refNode ? refNode.nextSibling : body.firstChild);
     wireNav();
   }
 
-  function injectFooter(html){
-    if(!html) return;
-    var div = document.createElement('div');
-    div.innerHTML = html;
-    document.body.appendChild(div.firstChild);
-    div.querySelectorAll('style').forEach(function(el){
-      document.head.appendChild(el.cloneNode(true));
-    });
-    // Set year
+  function injectFooter(html) {
+    parseStyles(html);
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    tmp.querySelectorAll('style').forEach(function (el) { el.remove(); });
+    // Append all child nodes
+    while (tmp.firstChild) {
+      document.body.appendChild(tmp.firstChild);
+    }
     var yr = document.getElementById('gf-year');
-    if(yr) yr.textContent = new Date().getFullYear();
+    if (yr) yr.textContent = new Date().getFullYear();
   }
 
-  function wireNav(){
-    // Active link
+  function wireNav() {
+    // Active link highlighting
     var path = window.location.pathname.replace(/\/$/, '') || '/';
-    document.querySelectorAll('.gnav-menu a, .mob-nav a').forEach(function(a){
+    document.querySelectorAll('.gnav-menu a, .mob-nav a').forEach(function (a) {
       var href = (a.getAttribute('href') || '').replace(/\/$/, '');
-      if(href && path === href) a.classList.add('active');
+      if (href && href !== '' && path === href) a.classList.add('active');
     });
-    // CTA override from data-cta on loader script
-    var scripts = document.querySelectorAll('script[src*="nav-footer-loader"]');
-    scripts.forEach(function(s){
-      var cta = s.dataset.cta;
-      if(cta){
-        var btn = document.getElementById('gnav-cta-btn');
-        if(btn) btn.textContent = cta;
-      }
+    // CTA override
+    document.querySelectorAll('script[data-cta]').forEach(function (s) {
+      var btn = document.getElementById('gnav-cta-btn');
+      if (btn) btn.textContent = s.dataset.cta;
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    fetchHTML(basePath + 'includes/nav.html', injectNav);
-    fetchHTML(basePath + 'includes/footer.html', injectFooter);
-  });
+  function run() {
+    var navUrl = basePath + 'includes/nav.html';
+    var footerUrl = basePath + 'includes/footer.html';
+
+    fetchInclude(navUrl)
+      .then(injectNav)
+      .catch(function (e) { console.error('[nav-loader] Nav fetch failed:', e); });
+
+    fetchInclude(footerUrl)
+      .then(injectFooter)
+      .catch(function (e) { console.error('[nav-loader] Footer fetch failed:', e); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
 })();
