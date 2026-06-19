@@ -1,94 +1,81 @@
 (function () {
   'use strict';
 
-  // Resolve base path from script src
-  var scripts = document.getElementsByTagName('script');
-  var basePath = '/';
-  for (var i = 0; i < scripts.length; i++) {
-    var src = scripts[i].src || '';
-    if (src.indexOf('nav-footer-loader') !== -1) {
-      basePath = src.replace(/includes\/nav-footer-loader\.js.*/, '');
-      break;
-    }
+  var NAV_URL    = '/includes/nav.html';
+  var FOOTER_URL = '/includes/footer.html';
+
+  /* ── fetch helper (XHR for broadest compatibility) ── */
+  function fetchHTML(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) cb(null, xhr.responseText);
+      else cb(new Error('HTTP ' + xhr.status));
+    };
+    xhr.onerror = function () { cb(new Error('Network error fetching ' + url)); };
+    xhr.send();
   }
 
-  function fetchInclude(url) {
-    return fetch(url, { method: 'GET', headers: { 'Accept': 'text/html' } })
-      .then(function (r) {
-        if (!r.ok) throw new Error('Failed: ' + url + ' (' + r.status + ')');
-        return r.text();
-      });
-  }
-
-  function parseStyles(html) {
-    var tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    tmp.querySelectorAll('style, link[rel="stylesheet"]').forEach(function (el) {
-      document.head.appendChild(el.cloneNode(true));
-    });
-  }
-
+  /* ── inject nav as first child of <body> ── */
   function injectNav(html) {
-    parseStyles(html);
-    var tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    // Remove style/link tags from the div before inserting (already moved to head)
-    tmp.querySelectorAll('style, link').forEach(function (el) { el.remove(); });
-    var nav = tmp.firstElementChild;
-    if (!nav) return;
-    var body = document.body;
-    // Insert after any GTM noscript
-    var refNode = null;
-    body.querySelectorAll('noscript').forEach(function (ns) {
-      if (ns.innerHTML.indexOf('googletagmanager') !== -1) refNode = ns;
-    });
-    body.insertBefore(nav, refNode ? refNode.nextSibling : body.firstChild);
+    var wrap = document.createElement('div');
+    wrap.innerHTML = html;
+    var ref = document.body.firstChild;
+    while (wrap.firstChild) {
+      document.body.insertBefore(wrap.firstChild, ref);
+    }
     wireNav();
   }
 
+  /* ── inject footer as last child of <body> ── */
   function injectFooter(html) {
-    parseStyles(html);
-    var tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    tmp.querySelectorAll('style').forEach(function (el) { el.remove(); });
-    // Append all child nodes
-    while (tmp.firstChild) {
-      document.body.appendChild(tmp.firstChild);
+    var wrap = document.createElement('div');
+    wrap.innerHTML = html;
+    while (wrap.firstChild) {
+      document.body.appendChild(wrap.firstChild);
     }
     var yr = document.getElementById('gf-year');
     if (yr) yr.textContent = new Date().getFullYear();
   }
 
-  function wireNav() {
-    // Active link highlighting
+  /* ── active link highlighting ── */
+  function setActiveLink() {
     var path = window.location.pathname.replace(/\/$/, '') || '/';
-    document.querySelectorAll('.gnav-menu a, .mob-nav a').forEach(function (a) {
-      var href = (a.getAttribute('href') || '').replace(/\/$/, '');
-      if (href && href !== '' && path === href) a.classList.add('active');
-    });
-    // CTA override
-    document.querySelectorAll('script[data-cta]').forEach(function (s) {
-      var btn = document.getElementById('gnav-cta-btn');
-      if (btn) btn.textContent = s.dataset.cta;
+    var links = document.querySelectorAll('nav.gnav-primary a');
+    links.forEach(function (a) {
+      var href = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
+      if (path === href || (href !== '' && href !== '/' && path.indexOf(href) === 0)) {
+        a.classList.add('gnav-active');
+      }
     });
   }
 
-  function run() {
-    var navUrl = basePath + 'includes/nav.html';
-    var footerUrl = basePath + 'includes/footer.html';
+  /* ── burger menu ── */
+  function wireNav() {
+    var ham = document.getElementById('gnav-ham');
+    var mob = document.getElementById('gnav-mobile');
+    if (ham && mob) {
+      ham.addEventListener('click', function () {
+        var open = mob.classList.toggle('open');
+        ham.setAttribute('aria-expanded', String(open));
+      });
+    }
+    setActiveLink();
+  }
 
-    fetchInclude(navUrl)
-      .then(injectNav)
-      .catch(function (e) { console.error('[nav-loader] Nav fetch failed:', e); });
-
-    fetchInclude(footerUrl)
-      .then(injectFooter)
-      .catch(function (e) { console.error('[nav-loader] Footer fetch failed:', e); });
+  /* ── boot ── */
+  function boot() {
+    fetchHTML(NAV_URL, function (err, html) {
+      if (!err) injectNav(html);
+    });
+    fetchHTML(FOOTER_URL, function (err, html) {
+      if (!err) injectFooter(html);
+    });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run);
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    run();
+    boot();
   }
 })();

@@ -16,14 +16,16 @@ img{max-width:100%;height:auto;display:block;}.wrap{max-width:1200px;margin:0 au
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .section-label::before{content:'';width:20px;height:2px;background:var(--gold);display:inline-block;}
 h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
-.page-hero{background:var(--navy);background-image:linear-gradient(to right,rgba(15,31,61,0.95) 50%,rgba(15,31,61,0.65) 100%),url('/images/title-bar-2400-Bluff-Trail-SLO-County.jpg');background-size:cover;background-position:center;padding:80px 1.5rem;}
+.page-hero{background:var(--navy);background-size:cover;background-position:center;padding:80px 1.5rem;}
 .page-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:start;}
 .breadcrumb{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:16px;}.breadcrumb a{color:rgba(255,255,255,0.45);text-decoration:none;}.breadcrumb span{margin:0 6px;}
-.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,46px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px;}.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,48px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px;}.page-hero h1 em{font-style:italic;color:var(--gold-light);}
 .page-hero p{font-size:16px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:28px;max-width:520px;}
 .btn-gold{background:var(--gold);color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:14px;letter-spacing:0.05em;padding:13px 24px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;text-transform:uppercase;}
 .btn-gold:hover{background:var(--gold-light);}
 .btn-ow{background:transparent;color:var(--white);font-weight:700;font-family:var(--font-sans);font-size:14px;padding:12px 24px;border-radius:4px;border:2px solid rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;}
+.btn-outline{background:transparent;color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:14px;padding:12px 24px;border-radius:4px;border:2px solid var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
 .form-card{background:var(--white);border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.45);overflow:hidden;}
 .form-header{background:var(--gold);padding:18px 24px;text-align:center;}.form-header h2{font-family:var(--font-serif);font-size:19px;color:var(--navy);font-weight:700;line-height:1.2;}.form-header p{font-size:12.5px;color:rgba(15,31,61,0.7);margin-top:4px;}
@@ -37,118 +39,111 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .btn-submit{width:100%;padding:13px;background:var(--navy);color:var(--white);font-family:var(--font-sans);font-size:15px;font-weight:700;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s;text-transform:uppercase;}
 .btn-submit:hover{background:var(--navy-light);}.btn-submit:disabled{opacity:0.7;cursor:not-allowed;}
 .form-disc{font-size:11px;color:var(--text-light);text-align:center;margin-top:8px;line-height:1.5;}
-.content-body h2{font-family:var(--font-serif);font-size:28px;color:var(--navy);margin:40px 0 14px;}
-.content-body p{color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;}
+.content-layout{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start;}
+.content-body h2{font-family:var(--font-serif);font-size:28px;color:var(--navy);margin:36px 0 14px;}
+.content-body h3{font-family:var(--font-serif);font-size:20px;color:var(--navy);margin:28px 0 10px;}
+.content-body p{color:var(--text-mid);line-height:1.75;margin-bottom:16px;}
+.content-body ul{list-style:none;margin-bottom:16px;}
+.content-body ul li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--text-mid);line-height:1.65;margin-bottom:10px;}
+.content-body ul li::before{content:'';width:20px;height:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;margin-top:2px;}
+.sticky-sidebar{position:sticky;top:88px;}.sidebar-card{background:var(--navy);border-radius:8px;padding:28px;margin-bottom:24px;}
+.sidebar-card h3{font-family:var(--font-serif);font-size:18px;color:var(--white);margin-bottom:12px;}.sidebar-card p{font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:16px;}
+.sidebar-card .btn-gold{width:100%;justify-content:center;}.sidebar-card .phone-link{display:flex;align-items:center;gap:8px;color:var(--gold-light);font-weight:700;font-size:15px;text-decoration:none;margin-top:12px;}
+.sidebar-related{background:var(--off-white);border:1px solid #E8E2D0;border-radius:8px;padding:24px;margin-top:16px;}
+.sidebar-related h3{font-family:var(--font-sans);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:14px;}
+.sidebar-related ul{list-style:none;}.sidebar-related ul li a{font-size:14px;color:var(--navy);text-decoration:none;font-weight:600;display:block;padding:8px 0;border-bottom:1px solid #E8E2D0;}
+.sidebar-related ul li:last-child a{border-bottom:0;}.sidebar-related ul li a:hover{color:var(--gold);}
 .faq-section{background:var(--off-white);}.faq-item{border-bottom:1px solid #E8E2D0;}
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-weight:700;color:var(--navy);font-size:16px;}
 .faq-indicator{font-size:22px;color:var(--gold);font-weight:300;flex-shrink:0;margin-left:16px;transition:transform 0.3s;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;font-size:15px;color:var(--text-mid);line-height:1.75;}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:20px;}.faq-item.open .faq-indicator{transform:rotate(45deg);}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px;}.faq-item.open .faq-indicator{transform:rotate(45deg);}
 .cta-strip{background:var(--gold-pale);border-top:3px solid var(--gold);text-align:center;padding:64px 1.5rem;}
 .cta-strip h2{font-family:var(--font-serif);font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--navy);margin-bottom:14px;}
 .cta-strip p{font-size:17px;color:var(--text-mid);max-width:560px;margin:0 auto 28px;}
 .cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
-.btn-outline{background:transparent;color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:14px;padding:12px 24px;border-radius:4px;border:2px solid var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;}
-.btn-outline:hover{background:var(--navy);color:var(--white);}
-@media(max-width:960px){.page-hero-inner{grid-template-columns:1fr;gap:40px;}}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+@media(max-width:960px){.page-hero-inner,.content-layout{grid-template-columns:1fr;gap:40px;}.sticky-sidebar{position:static;}}
 @media(max-width:600px){section{padding:52px 1.5rem;}.page-hero{padding:56px 1.5rem;}.form-row-half{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
 <main>
-<section class="page-hero">
+
+<section class="page-hero" style="background-image:linear-gradient(to right,rgba(15,31,61,0.95) 50%,rgba(15,31,61,0.65) 100%),url('/images/title-bar-2400-Bluff-Trail-SLO-County.jpg');">
   <div class="page-hero-inner">
     <div>
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/locations/">Locations</a><span>/</span>Atascadero</div>
       <h1>Attorney Serving <em>Atascadero</em>, CA</h1>
-      <p>Estate planning, business law, and civil litigation for families and businesses in Atascadero and throughout North Central SLO County. We serve the entire SLO County area from our downtown San Luis Obispo office. Free consultations.</p>
+      <p>Estate planning, business law, and civil litigation for families and businesses in Atascadero and throughout North Central SLO County. Free consultations from our downtown San Luis Obispo office.</p>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Consultation</a>
       </div>
     </div>
     <div class="form-card" id="form-card">
-      <div class="form-header"><h2>Free Consultation for Atascadero Clients</h2><p>Serving all of North Central SLO County.</p></div>
-      <div class="form-body">
-        <div class="form-row-half">
-          <div class="form-row"><label for="ts-fname">First Name*</label><input type="text" id="ts-fname" placeholder="First"></div>
-          <div class="form-row"><label for="ts-lname">Last Name</label><input type="text" id="ts-lname" placeholder="Last"></div>
-        </div>
-        <div class="form-row"><label for="ts-phone">Phone*</label><input type="tel" id="ts-phone" placeholder="(805) 555-0100"></div>
-        <div class="form-row"><label for="ts-email">Email</label><input type="email" id="ts-email" placeholder="you@email.com"></div>
-        <div class="form-row">
-          <label for="ts-service">How Can We Help?</label>
-          <select id="ts-service">
-            <option value="Trusts &amp; Estate Planning">Trusts &amp; Estate Planning</option>
-            <option value="Probate">Probate</option>
-            <option value="Business Law">Business Law</option>
-            <option value="Civil Litigation">Civil Litigation</option>
-            <option value="Personal Injury">Personal Injury</option>
-            <option value="Auto Accident">Auto Accident</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-row"><label for="ts-message">Brief Description</label><textarea id="ts-message" placeholder="Tell us about your situation..."></textarea></div>
-        <div class="consent-row">
-          <input type="checkbox" id="ts-sms-consent">
-          <label for="ts-sms-consent">I consent to receive non-marketing texts from Tardiff and Saldo Law Offices. Message and data rates may apply. Reply STOP to opt out. Must be 18+.</label>
-        </div>
-        <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Request Free Consultation</button>
-        <p class="form-disc">Mon &ndash; Fri, 9am &ndash; 5pm. Office at 1235 Palm St, SLO.</p>
-      </div>
+  <div class="form-header"><h2>Get Your Free Consultation</h2><p>Same-week appointments often available.</p></div>
+  <div class="form-body">
+    <div class="form-row-half">
+      <div class="form-row"><label for="ts-fname">First Name*</label><input type="text" id="ts-fname" placeholder="First"></div>
+      <div class="form-row"><label for="ts-lname">Last Name</label><input type="text" id="ts-lname" placeholder="Last"></div>
     </div>
+    <div class="form-row"><label for="ts-phone">Phone*</label><input type="tel" id="ts-phone" placeholder="(805) 555-0100"></div>
+    <div class="form-row"><label for="ts-email">Email</label><input type="email" id="ts-email" placeholder="you@email.com"></div>
+    <div class="form-row"><label for="ts-service">Practice Area</label>
+      <select id="ts-service">
+        <option value="Trusts &amp; Estate Planning">Trusts &amp; Estate Planning</option>
+        <option value="Probate">Probate</option>
+        <option value="Business Law">Business Law</option>
+        <option value="Civil Litigation">Civil Litigation</option>
+        <option value="Personal Injury">Personal Injury</option>
+        <option value="Auto Accident">Auto Accident</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-row"><label for="ts-message">Brief Description</label><textarea id="ts-message" placeholder="Tell us about your situation..."></textarea></div>
+    <div class="consent-row">
+      <input type="checkbox" id="ts-sms-consent">
+      <label for="ts-sms-consent">I consent to receive non-marketing texts from Tardiff and Saldo Law Offices. Message and data rates may apply. Reply STOP to opt out. Must be 18+.</label>
+    </div>
+    <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Request Free Consultation</button>
+    <p class="form-disc">Mon &ndash; Fri, 9am &ndash; 5pm. Office at 1235 Palm St, SLO.</p>
+  </div>
+</div>
   </div>
 </section>
-
 <section style="background:var(--white);">
-  <div class="wrap">
+  <div class="wrap" style="max-width:860px;">
     <div class="section-label">Serving Atascadero &amp; North Central SLO County</div>
     <h2 class="section-title">Legal Services for Atascadero Families &amp; Businesses</h2>
-    <div class="content-body">
-      <p>Atascadero sits at the center of SLO County, between Paso Robles to the north and San Luis Obispo to the south, making it a natural hub for North Central County residents looking for quality legal representation. The city has a strong residential community, active small business environment along El Camino Real, and a growing population that increasingly needs estate planning, business legal services, and civil litigation support.</p>
-
-      <h2>Estate Planning for Atascadero Families</h2>
-
-      <p>California's probate process is expensive and public. For families here who own a home, have retirement accounts, or hold any meaningful assets in their own name, a living trust is the most effective way to keep those assets out of court after death. Our attorneys provide flat-fee estate planning packages that include the full suite of documents most families need: living trust, pour-over will, powers of attorney, healthcare directive, and HIPAA authorization.</p>
-
-      <p>Atascadero residents with questions about property tax reassessment under Prop 19, trust funding for real property, or special needs trusts should call us for a free consultation. These are areas where generic online templates consistently fall short of California's specific requirements. The <a href="https://www.atascadero.org/" target="_blank" rel="noopener">City of Atascadero</a> and <a href="https://www.slocounty.ca.gov/" target="_blank" rel="noopener">SLO County</a> both maintain online resources for local residents.</p>
-
-      <h2>Business Law Along El Camino Real</h2>
-
-      <p>The businesses that line El Camino Real through Atascadero, from retail to services to professional offices, need contracts that reflect California law as it's actually practiced. We draft operating agreements, vendor contracts, employment agreements, and buy-sell agreements for local businesses. When disputes arise, we're equipped to handle negotiation, mediation, and litigation. Our attorneys have tried contract disputes in local courts, which is why the documents they draft are built to hold up. The <a href="https://www.atascaderochamber.org/" target="_blank" rel="noopener">Atascadero Chamber of Commerce</a> is a good resource for local business connections.</p>
-
-      <h2>Personal Injury and Civil Litigation</h2>
-
-      <p>US-101 and Highway 41 through the Atascadero area see significant traffic, including commercial truck volume. Accidents on these routes can cause serious injuries. We handle <a href="/services/auto-accidents/" style="color:var(--gold);font-weight:700;">auto accident cases</a>, <a href="/services/personal-injury/" style="color:var(--gold);font-weight:700;">personal injury claims</a>, and <a href="/services/wrongful-death/" style="color:var(--gold);font-weight:700;">wrongful death</a> cases on a contingency basis throughout the area. Neighboring clients can also find resources on our <a href="/locations/paso-robles/" style="color:var(--gold);font-weight:700;">Paso Robles</a> and <a href="/locations/san-luis-obispo/" style="color:var(--gold);font-weight:700;">San Luis Obispo</a> location pages.</p>
-    </div>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Atascadero sits at the center of the county between Paso Robles and San Luis Obispo. The city has a strong residential community, active small business environment along El Camino Real, and a growing population needing estate planning and business legal services.</p>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">We serve Atascadero families and businesses from our SLO office. Most initial consultations are available by phone or video to minimize the commute.</p>
+    <h2 style="font-family:var(--font-serif);font-size:26px;color:var(--navy);margin:36px 0 14px;">Estate Planning for Atascadero Residents</h2>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">California probate can take over a year and costs thousands based on your estate's gross value. A properly funded living trust avoids all of that. We offer flat-fee estate plan packages and walk every client through the trust funding step that most online services skip entirely. Our <a href="/services/trusts-estates/" style="color:var(--gold);font-weight:700;">trusts and estate planning page</a> has the full details.</p>
+    <h2 style="font-family:var(--font-serif);font-size:26px;color:var(--navy);margin:36px 0 14px;">Business Law for Atascadero Businesses</h2>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Our contracts are drafted by litigators who have argued them in court. Whether you need business formation, a buy-sell agreement, contract review, or dispute resolution, we handle it. See our <a href="/services/business-law/" style="color:var(--gold);font-weight:700;">business law page</a> for more.</p>
+    <h2 style="font-family:var(--font-serif);font-size:26px;color:var(--navy);margin:36px 0 14px;">Civil Litigation &amp; Personal Injury</h2>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">If you or a family member has been injured in an accident in the North Central SLO County, our <a href="/services/personal-injury/" style="color:var(--gold);font-weight:700;">personal injury team</a> provides free case reviews with no fee unless we recover. We also handle <a href="/services/auto-accidents/" style="color:var(--gold);font-weight:700;">auto accidents</a> and <a href="/services/wrongful-death/" style="color:var(--gold);font-weight:700;">wrongful death claims</a> throughout the area.</p>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Local resources: <a href="https://www.atascadero.org/" target="_blank" rel="noopener">City of Atascadero</a>, <a href="https://www.slocounty.ca.gov/" target="_blank" rel="noopener">SLO County</a>, and <a href="https://www.atascaderochamber.org/" target="_blank" rel="noopener">Atascadero Chamber</a>. Neighboring clients can also see our <a href="/locations/paso-robles/" style="color:var(--gold);font-weight:700;">Paso Robles</a> and <a href="/locations/san-luis-obispo/" style="color:var(--gold);font-weight:700;">San Luis Obispo</a> pages.</p>
   </div>
 </section>
-
 <section class="faq-section">
   <div class="wrap">
     <div class="section-label">Common Questions</div>
     <h2 class="section-title">FAQs for Atascadero Clients</h2>
     <div style="max-width:820px;">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Does Tardiff &amp; Saldo have an office in Atascadero?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">Our main office is at 1235 Palm St in downtown San Luis Obispo, which is accessible from Atascadero via Highway 101. We handle initial consultations by phone or video call for clients throughout SLO County, making it easy to get started without a long drive. In-person appointments for document signing are coordinated at our SLO office. Call (888) 461-2215 to arrange a time that works for you.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do Atascadero residents need a living trust?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">In most cases, yes. Any California resident who owns real estate or has assets over atascadero84,500 in their own name should seriously consider a living trust to avoid probate. California probate can take over a year and costs a statutory percentage of the gross estate value in court and attorney fees. A properly funded living trust avoids all of that and keeps your affairs private. We offer free consultations and flat-fee estate plan packages. Call us to discuss your situation specifically.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How quickly can I get an appointment?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">Same-week appointments are often available, particularly for phone or video consultations. In-person appointments at our San Luis Obispo office generally have availability within one to two weeks. If you have a time-sensitive matter such as an appellate deadline, a probate filing, or an injury claim, call us immediately at (888) 461-2215 and we will prioritize accordingly.</div>
-      </div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does Tardiff &amp; Saldo have an office in Atascadero?<span class="faq-indicator">+</span></div><div class="faq-a">Our main office is at 1235 Palm St in downtown San Luis Obispo, accessible from Atascadero via Highway 101. We handle initial consultations by phone or video for clients throughout SLO County. In-person appointments for document signing are at our SLO office. Call (888) 461-2215 to arrange a time that works for you.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do Atascadero residents need a living trust?<span class="faq-indicator">+</span></div><div class="faq-a">In most cases, yes. Any California resident who owns real estate or has assets over $184,500 in their own name should seriously consider a living trust to avoid probate. California probate can take over a year and costs a statutory percentage of the gross estate value. A properly funded living trust avoids all of that and keeps your affairs private. We offer free consultations and flat-fee estate plan packages.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How quickly can I get an appointment?<span class="faq-indicator">+</span></div><div class="faq-a">Same-week appointments are often available, particularly for phone or video consultations. In-person appointments at our San Luis Obispo office generally have availability within one to two weeks. If you have a time-sensitive matter such as an appellate deadline or an injury claim, call us immediately at (888) 461-2215 and we will prioritize accordingly.</div></div>
     </div>
   </div>
 </section>
-
 <section class="cta-strip">
   <div class="wrap">
     <h2>Quality Legal Counsel for Atascadero &amp; North Central SLO County</h2>
-    <p>Serving Atascadero from our San Luis Obispo office. Free consultations by phone, video, or in person. Same-week appointments often available.</p>
+    <p>Free consultations by phone, video, or in person at our San Luis Obispo office. Same-week appointments often available.</p>
     <div class="cta-btns">
       <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
       <a class="btn-outline" href="#form-card">Free Consultation</a>
@@ -156,17 +151,17 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </section>
 </main>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LegalService","name":"Tardiff & Saldo Law Offices","telephone":"+18884612215","address":{"@type":"PostalAddress","streetAddress":"1235 Palm St","addressLocality":"San Luis Obispo","addressRegion":"CA","postalCode":"93401"},"areaServed":{"@type":"City","name":"Atascadero"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tardiffsaldo.com/"},{"@type":"ListItem","position":2,"name":"Locations","item":"https://tardiffsaldo.com/locations/"},{"@type":"ListItem","position":3,"name":"Atascadero","item":"https://tardiffsaldo.com/locations/atascadero/"}]}]}
-</script>
 <script>
 function toggleFaq(el){var item=el.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}
 async function handleFormSubmit(){
-  var fname=document.getElementById('ts-fname').value.trim();var lname=document.getElementById('ts-lname').value.trim();var phone=document.getElementById('ts-phone').value.trim();var email=document.getElementById('ts-email').value.trim();var service=document.getElementById('ts-service').value;var message=document.getElementById('ts-message').value.trim();var sms=document.getElementById('ts-sms-consent').checked;
+  var fname=document.getElementById('ts-fname').value.trim();var lname=document.getElementById('ts-lname').value.trim();
+  var phone=document.getElementById('ts-phone').value.trim();var email=document.getElementById('ts-email').value.trim();
+  var service=document.getElementById('ts-service').value;var message=document.getElementById('ts-message').value.trim();
+  var sms=document.getElementById('ts-sms-consent').checked;
   if(!fname||(!phone&&!email)){alert('Please fill in your name and at least one way to reach you.');return;}
   var btn=document.getElementById('ts-submit-btn');btn.textContent='Submitting...';btn.disabled=true;
-  localStorage.setItem('email',email.toLowerCase());localStorage.setItem('phone',phone);localStorage.setItem('fname',fname);localStorage.setItem('lname',lname);
-  try{await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Atascadero Location Page'})});}catch(e){console.error(e);}
+  try{await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Atascadero Location Page'})});
+  }catch(e){console.error(e);}
   window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead'});
   window.location.href='https://tardiffsaldo.com/thank-you/';
 }

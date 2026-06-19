@@ -10,241 +10,158 @@
 <script src="/includes/nav-footer-loader.js"></script>
 <style>
 :root{--navy:#0F1F3D;--navy-mid:#162848;--navy-light:#1E3460;--gold:#C9A84C;--gold-light:#E2C97A;--gold-pale:#F5EDD4;--white:#FFFFFF;--off-white:#F7F5F0;--text-dark:#1A1A2E;--text-mid:#4A4A5A;--text-light:#8A8A9A;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'Lato',Arial,sans-serif;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
 body{font-family:var(--font-sans);color:var(--text-dark);font-size:16px;line-height:1.6;background:var(--white);}
-img{max-width:100%;height:auto;display:block;}
-.wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
-section{padding:72px 1.5rem;}
+img{max-width:100%;height:auto;display:block;}.wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem;}section{padding:72px 1.5rem;}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .section-label::before{content:'';width:20px;height:2px;background:var(--gold);display:inline-block;}
 h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
-.page-hero{background:var(--navy);background-image:linear-gradient(to right,rgba(15,31,61,0.97) 55%,rgba(15,31,61,0.7) 100%),url('/images/Personal-Injury-Lawyers.jpg');background-size:cover;background-position:center;padding:80px 1.5rem;}
+.page-hero{background:var(--navy);background-size:cover;background-position:center;padding:80px 1.5rem;}
 .page-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:start;}
-.breadcrumb{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:16px;}
-.breadcrumb a{color:rgba(255,255,255,0.45);text-decoration:none;}
-.breadcrumb a:hover{color:var(--gold);}
-.breadcrumb span{margin:0 6px;}
-.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,48px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px;}
-.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:16px;}.breadcrumb a{color:rgba(255,255,255,0.45);text-decoration:none;}.breadcrumb span{margin:0 6px;}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,48px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px;}.page-hero h1 em{font-style:italic;color:var(--gold-light);}
 .page-hero p{font-size:16px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:28px;max-width:520px;}
 .btn-gold{background:var(--gold);color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:14px;letter-spacing:0.05em;padding:13px 24px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;text-transform:uppercase;}
 .btn-gold:hover{background:var(--gold-light);}
-.btn-outline-white{background:transparent;color:var(--white);font-weight:700;font-family:var(--font-sans);font-size:14px;letter-spacing:0.05em;padding:12px 24px;border-radius:4px;border:2px solid rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;}
-.hero-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
-.form-card{background:var(--white);border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.45);overflow:hidden;flex-shrink:0;}
-.form-header{background:var(--gold);padding:18px 24px;text-align:center;}
-.form-header h2{font-family:var(--font-serif);font-size:19px;color:var(--navy);font-weight:700;line-height:1.2;}
-.form-header p{font-size:12.5px;color:rgba(15,31,61,0.7);margin-top:4px;}
-.form-body{padding:22px;}
-.form-row{margin-bottom:12px;}
-.form-row label{display:block;font-size:11px;font-weight:700;letter-spacing:0.06em;color:var(--text-mid);margin-bottom:4px;text-transform:uppercase;}
+.btn-ow{background:transparent;color:var(--white);font-weight:700;font-family:var(--font-sans);font-size:14px;padding:12px 24px;border-radius:4px;border:2px solid rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;}
+.btn-outline{background:transparent;color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:14px;padding:12px 24px;border-radius:4px;border:2px solid var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
+.form-card{background:var(--white);border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.45);overflow:hidden;}
+.form-header{background:var(--gold);padding:18px 24px;text-align:center;}.form-header h2{font-family:var(--font-serif);font-size:19px;color:var(--navy);font-weight:700;line-height:1.2;}.form-header p{font-size:12.5px;color:rgba(15,31,61,0.7);margin-top:4px;}
+.form-body{padding:22px;}.form-row{margin-bottom:12px;}.form-row label{display:block;font-size:11px;font-weight:700;letter-spacing:0.06em;color:var(--text-mid);margin-bottom:4px;text-transform:uppercase;}
 .form-row input,.form-row select,.form-row textarea{width:100%;padding:10px 13px;border:1.5px solid #DDD;border-radius:4px;font-family:var(--font-sans);font-size:14.5px;color:var(--text-dark);background:#FAFAFA;transition:border-color 0.2s;appearance:none;}
 .form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--gold);background:var(--white);}
-.form-row textarea{height:72px;resize:none;}
-.form-row select{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:11px;padding-right:34px;}
+.form-row textarea{height:72px;resize:none;}.form-row select{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:11px;padding-right:34px;}
 .form-row-half{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.consent-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;}
-.consent-row input[type=checkbox]{width:15px;height:15px;margin-top:3px;flex-shrink:0;accent-color:var(--navy);}
+.consent-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;}.consent-row input[type=checkbox]{width:15px;height:15px;margin-top:3px;flex-shrink:0;accent-color:var(--navy);}
 .consent-row label{font-size:10.5px;color:var(--text-light);line-height:1.5;text-transform:none;letter-spacing:0;}
-.btn-submit{width:100%;padding:13px;background:var(--navy);color:var(--white);font-family:var(--font-sans);font-size:15px;font-weight:700;letter-spacing:0.05em;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s;text-transform:uppercase;}
-.btn-submit:hover{background:var(--navy-light);}
-.btn-submit:disabled{opacity:0.7;cursor:not-allowed;}
+.btn-submit{width:100%;padding:13px;background:var(--navy);color:var(--white);font-family:var(--font-sans);font-size:15px;font-weight:700;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s;text-transform:uppercase;}
+.btn-submit:hover{background:var(--navy-light);}.btn-submit:disabled{opacity:0.7;cursor:not-allowed;}
 .form-disc{font-size:11px;color:var(--text-light);text-align:center;margin-top:8px;line-height:1.5;}
-.content-layout{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;}
+.content-layout{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start;}
 .content-body h2{font-family:var(--font-serif);font-size:28px;color:var(--navy);margin:36px 0 14px;}
+.content-body h3{font-family:var(--font-serif);font-size:20px;color:var(--navy);margin:28px 0 10px;}
 .content-body p{color:var(--text-mid);line-height:1.75;margin-bottom:16px;}
 .content-body ul{list-style:none;margin-bottom:16px;}
 .content-body ul li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--text-mid);line-height:1.65;margin-bottom:10px;}
 .content-body ul li::before{content:'';width:20px;height:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;margin-top:2px;}
-.sub-services-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
-.sub-card{border:1px solid #E8E2D0;border-radius:8px;padding:24px;text-decoration:none;transition:all 0.2s;display:block;}
-.sub-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(0,0,0,0.08);}
-.sub-card h3{font-family:var(--font-serif);font-size:18px;color:var(--navy);margin-bottom:8px;}
-.sub-card p{font-size:13.5px;color:var(--text-mid);line-height:1.6;margin-bottom:0;}
-.sticky-sidebar{position:sticky;top:88px;}
-.sidebar-card{background:var(--navy);border-radius:8px;padding:28px;margin-bottom:24px;}
-.sidebar-card h3{font-family:var(--font-serif);font-size:18px;color:var(--white);margin-bottom:12px;}
-.sidebar-card p{font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:16px;}
-.sidebar-card .btn-gold{width:100%;justify-content:center;}
-.sidebar-card .phone-link{display:flex;align-items:center;gap:8px;color:var(--gold-light);font-weight:700;font-size:15px;text-decoration:none;margin-top:12px;}
-.sidebar-related{background:var(--off-white);border:1px solid #E8E2D0;border-radius:8px;padding:24px;}
+.sticky-sidebar{position:sticky;top:88px;}.sidebar-card{background:var(--navy);border-radius:8px;padding:28px;margin-bottom:24px;}
+.sidebar-card h3{font-family:var(--font-serif);font-size:18px;color:var(--white);margin-bottom:12px;}.sidebar-card p{font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:16px;}
+.sidebar-card .btn-gold{width:100%;justify-content:center;}.sidebar-card .phone-link{display:flex;align-items:center;gap:8px;color:var(--gold-light);font-weight:700;font-size:15px;text-decoration:none;margin-top:12px;}
+.sidebar-related{background:var(--off-white);border:1px solid #E8E2D0;border-radius:8px;padding:24px;margin-top:16px;}
 .sidebar-related h3{font-family:var(--font-sans);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:14px;}
-.sidebar-related ul{list-style:none;}
-.sidebar-related ul li a{font-size:14px;color:var(--navy);text-decoration:none;font-weight:600;display:block;padding:8px 0;border-bottom:1px solid #E8E2D0;}
-.sidebar-related ul li:last-child a{border-bottom:0;}
-.sidebar-related ul li a:hover{color:var(--gold);}
-.faq-section{background:var(--off-white);}
-.faq-item{border-bottom:1px solid #E8E2D0;overflow:hidden;}
+.sidebar-related ul{list-style:none;}.sidebar-related ul li a{font-size:14px;color:var(--navy);text-decoration:none;font-weight:600;display:block;padding:8px 0;border-bottom:1px solid #E8E2D0;}
+.sidebar-related ul li:last-child a{border-bottom:0;}.sidebar-related ul li a:hover{color:var(--gold);}
+.faq-section{background:var(--off-white);}.faq-item{border-bottom:1px solid #E8E2D0;}
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-weight:700;color:var(--navy);font-size:16px;}
 .faq-indicator{font-size:22px;color:var(--gold);font-weight:300;flex-shrink:0;margin-left:16px;transition:transform 0.3s;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;font-size:15px;color:var(--text-mid);line-height:1.75;}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:20px;}
-.faq-item.open .faq-indicator{transform:rotate(45deg);}
-.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;}
-.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px;}.faq-item.open .faq-indicator{transform:rotate(45deg);}
 .cta-strip{background:var(--gold-pale);border-top:3px solid var(--gold);text-align:center;padding:64px 1.5rem;}
 .cta-strip h2{font-family:var(--font-serif);font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--navy);margin-bottom:14px;}
 .cta-strip p{font-size:17px;color:var(--text-mid);max-width:560px;margin:0 auto 28px;}
 .cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
-.btn-outline{background:transparent;color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:14px;letter-spacing:0.05em;padding:12px 24px;border-radius:4px;border:2px solid var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;}
-.btn-outline:hover{background:var(--navy);color:var(--white);}
-@media(max-width:960px){.page-hero-inner,.content-layout{grid-template-columns:1fr;gap:40px;}.sticky-sidebar{position:static;}.sub-services-grid{grid-template-columns:1fr;}}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+@media(max-width:960px){.page-hero-inner,.content-layout{grid-template-columns:1fr;gap:40px;}.sticky-sidebar{position:static;}}
 @media(max-width:600px){section{padding:52px 1.5rem;}.page-hero{padding:56px 1.5rem;}.form-row-half{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
 <main>
 
-<section class="page-hero">
+<section class="page-hero" style="background-image:linear-gradient(to right,rgba(15,31,61,0.97) 55%,rgba(15,31,61,0.7) 100%),url('/images/Personal-Injury-Lawyers.jpg');">
   <div class="page-hero-inner">
     <div>
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>Civil Litigation</div>
       <h1>Civil Litigation Attorneys in <em>San Luis Obispo</em></h1>
-      <p>When you need attorneys who know what it takes to win in court, not just settle cheap. We handle personal injury, auto accidents, wrongful death, business disputes, and appellate work across SLO County.</p>
+      <p>When you need attorneys who are genuinely ready to go to trial. We handle personal injury, auto accidents, wrongful death, business disputes, and appellate work across SLO County.</p>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
-        <a class="btn-outline-white" href="#form-card">Free Case Review</a>
+        <a class="btn-ow" href="#form-card">Free Case Review</a>
       </div>
     </div>
     <div class="form-card" id="form-card">
-      <div class="form-header">
-        <h2>Free Case Review</h2>
-        <p>No fee unless we win on injury cases.</p>
-      </div>
-      <div class="form-body">
-        <div class="form-row-half">
-          <div class="form-row"><label for="ts-fname">First Name*</label><input type="text" id="ts-fname" placeholder="First"></div>
-          <div class="form-row"><label for="ts-lname">Last Name</label><input type="text" id="ts-lname" placeholder="Last"></div>
-        </div>
-        <div class="form-row"><label for="ts-phone">Phone*</label><input type="tel" id="ts-phone" placeholder="(805) 555-0100"></div>
-        <div class="form-row"><label for="ts-email">Email</label><input type="email" id="ts-email" placeholder="you@email.com"></div>
-        <div class="form-row">
-          <label for="ts-service">Type of Case</label>
-          <select id="ts-service">
-            <option value="Personal Injury">Personal Injury</option>
-            <option value="Auto Accident">Auto Accident</option>
-            <option value="Wrongful Death">Wrongful Death</option>
-            <option value="Slip and Fall">Slip and Fall</option>
-            <option value="Brain Injury">Traumatic Brain Injury</option>
-            <option value="Business Dispute">Business Dispute</option>
-            <option value="Appellate">Appellate</option>
-            <option value="Other Litigation">Other</option>
-          </select>
-        </div>
-        <div class="form-row"><label for="ts-message">Brief Description</label><textarea id="ts-message" placeholder="What happened? When? Any injuries?"></textarea></div>
-        <div class="consent-row">
-          <input type="checkbox" id="ts-sms-consent">
-          <label for="ts-sms-consent">I consent to receive non-marketing texts from Tardiff and Saldo Law Offices about my case inquiry. Message and data rates may apply. Reply STOP to opt out. Must be 18+.</label>
-        </div>
-        <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Get My Free Case Review</button>
-        <p class="form-disc">Free consultations Mon &ndash; Fri, 9am &ndash; 5pm.</p>
-      </div>
+  <div class="form-header"><h2>Get Your Free Consultation</h2><p>No pressure. Honest answers.</p></div>
+  <div class="form-body">
+    <div class="form-row-half">
+      <div class="form-row"><label for="ts-fname">First Name*</label><input type="text" id="ts-fname" placeholder="First"></div>
+      <div class="form-row"><label for="ts-lname">Last Name</label><input type="text" id="ts-lname" placeholder="Last"></div>
     </div>
+    <div class="form-row"><label for="ts-phone">Phone*</label><input type="tel" id="ts-phone" placeholder="(805) 555-0100"></div>
+    <div class="form-row"><label for="ts-email">Email</label><input type="email" id="ts-email" placeholder="you@email.com"></div>
+    <div class="form-row"><label for="ts-service">Practice Area</label>
+      <select id="ts-service">
+        <option value="Trusts &amp; Estate Planning">Trusts &amp; Estate Planning</option>
+        <option value="Probate">Probate</option>
+        <option value="Business Law">Business Law</option>
+        <option value="Civil Litigation">Civil Litigation</option>
+        <option value="Personal Injury">Personal Injury</option>
+        <option value="Auto Accident">Auto Accident</option>
+        <option value="Wrongful Death">Wrongful Death</option>
+        <option value="Appellate Law">Appellate Law</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-row"><label for="ts-message">Brief Description</label><textarea id="ts-message" placeholder="Tell us about your situation..."></textarea></div>
+    <div class="consent-row">
+      <input type="checkbox" id="ts-sms-consent">
+      <label for="ts-sms-consent">I consent to receive non-marketing texts from Tardiff and Saldo Law Offices. Message and data rates may apply. Reply STOP to opt out. Must be 18+.</label>
+    </div>
+    <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Get My Free Consultation</button>
+    <p class="form-disc">Mon &ndash; Fri, 9am &ndash; 5pm. Same-week appointments often available.</p>
+  </div>
+</div>
   </div>
 </section>
-
 <section style="background:var(--white);">
   <div class="wrap">
     <div class="content-layout">
       <div class="content-body">
         <div class="section-label">Civil Litigation in SLO County</div>
         <h2 class="section-title" style="margin-top:0;">Attorneys Who Actually Go to Trial</h2>
-
-        <p>Most personal injury cases settle. But insurers settle fairly only when they know the opposing attorney is willing and able to take a case to trial. That willingness is what gives you leverage. Our litigation team has genuine trial experience in San Luis Obispo County courts, and that reputation affects how insurance companies handle your claim from day one.</p>
-
-        <p>The path from injury to compensation isn't a straight line. It requires a thorough investigation, careful evidence preservation, strong demand letters, and the credibility to back those demands up in court when necessary. We handle every step.</p>
-
+        <p>Most personal injury cases settle. But insurers settle fairly only when they know the opposing attorney is willing and able to take a case to trial. Our litigation team has genuine trial experience in San Luis Obispo County courts, and that reputation affects how insurance companies handle your claim from day one.</p>
         <h2>Civil Litigation Practice Areas</h2>
-
-        <div class="sub-services-grid">
-          <a class="sub-card" href="/services/personal-injury/">
-            <h3>Personal Injury</h3>
-            <p>Accidents, slips and falls, product liability, and premises liability. We fight for full compensation including medical bills, lost wages, and pain and suffering.</p>
-          </a>
-          <a class="sub-card" href="/services/auto-accidents/">
-            <h3>Auto Accidents</h3>
-            <p>Car, truck, motorcycle, and bicycle accidents throughout SLO County. We deal with the insurance companies so you can focus on recovery.</p>
-          </a>
-          <a class="sub-card" href="/services/wrongful-death/">
-            <h3>Wrongful Death</h3>
-            <p>When negligence or misconduct takes a life, families deserve accountability and compensation. We represent surviving family members with sensitivity and strength.</p>
-          </a>
-          <a class="sub-card" href="/services/appellate-law/">
-            <h3>Appellate Law</h3>
-            <p>When a trial court gets it wrong, an experienced appellate attorney can make the difference. We handle both civil and criminal appeals.</p>
-          </a>
+        <ul>
+          <li><strong><a href="/services/personal-injury/" style="color:var(--navy);">Personal Injury:</a></strong> Slip and fall, premises liability, product liability, traumatic brain injury. No fee unless we recover.</li>
+          <li><strong><a href="/services/auto-accidents/" style="color:var(--navy);">Auto Accidents:</a></strong> Car, truck, motorcycle, and bicycle accidents throughout SLO County.</li>
+          <li><strong><a href="/services/wrongful-death/" style="color:var(--navy);">Wrongful Death:</a></strong> Representing surviving families with compassion and strength. Contingency basis.</li>
+          <li><strong><a href="/services/appellate-law/" style="color:var(--navy);">Appellate Law:</a></strong> Civil and criminal appeals at the California Court of Appeal and beyond.</li>
+          <li><strong>Business Litigation:</strong> Breach of contract, fraud, and unfair competition handled by trial-experienced attorneys.</li>
+        </ul>
+        <p>For California civil procedure, the <a href="https://www.courts.ca.gov/" target="_blank" rel="noopener">California Courts</a> website provides useful background on the litigation process. Our litigation background also strengthens our <a href="/services/trusts-estates/" style="color:var(--gold);font-weight:700;">estate planning</a> and <a href="/services/business-law/" style="color:var(--gold);font-weight:700;">business law</a> work.</p>
+        <div class="video-wrap" style="margin:24px 0;">
+          <iframe src="https://www.youtube.com/embed/hVH2m2VkUiw?si=Gvk6hxCHC8o1bhYK" title="Civil litigation law firm San Luis Obispo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
-
-        <p>We also handle <strong>traumatic brain injuries</strong>, <strong>birth injuries</strong>, <strong>slip and fall</strong> accidents, and complex <strong>business litigation</strong> including breach of contract, fraud, and unfair competition claims. <a href="/contact.html" style="color:var(--gold);font-weight:700;">Contact us</a> for a free case review.</p>
-
-        <h2>Our Civil Litigation Team</h2>
-        <div class="video-wrap" style="margin:20px 0 28px;">
-          <iframe src="https://www.youtube.com/embed/hVH2m2VkUiw?si=Gvk6hxCHC8o1bhYK" title="Civil litigation law firm San Luis Obispo Tardiff and Saldo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </div>
-
-        <h2>Litigation Experience That Protects All Our Clients</h2>
-        <p>Our litigation background shapes the work we do across every practice area. The contracts our <a href="/services/business-law/" style="color:var(--gold);font-weight:700;">business law team</a> drafts are written by attorneys who've seen contracts fail under cross-examination. The <a href="/services/trusts-estates/" style="color:var(--gold);font-weight:700;">estate plans</a> we create are structured by attorneys who've litigated poorly drafted ones in probate court. That integration is what "a different kind of law firm" actually means.</p>
-
-        <p>Our practice covers all of San Luis Obispo County. Whether you're dealing with an injury in <a href="/locations/paso-robles/" style="color:var(--gold);font-weight:700;">Paso Robles</a>, an accident near <a href="/locations/morro-bay/" style="color:var(--gold);font-weight:700;">Morro Bay</a>, or a business dispute anywhere in the region, we handle it. For information on California civil procedure, the <a href="https://www.courts.ca.gov/" target="_blank" rel="noopener">California Courts</a> website provides useful background on the litigation process.</p>
       </div>
-
       <div class="sticky-sidebar">
-        <div class="sidebar-card">
-          <h3>Free Case Review</h3>
-          <p>Tell us what happened. We'll give you an honest assessment of your options with no pressure and no obligation.</p>
-          <a class="btn-gold" href="#form-card" style="width:100%;justify-content:center;">Get Free Case Review</a>
-          <a class="phone-link" href="tel:8884612215">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-            (888) 461-2215
-          </a>
-        </div>
-        <div class="sidebar-related">
-          <h3>Litigation Services</h3>
-          <ul>
-            <li><a href="/services/personal-injury/">Personal Injury</a></li>
-            <li><a href="/services/auto-accidents/">Auto Accidents</a></li>
-            <li><a href="/services/wrongful-death/">Wrongful Death</a></li>
-            <li><a href="/services/appellate-law/">Appellate Law</a></li>
-          </ul>
-        </div>
-        <div class="sidebar-related" style="margin-top:16px;">
-          <h3>Other Practice Areas</h3>
-          <ul>
-            <li><a href="/services/trusts-estates/">Trusts &amp; Estates</a></li>
-            <li><a href="/services/business-law/">Business Law</a></li>
-          </ul>
-        </div>
-      </div>
+  <div class="sidebar-card">
+    <h3>Free Case Review</h3>
+    <p>Tell us what happened. Honest assessment, no pressure, no obligation.</p>
+    <a class="btn-gold" href="#form-card" style="width:100%;justify-content:center;">Schedule Free Consult</a>
+    <a class="phone-link" href="tel:8884612215">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      (888) 461-2215
+    </a>
+  </div>
+  <div class="sidebar-related"><h3>Related Services</h3><ul><li><a href="/services/personal-injury/">Personal Injury</a></li><li><a href="/services/auto-accidents/">Auto Accidents</a></li><li><a href="/services/wrongful-death/">Wrongful Death</a></li><li><a href="/services/appellate-law/">Appellate Law</a></li></ul></div>
+</div>
     </div>
   </div>
 </section>
-
 <section class="faq-section">
   <div class="wrap">
     <div class="section-label">Common Questions</div>
     <h2 class="section-title">Civil Litigation FAQs</h2>
     <div style="max-width:820px;">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How long do I have to file a personal injury claim in California?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">California's statute of limitations for most personal injury claims is two years from the date of injury. However, there are important exceptions. Claims against government entities (cities, counties, CalTrans) require a government tort claim within six months of the incident. Claims for minors may be tolled until they turn 18. Medical malpractice has a different timeline. Do not wait to consult an attorney, earlier is always better for evidence preservation and case strength.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How much does a civil litigation attorney cost?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">For personal injury cases, we work on a contingency fee basis, meaning you pay no attorney fees unless we recover compensation for you. For business disputes and other civil matters, we discuss billing structures during your free consultation. We're transparent about fees upfront so there are no surprises.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What should I do immediately after a car accident in San Luis Obispo?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">Call 911 if anyone is injured. Seek medical attention even if you feel fine, as symptoms from whiplash and other injuries can appear days later. Document the scene with photos if you can. Exchange insurance and contact information with the other driver. Do not give a recorded statement to any insurance company without speaking to an attorney first. Then contact us for a free case review. What you say to insurers in the first days can significantly affect your claim.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Will my case go to trial?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">Most civil cases settle before trial, but the credibility to go to trial is what creates settlement leverage. Insurance companies and defense attorneys evaluate opposing counsel carefully. When they know your attorney has actual trial experience in local courts, they take the case more seriously from the outset. We never push clients to settle for less than their case is worth, and we're fully prepared to take a case to verdict when that's what it takes.</div>
-      </div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long do I have to file a personal injury claim in California?<span class="faq-indicator">+</span></div><div class="faq-a">California's statute of limitations for most personal injury claims is two years from the date of injury. Claims against government entities require a government tort claim within six months. Missing these deadlines means losing your right to sue entirely. Contact an attorney as soon as possible.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does a civil litigation attorney cost?<span class="faq-indicator">+</span></div><div class="faq-a">For personal injury cases we work on a contingency fee basis, meaning you pay no attorney fees unless we recover compensation for you. For business disputes and other civil matters we discuss billing structures during your free consultation. We are transparent about fees upfront.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Will my case go to trial?<span class="faq-indicator">+</span></div><div class="faq-a">Most civil cases settle, but the credibility to go to trial is what creates settlement leverage. Insurance companies evaluate opposing counsel carefully. When they know your attorney has actual trial experience in local courts, they take the case more seriously from the outset. We are fully prepared to take a case to verdict when that is what it takes.</div></div>
     </div>
   </div>
 </section>
-
 <section class="cta-strip">
   <div class="wrap">
     <h2>Get the Legal Firepower Your Case Deserves</h2>
@@ -255,21 +172,18 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     </div>
   </div>
 </section>
-
 </main>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LegalService","name":"Tardiff & Saldo Law Offices","url":"https://tardiffsaldo.com","telephone":"+18884612215","address":{"@type":"PostalAddress","streetAddress":"1235 Palm St","addressLocality":"San Luis Obispo","addressRegion":"CA","postalCode":"93401","addressCountry":"US"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tardiffsaldo.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://tardiffsaldo.com/services/"},{"@type":"ListItem","position":3,"name":"Civil Litigation","item":"https://tardiffsaldo.com/services/civil-litigation/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long do I have to file a personal injury claim in California?","acceptedAnswer":{"@type":"Answer","text":"California's general statute of limitations for personal injury is two years, but government entity claims require a tort claim within six months. Do not wait to consult an attorney."}},{"@type":"Question","name":"Will my case go to trial?","acceptedAnswer":{"@type":"Answer","text":"Most civil cases settle, but the credibility to go to trial creates settlement leverage. We are fully prepared to take cases to verdict when necessary."}}]}]}
-</script>
-
 <script>
 function toggleFaq(el){var item=el.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}
 async function handleFormSubmit(){
-  var fname=document.getElementById('ts-fname').value.trim();var lname=document.getElementById('ts-lname').value.trim();var phone=document.getElementById('ts-phone').value.trim();var email=document.getElementById('ts-email').value.trim();var service=document.getElementById('ts-service').value;var message=document.getElementById('ts-message').value.trim();var sms=document.getElementById('ts-sms-consent').checked;
+  var fname=document.getElementById('ts-fname').value.trim();var lname=document.getElementById('ts-lname').value.trim();
+  var phone=document.getElementById('ts-phone').value.trim();var email=document.getElementById('ts-email').value.trim();
+  var service=document.getElementById('ts-service').value;var message=document.getElementById('ts-message').value.trim();
+  var sms=document.getElementById('ts-sms-consent').checked;
   if(!fname||(!phone&&!email)){alert('Please fill in your name and at least one way to reach you.');return;}
   var btn=document.getElementById('ts-submit-btn');btn.textContent='Submitting...';btn.disabled=true;
-  localStorage.setItem('email',email.toLowerCase());localStorage.setItem('phone',phone);localStorage.setItem('fname',fname);localStorage.setItem('lname',lname);
-  try{await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Civil Litigation Service Page'})});}catch(e){console.error(e);}
+  try{await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Civil Litigation Service Page'})});
+  }catch(e){console.error(e);}
   window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead'});
   window.location.href='https://tardiffsaldo.com/thank-you/';
 }

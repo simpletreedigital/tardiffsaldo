@@ -9,7 +9,6 @@
 <link rel="icon" type="image/png" href="/images/Tardiff-Saldo-site-favicon.png">
 <script src="/includes/nav-footer-loader.js"></script>
 <style>
-/* ---- PAGE GLOBALS ---- */
 :root{
   --navy:#0F1F3D;--navy-mid:#162848;--navy-light:#1E3460;
   --gold:#C9A84C;--gold-light:#E2C97A;--gold-pale:#F5EDD4;
@@ -25,110 +24,58 @@ img{max-width:100%;height:auto;display:block;}
 a{color:var(--navy);}
 .wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
 
-/* ---- HERO ---- */
 .hero{
   background:var(--navy);
-  background-image:linear-gradient(135deg,rgba(15,31,61,0.97) 0%,rgba(22,40,72,0.93) 50%,rgba(30,52,96,0.88) 100%),
-  url('/images/title-bar-2400-San-Luis-Obispo-at-sunset.jpg');
+  background-image:linear-gradient(135deg,rgba(15,31,61,0.97) 0%,rgba(22,40,72,0.92) 50%,rgba(30,52,96,0.87) 100%),url('/images/title-bar-2400-San-Luis-Obispo-at-sunset.jpg');
   background-size:cover;background-position:center;
-  padding:88px 1.5rem 96px;position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 50%,rgba(201,168,76,0.07) 0%,transparent 65%);
-  pointer-events:none;
+  padding:88px 1.5rem 96px;
 }
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start;}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:18px;
-}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
 .hero-eyebrow::before{content:'';width:28px;height:2px;background:var(--gold);display:inline-block;}
-.hero h1{
-  font-family:var(--font-serif);font-size:clamp(30px,4vw,52px);font-weight:700;
-  color:var(--white);line-height:1.15;margin-bottom:22px;
-}
+.hero h1{font-family:var(--font-serif);font-size:clamp(30px,4vw,52px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:22px;}
 .hero h1 em{font-style:italic;color:var(--gold-light);}
 .hero-sub{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:28px;max-width:520px;}
 .hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:32px;}
-.hero-checks li{
-  display:flex;align-items:center;gap:10px;
-  font-size:15px;color:rgba(255,255,255,0.85);
-}
-.hero-checks li::before{
-  content:'';width:20px;height:20px;flex-shrink:0;border-radius:50%;
-  background:rgba(201,168,76,0.2);border:1.5px solid var(--gold);
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size:contain;
-}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,0.85);}
+.hero-checks li::before{content:'';width:20px;height:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
 .hero-badges{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
 .badge-item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(255,255,255,0.45);}
 .badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
-/* ---- FORM CARD ---- */
-.form-card{
-  background:var(--white);border-radius:8px;
-  box-shadow:0 24px 80px rgba(0,0,0,0.45);
-  overflow:hidden;flex-shrink:0;
-}
+.form-card{background:var(--white);border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.45);overflow:hidden;}
 .form-header{background:var(--gold);padding:18px 24px;text-align:center;}
 .form-header h2{font-family:var(--font-serif);font-size:20px;color:var(--navy);font-weight:700;line-height:1.2;}
 .form-header p{font-size:13px;color:rgba(15,31,61,0.7);margin-top:4px;}
 .form-body{padding:24px;}
 .form-row{margin-bottom:13px;}
 .form-row label{display:block;font-size:11px;font-weight:700;letter-spacing:0.06em;color:var(--text-mid);margin-bottom:5px;text-transform:uppercase;}
-.form-row input,.form-row select,.form-row textarea{
-  width:100%;padding:11px 14px;border:1.5px solid #DDD;border-radius:4px;
-  font-family:var(--font-sans);font-size:15px;color:var(--text-dark);
-  background:#FAFAFA;transition:border-color 0.2s;appearance:none;
-}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:11px 14px;border:1.5px solid #DDD;border-radius:4px;font-family:var(--font-sans);font-size:15px;color:var(--text-dark);background:#FAFAFA;transition:border-color 0.2s;appearance:none;}
 .form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--gold);background:var(--white);}
 .form-row textarea{height:76px;resize:none;}
-.form-row select{
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:36px;
-}
+.form-row select{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:36px;}
 .form-row-half{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .consent-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;}
 .consent-row input[type=checkbox]{width:16px;height:16px;margin-top:3px;flex-shrink:0;accent-color:var(--navy);}
 .consent-row label{font-size:11px;color:var(--text-light);line-height:1.5;text-transform:none;letter-spacing:0;}
-.btn-submit{
-  width:100%;padding:14px;background:var(--navy);color:var(--white);
-  font-family:var(--font-sans);font-size:15px;font-weight:700;letter-spacing:0.05em;
-  border:none;border-radius:4px;cursor:pointer;transition:background 0.2s;text-transform:uppercase;
-}
+.btn-submit{width:100%;padding:14px;background:var(--navy);color:var(--white);font-family:var(--font-sans);font-size:15px;font-weight:700;letter-spacing:0.05em;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s;text-transform:uppercase;}
 .btn-submit:hover{background:var(--navy-light);}
-.btn-submit:disabled{opacity:0.7;cursor:not-allowed;}
 .form-disc{font-size:11px;color:var(--text-light);text-align:center;margin-top:9px;line-height:1.5;}
 
-/* ---- TRUST BAR ---- */
-.trust-bar{
-  background:var(--white);border-bottom:1px solid #E8E4D8;
-  border-top:1px solid #E8E4D8;padding:20px 1.5rem;
-}
+.trust-bar{background:var(--white);border-bottom:1px solid #E8E4D8;border-top:1px solid #E8E4D8;padding:20px 1.5rem;}
 .trust-bar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
 .trust-item{display:flex;align-items:center;gap:10px;opacity:0.72;}
-.trust-item img{height:36px;width:auto;filter:grayscale(20%);}
+.trust-item img{height:36px;width:auto;}
 .trust-item span{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);}
 
-/* ---- SECTION COMMONS ---- */
 section{padding:72px 1.5rem;}
-.section-label{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:12px;
-}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .section-label::before{content:'';width:20px;height:2px;background:var(--gold);display:inline-block;}
 h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
 .section-intro{font-size:17px;color:var(--text-mid);line-height:1.75;max-width:640px;margin-bottom:40px;}
 
-/* ---- SERVICES GRID ---- */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.svc-card{
-  border:1px solid #E8E2D0;border-radius:8px;overflow:hidden;
-  transition:box-shadow 0.2s,transform 0.2s;background:var(--white);
-}
+.svc-card{border:1px solid #E8E2D0;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;background:var(--white);}
 .svc-card:hover{box-shadow:0 8px 32px rgba(15,31,61,0.1);transform:translateY(-3px);}
 .svc-card-img{aspect-ratio:16/9;overflow:hidden;}
 .svc-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
@@ -137,20 +84,23 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .svc-card-body h3{font-family:var(--font-serif);font-size:20px;color:var(--navy);margin-bottom:10px;}
 .svc-card-body p{font-size:14px;color:var(--text-mid);line-height:1.65;margin-bottom:16px;}
 .svc-link{font-size:13px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;}
-.svc-link:hover{color:var(--navy);}
 
-/* ---- DIFFERENTIATORS ---- */
-.diff-section{background:var(--navy);color:var(--white);}
+.diff-section{background:var(--navy);}
 .diff-section .section-title{color:var(--white);}
 .diff-section .section-intro{color:rgba(255,255,255,0.7);}
 .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .diff-card{border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:32px 28px;}
-.diff-icon{width:48px;height:48px;border-radius:50%;background:rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.diff-icon{width:48px;height:48px;border-radius:50%;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
 .diff-icon svg{width:22px;height:22px;color:var(--gold);}
-.diff-card h3{font-family:var(--font-serif);font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;}
+.diff-card h3{font-family:var(--font-serif);font-size:18px;color:var(--white);margin-bottom:10px;}
 .diff-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;}
 
-/* ---- REVIEWS ---- */
+.video-section{background:var(--off-white);}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.video-caption{font-size:14px;font-weight:700;color:var(--navy);margin-top:12px;}
+
 .reviews-section{background:var(--off-white);}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .review-card{background:var(--white);border-radius:8px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
@@ -163,25 +113,6 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .rating-detail .stars{margin-bottom:4px;}
 .rating-detail p{font-size:13px;color:var(--text-mid);}
 
-/* ---- LOCATIONS STRIP ---- */
-.locs-strip{background:var(--white);}
-.locs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
-.loc-card{
-  border:1px solid #E8E2D0;border-radius:6px;padding:20px 16px;text-align:center;
-  text-decoration:none;transition:all 0.2s;
-}
-.loc-card:hover{border-color:var(--gold);background:var(--gold-pale);}
-.loc-card h3{font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.loc-card p{font-size:12px;color:var(--text-light);}
-
-/* ---- VIDEO SECTION ---- */
-.video-section{background:var(--off-white);}
-.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000;}
-.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-.video-caption{font-size:14px;font-weight:700;color:var(--navy);margin-top:12px;}
-
-/* ---- TEAM STRIP ---- */
 .team-strip{background:var(--navy);}
 .team-strip .section-title{color:var(--white);}
 .team-strip .section-intro{color:rgba(255,255,255,0.7);}
@@ -191,27 +122,22 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .team-card h3{font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
 .team-card p{font-size:12px;color:rgba(255,255,255,0.5);}
 
-/* ---- FINAL CTA ---- */
+.locs-strip{background:var(--white);}
+.locs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.loc-card{border:1px solid #E8E2D0;border-radius:6px;padding:20px 16px;text-align:center;text-decoration:none;transition:all 0.2s;display:block;}
+.loc-card:hover{border-color:var(--gold);background:var(--gold-pale);}
+.loc-card h3{font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.loc-card p{font-size:12px;color:var(--text-light);}
+
 .final-cta{background:var(--gold-pale);border-top:3px solid var(--gold);text-align:center;padding:72px 1.5rem;}
 .final-cta h2{font-family:var(--font-serif);font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--navy);margin-bottom:14px;}
 .final-cta p{font-size:17px;color:var(--text-mid);max-width:600px;margin:0 auto 32px;}
 .cta-btns{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
-.btn-gold{
-  background:var(--gold);color:var(--navy);font-weight:700;
-  font-family:var(--font-sans);font-size:15px;letter-spacing:0.04em;
-  padding:14px 28px;border-radius:4px;text-decoration:none;
-  display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;text-transform:uppercase;
-}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:15px;letter-spacing:0.04em;padding:14px 28px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;text-transform:uppercase;}
 .btn-gold:hover{background:var(--gold-light);}
-.btn-outline{
-  background:transparent;color:var(--navy);font-weight:700;
-  font-family:var(--font-sans);font-size:15px;letter-spacing:0.04em;
-  padding:13px 28px;border-radius:4px;border:2px solid var(--navy);
-  text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;
-}
+.btn-outline{background:transparent;color:var(--navy);font-weight:700;font-family:var(--font-sans);font-size:15px;letter-spacing:0.04em;padding:13px 28px;border-radius:4px;border:2px solid var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;text-transform:uppercase;}
 .btn-outline:hover{background:var(--navy);color:var(--white);}
 
-/* ---- RESPONSIVE ---- */
 @media(max-width:960px){
   .hero-inner{grid-template-columns:1fr;gap:40px;}
   .services-grid,.diff-grid,.reviews-grid{grid-template-columns:1fr 1fr;}
@@ -230,7 +156,6 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 <body>
 <main>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div>
@@ -258,23 +183,11 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       </div>
       <div class="form-body">
         <div class="form-row-half">
-          <div class="form-row">
-            <label for="ts-fname">First Name*</label>
-            <input type="text" id="ts-fname" placeholder="First">
-          </div>
-          <div class="form-row">
-            <label for="ts-lname">Last Name</label>
-            <input type="text" id="ts-lname" placeholder="Last">
-          </div>
+          <div class="form-row"><label for="ts-fname">First Name*</label><input type="text" id="ts-fname" placeholder="First"></div>
+          <div class="form-row"><label for="ts-lname">Last Name</label><input type="text" id="ts-lname" placeholder="Last"></div>
         </div>
-        <div class="form-row">
-          <label for="ts-phone">Phone*</label>
-          <input type="tel" id="ts-phone" placeholder="(805) 555-0100">
-        </div>
-        <div class="form-row">
-          <label for="ts-email">Email</label>
-          <input type="email" id="ts-email" placeholder="you@email.com">
-        </div>
+        <div class="form-row"><label for="ts-phone">Phone*</label><input type="tel" id="ts-phone" placeholder="(805) 555-0100"></div>
+        <div class="form-row"><label for="ts-email">Email</label><input type="email" id="ts-email" placeholder="you@email.com"></div>
         <div class="form-row">
           <label for="ts-service">Area of Need</label>
           <select id="ts-service">
@@ -289,13 +202,10 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
             <option value="Other">Other</option>
           </select>
         </div>
-        <div class="form-row">
-          <label for="ts-message">Brief Description</label>
-          <textarea id="ts-message" placeholder="Tell us a little about your situation..."></textarea>
-        </div>
+        <div class="form-row"><label for="ts-message">Brief Description</label><textarea id="ts-message" placeholder="Tell us a little about your situation..."></textarea></div>
         <div class="consent-row">
           <input type="checkbox" id="ts-sms-consent">
-          <label for="ts-sms-consent">By checking this box I consent to receive non-marketing text messages from Tardiff and Saldo Law Offices about appointment confirmations, reminders, and follow-up communications related to my inquiry. Message frequency may vary. Message and data rates may apply. Text HELP for assistance, reply STOP to opt out. You must be 18 or older to consent.</label>
+          <label for="ts-sms-consent">By checking this box I consent to receive non-marketing text messages from Tardiff and Saldo Law Offices about appointment confirmations, reminders, and follow-up communications. Message and data rates may apply. Text STOP to opt out. Must be 18+.</label>
         </div>
         <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Request Free Consultation</button>
         <p class="form-disc">Free consultations Mon &ndash; Fri, 9am &ndash; 5pm. Same-week appointments often available.</p>
@@ -304,18 +214,16 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </section>
 
-<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-item"><img src="/images/800px-CalBarSeal.svg.png" alt="California State Bar seal" height="36"><span>CA State Bar</span></div>
-    <div class="trust-item"><img src="/images/CLA_LOGO_Copper.cropped.png" alt="California Lawyers Association logo" height="36"><span>CLA Member</span></div>
-    <div class="trust-item"><img src="/images/SLO-Chamber-Logo.jpeg" alt="San Luis Obispo Chamber of Commerce logo" height="36"><span>SLO Chamber</span></div>
-    <div class="trust-item"><img src="/images/BBB-Logo.png" alt="Better Business Bureau accredited" height="36"><span>BBB Accredited</span></div>
-    <div class="trust-item"><img src="/images/avvo.png" alt="Avvo rated attorney" height="36"><span>Avvo Rated</span></div>
+    <div class="trust-item"><img src="/images/800px-CalBarSeal.svg.png" alt="California State Bar" height="36"><span>CA State Bar</span></div>
+    <div class="trust-item"><img src="/images/CLA_LOGO_Copper.cropped.png" alt="California Lawyers Association" height="36"><span>CLA Member</span></div>
+    <div class="trust-item"><img src="/images/SLO-Chamber-Logo.jpeg" alt="SLO Chamber of Commerce" height="36"><span>SLO Chamber</span></div>
+    <div class="trust-item"><img src="/images/BBB-Logo.png" alt="Better Business Bureau" height="36"><span>BBB Accredited</span></div>
+    <div class="trust-item"><img src="/images/avvo.png" alt="Avvo Rated" height="36"><span>Avvo Rated</span></div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="locs-strip">
   <div class="wrap">
     <div class="section-label">Practice Areas</div>
@@ -323,26 +231,26 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     <p class="section-intro">Our litigation experience informs every contract, trust, and estate plan we write. We know what fails in court because we've argued those cases ourselves.</p>
     <div class="services-grid">
       <div class="svc-card">
-        <div class="svc-card-img"><img src="/images/Estate-Planning-Lawyers.jpg" alt="Estate planning attorney reviewing trust documents in San Luis Obispo 93401" loading="lazy"></div>
+        <div class="svc-card-img"><img src="/images/Estate-Planning-Lawyers.jpg" alt="Estate planning attorney reviewing trust documents San Luis Obispo 93401" loading="lazy"></div>
         <div class="svc-card-body">
           <h3>Trusts &amp; Estate Planning</h3>
-          <p>Most everyone needs a trust. We create living trusts, wills, powers of attorney, and healthcare directives that protect your family and avoid probate. Flat-fee pricing. Free consult.</p>
+          <p>Most everyone needs a trust. We create living trusts, wills, powers of attorney, and healthcare directives. Flat-fee pricing, free consult.</p>
           <a class="svc-link" href="/services/trusts-estates/">Learn More &rarr;</a>
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-card-img"><img src="/images/Business-Lawyer.jpg" alt="Business law attorney reviewing contract for SLO County company 93401" loading="lazy"></div>
+        <div class="svc-card-img"><img src="/images/Business-Lawyer.jpg" alt="Business law attorney reviewing contract SLO County 93401" loading="lazy"></div>
         <div class="svc-card-body">
           <h3>Business Law</h3>
-          <p>From formation through dispute resolution, we handle contracts, buy-sell agreements, M&amp;A, shareholder disputes, and business litigation. Drafted by litigators who've seen what fails.</p>
+          <p>Contracts, buy-sell agreements, M&amp;A, shareholder disputes, and business litigation. Drafted by litigators who've seen what fails.</p>
           <a class="svc-link" href="/services/business-law/">Learn More &rarr;</a>
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-card-img"><img src="/images/Personal-Injury-Lawyers.jpg" alt="Civil litigation attorneys representing injured clients in San Luis Obispo County" loading="lazy"></div>
+        <div class="svc-card-img"><img src="/images/Personal-Injury-Lawyers.jpg" alt="Civil litigation attorneys representing clients San Luis Obispo County" loading="lazy"></div>
         <div class="svc-card-body">
           <h3>Civil Litigation</h3>
-          <p>Personal injury, auto accidents, wrongful death, slip and fall, and appellate law. We fight for the compensation you deserve and take cases to trial when insurers won't settle fairly.</p>
+          <p>Personal injury, auto accidents, wrongful death, and appellate law. We go to trial when insurers won't settle fairly.</p>
           <a class="svc-link" href="/services/civil-litigation/">Learn More &rarr;</a>
         </div>
       </div>
@@ -350,7 +258,6 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </section>
 
-<!-- DIFFERENTIATORS -->
 <section class="diff-section">
   <div class="wrap">
     <div class="section-label">Why Tardiff &amp; Saldo</div>
@@ -358,31 +265,24 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     <p class="section-intro">We bring litigation experience to transactional work, local knowledge to every case, and plain-spoken counsel to every client.</p>
     <div class="diff-grid">
       <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Litigators Who Draft Transactional Docs</h3>
         <p>Our contracts, trusts, and business agreements are written by attorneys who have argued these documents in court. That perspective eliminates the loopholes that create litigation later.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 110-14h8.5"/><polyline points="15 3 19 7 15 11"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
         <h3>Central Coast Natives</h3>
         <p>We grew up here, practice here, and understand the specific legal landscape of San Luis Obispo County, including local courts, local judges, and local business dynamics.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
         <h3>Transparent Pricing &amp; Payment Plans</h3>
-        <p>We offer flat-fee estate planning packages so you know exactly what you're paying upfront. Payment plans are available. No surprise invoices.</p>
+        <p>Flat-fee estate planning packages so you know exactly what you're paying upfront. Payment plans available. No surprise invoices.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VIDEO SECTION -->
 <section class="video-section">
   <div class="wrap">
     <div class="section-label">Meet the Firm</div>
@@ -390,22 +290,17 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     <p class="section-intro">Real attorneys. Real answers. Watch a few minutes to understand what makes our approach different.</p>
     <div class="video-grid">
       <div>
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/ZMavxu7hYFM?si=6b-rBLmNyEWYOd35" title="Tardiff and Saldo Law Offices services overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/ZMavxu7hYFM?si=6b-rBLmNyEWYOd35" title="Tardiff and Saldo Law Offices services overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
         <p class="video-caption">Services We Provide</p>
       </div>
       <div>
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/bNxypBo7M1Q?si=5o7jQajglZ4De_FE" title="Meet the founders of Tardiff and Saldo Law Offices" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/bNxypBo7M1Q?si=5o7jQajglZ4De_FE" title="Meet the founders of Tardiff and Saldo Law Offices" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
         <p class="video-caption">Meet Our Founders</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="reviews-section">
   <div class="wrap">
     <div class="section-label">Client Reviews</div>
@@ -420,117 +315,69 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Tyler and Dustin took our estate planning seriously. They explained everything in plain English, set up our trust quickly, and the pricing was completely transparent. No surprises."</p>
+        <p class="review-text">"Tyler and Dustin took our estate planning seriously. They explained everything in plain English, set up our trust quickly, and the pricing was completely transparent."</p>
         <div class="reviewer">Sarah M. <span>San Luis Obispo</span></div>
       </div>
       <div class="review-card">
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"After our car accident, we had no idea where to start. Tardiff &amp; Saldo walked us through everything, negotiated hard with the insurance company, and got us a settlement we couldn't have gotten alone."</p>
+        <p class="review-text">"After our car accident, we had no idea where to start. Tardiff &amp; Saldo walked us through everything and got us a settlement we couldn't have gotten alone."</p>
         <div class="reviewer">Marcus T. <span>Paso Robles</span></div>
       </div>
       <div class="review-card">
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"I needed a business attorney who actually knew California law, not just general contract boilerplate. These guys have tried cases locally. Their contracts reflect that experience."</p>
+        <p class="review-text">"I needed a business attorney who actually knew California law. These guys have tried cases locally. Their contracts reflect that experience."</p>
         <div class="reviewer">Linda R. <span>Arroyo Grande</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
 <section class="team-strip">
   <div class="wrap">
     <div class="section-label">Our Legal Team</div>
     <h2 class="section-title">Attorneys You Can Talk To</h2>
-    <p class="section-intro">Our team is led by Central Coast natives with deep roots in the community and over 30 years of combined experience across all practice areas.</p>
+    <p class="section-intro">Our team is led by Central Coast natives with deep roots in the community and over 30 years of combined experience.</p>
     <div class="team-grid">
-      <div class="team-card">
-        <img src="/images/Tardiff-Saldo-legal-team-headshot-Tyler-1.jpg" alt="Tyler Saldo, founding attorney Tardiff and Saldo Law Offices San Luis Obispo" loading="lazy">
-        <h3>Tyler Saldo</h3>
-        <p>Founding Attorney</p>
-      </div>
-      <div class="team-card">
-        <img src="/images/Tardiff-Saldo-legal-team-headshot-Dustin-1.jpg" alt="Dustin Tardiff, founding attorney Tardiff and Saldo Law Offices SLO" loading="lazy">
-        <h3>Dustin Tardiff</h3>
-        <p>Founding Attorney</p>
-      </div>
-      <div class="team-card">
-        <img src="/images/Tardiff-Saldo-legal-team-headshot-Neil-1.jpg" alt="Neil Tardiff, attorney at Tardiff and Saldo Law" loading="lazy">
-        <h3>Neil Tardiff</h3>
-        <p>Attorney</p>
-      </div>
-      <div class="team-card">
-        <img src="/images/Tardiff-Saldo-legal-team-headshot-John-1.jpg" alt="John, attorney at Tardiff and Saldo Law Offices SLO County" loading="lazy">
-        <h3>John</h3>
-        <p>Attorney</p>
-      </div>
-      <div class="team-card">
-        <img src="/images/Tardiff-Saldo-legal-team-headshot-Becky-1.jpg" alt="Becky Hall, paralegal at Tardiff and Saldo Law Offices" loading="lazy">
-        <h3>Becky Hall</h3>
-        <p>Paralegal</p>
-      </div>
+      <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-Tyler-1.jpg" alt="Tyler Saldo founding attorney San Luis Obispo" loading="lazy"><h3>Tyler Saldo</h3><p>Founding Attorney</p></div>
+      <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-Dustin-1.jpg" alt="Dustin Tardiff founding attorney SLO" loading="lazy"><h3>Dustin Tardiff</h3><p>Founding Attorney</p></div>
+      <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-Neil-1.jpg" alt="Neil Tardiff attorney SLO County" loading="lazy"><h3>Neil Tardiff</h3><p>Attorney</p></div>
+      <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-John-1.jpg" alt="John attorney Tardiff Saldo" loading="lazy"><h3>John</h3><p>Attorney</p></div>
+      <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-Becky-1.jpg" alt="Becky Hall paralegal Tardiff Saldo" loading="lazy"><h3>Becky Hall</h3><p>Paralegal</p></div>
     </div>
-    <div style="text-align:center;margin-top:40px;">
-      <a class="btn-gold" href="/about.html">Meet the Full Team &rarr;</a>
-    </div>
+    <div style="text-align:center;margin-top:40px;"><a class="btn-gold" href="/about.html">Meet the Full Team &rarr;</a></div>
   </div>
 </section>
 
-<!-- LOCATIONS -->
 <section class="locs-strip">
   <div class="wrap">
     <div class="section-label">Service Area</div>
     <h2 class="section-title">Serving All of SLO County</h2>
-    <p class="section-intro">Our office is based in downtown San Luis Obispo, with a secondary office in Avila Beach. We serve clients throughout the Central Coast.</p>
+    <p class="section-intro">Our office is in downtown San Luis Obispo. We serve clients throughout the Central Coast.</p>
     <div class="locs-grid">
-      <a class="loc-card" href="/locations/san-luis-obispo/">
-        <h3>San Luis Obispo</h3>
-        <p>Primary Office</p>
-      </a>
-      <a class="loc-card" href="/locations/paso-robles/">
-        <h3>Paso Robles</h3>
-        <p>SLO County</p>
-      </a>
-      <a class="loc-card" href="/locations/arroyo-grande/">
-        <h3>Arroyo Grande</h3>
-        <p>South County</p>
-      </a>
-      <a class="loc-card" href="/locations/atascadero/">
-        <h3>Atascadero</h3>
-        <p>North County</p>
-      </a>
-      <a class="loc-card" href="/locations/morro-bay/">
-        <h3>Morro Bay</h3>
-        <p>Coastal SLO</p>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a class="btn-outline" href="/locations/">View All Service Areas &rarr;</a>
+      <a class="loc-card" href="/locations/san-luis-obispo/"><h3>San Luis Obispo</h3><p>Primary Office</p></a>
+      <a class="loc-card" href="/locations/paso-robles/"><h3>Paso Robles</h3><p>North County</p></a>
+      <a class="loc-card" href="/locations/arroyo-grande/"><h3>Arroyo Grande</h3><p>South County</p></a>
+      <a class="loc-card" href="/locations/atascadero/"><h3>Atascadero</h3><p>North Central</p></a>
+      <a class="loc-card" href="/locations/morro-bay/"><h3>Morro Bay</h3><p>Coastal SLO</p></a>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <section class="final-cta">
   <div class="wrap">
     <h2>Don't Wait Until It's Too Late to Protect Your Family</h2>
-    <p>A complete estate plan, solid business contract, or injury claim starts with a free conversation. No jargon, no pressure, just honest guidance from attorneys who've been there.</p>
+    <p>A complete estate plan, solid business contract, or injury claim starts with a free conversation. No jargon, no pressure, just honest guidance.</p>
     <div class="cta-btns">
-      <a class="btn-gold" href="tel:8884612215">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        Call (888) 461-2215
-      </a>
-      <a class="btn-outline" href="#form-card">Request Free Consultation</a>
+      <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
+      <a class="btn-outline" href="/contact.html">Request Free Consultation</a>
     </div>
   </div>
 </section>
 
 </main>
-
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"Tardiff & Saldo Law Offices","url":"https://tardiffsaldo.com","telephone":"+18884612215","email":"tyler@tardiffsaldo.com","address":{"@type":"PostalAddress","streetAddress":"1235 Palm St","addressLocality":"San Luis Obispo","addressRegion":"CA","postalCode":"93401","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":35.2828,"longitude":-120.6596},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},"priceRange":"$$","areaServed":[{"@type":"City","name":"San Luis Obispo"},{"@type":"City","name":"Paso Robles"},{"@type":"City","name":"Arroyo Grande"},{"@type":"City","name":"Atascadero"},{"@type":"City","name":"Morro Bay"}],"sameAs":["https://www.facebook.com/TardiffSaldoLaw","https://www.instagram.com/tardiffsaldolaw/","https://www.youtube.com/@TardiffSaldoLawOffices-el8es"],"knowsAbout":["Estate Planning","Trust Law","Probate","Business Law","Civil Litigation","Personal Injury","Wrongful Death","Appellate Law"]}
+{"@context":"https://schema.org","@type":"LegalService","name":"Tardiff & Saldo Law Offices","url":"https://tardiffsaldo.com","telephone":"+18884612215","email":"tyler@tardiffsaldo.com","address":{"@type":"PostalAddress","streetAddress":"1235 Palm St","addressLocality":"San Luis Obispo","addressRegion":"CA","postalCode":"93401","addressCountry":"US"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},"sameAs":["https://www.facebook.com/TardiffSaldoLaw","https://www.instagram.com/tardiffsaldolaw/","https://www.youtube.com/@TardiffSaldoLawOffices-el8es"]}
 </script>
-
 <script>
 async function handleFormSubmit(){
   var fname=document.getElementById('ts-fname').value.trim();
@@ -543,14 +390,9 @@ async function handleFormSubmit(){
   if(!fname||(!phone&&!email)){alert('Please fill in your name and at least one way to reach you.');return;}
   var btn=document.getElementById('ts-submit-btn');
   btn.textContent='Submitting...';btn.disabled=true;
-  localStorage.setItem('email',email.toLowerCase());
-  localStorage.setItem('phone',phone);
-  localStorage.setItem('fname',fname);
-  localStorage.setItem('lname',lname);
   try{
     await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+      method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Homepage Form'})
     });
   }catch(e){console.error(e);}

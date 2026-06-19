@@ -1,4 +1,2 @@
-# Clean trailing slash handling - Cloudflare Pages handles this natively
-# but this ensures consistency
-/services /services/ 301
-/locations /locations/ 301
+/services/ /services/trusts-estates/ 301
+/locations/ /locations/san-luis-obispo/ 301

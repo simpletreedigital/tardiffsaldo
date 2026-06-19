@@ -1,157 +1,197 @@
 <style>
+/* ── GLOBAL NAV — Tardiff & Saldo ── */
 :root{
-  --navy:#0F1F3D;--navy-mid:#162848;--navy-light:#1E3460;
-  --gold:#C9A84C;--gold-light:#E2C97A;--gold-pale:#F5EDD4;
-  --white:#FFFFFF;--off-white:#F7F5F0;
-  --text-dark:#1A1A2E;--text-mid:#4A4A5A;--text-light:#8A8A9A;
-  --font-serif:'Playfair Display',Georgia,serif;
-  --font-sans:'Lato',Arial,sans-serif;
+  --ts-navy:#0F1F3D;
+  --ts-navy-mid:#162848;
+  --ts-gold:#C9A84C;
+  --ts-gold-light:#E2C97A;
+  --ts-white:#FFFFFF;
+  --ts-font-serif:'Playfair Display',Georgia,serif;
+  --ts-font-sans:'Lato',Arial,sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--font-sans);color:var(--text-dark);font-size:16px;line-height:1.6;}
-.gnav{
-  position:sticky;top:0;z-index:9999;
-  background:var(--navy);border-bottom:3px solid var(--gold);
-  font-family:var(--font-sans);
+.gnav-utility{
+  background:var(--ts-navy);
+  color:rgba(255,255,255,.7);
+  font-size:12.5px;
+  line-height:1;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  font-family:var(--ts-font-sans);
 }
-.gnav-inner{
-  max-width:1200px;margin:0 auto;padding:0 1.5rem;
-  display:flex;align-items:center;justify-content:space-between;
+.gnav-utility-inner{
+  max-width:1200px;margin:0 auto;padding:8px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.gnav-utility-left{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.gnav-utility-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:rgba(255,255,255,.6)}
+.gnav-utility-item svg{width:13px;height:13px;opacity:.7;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2}
+.gnav-utility-right{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.gnav-utility-right a{color:var(--ts-gold-light);font-weight:600;transition:color .2s;text-decoration:none;font-size:12.5px}
+.gnav-utility-right a:hover{color:var(--ts-white)}
+.gnav-utility-divider{width:1px;height:12px;background:rgba(255,255,255,.2);display:inline-block}
+
+header.gnav{
+  position:sticky;top:0;z-index:900;
+  background:var(--ts-navy);
+  border-bottom:3px solid var(--ts-gold);
   height:72px;
+  font-family:var(--ts-font-sans);
 }
-.gnav-logo a{display:block;line-height:1;}
-.gnav-logo img{height:42px;display:block;}
-.gnav-menu{display:flex;align-items:center;gap:0;list-style:none;}
-.gnav-menu>li{position:relative;}
-.gnav-menu>li>a{
-  display:block;padding:0 14px;height:72px;line-height:72px;
-  font-size:12.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
-  color:rgba(255,255,255,0.85);text-decoration:none;white-space:nowrap;
-  transition:color 0.2s;
+header.gnav .gnav-inner{
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:24px;height:100%;
 }
-.gnav-menu>li>a:hover,.gnav-menu>li>a.active{color:var(--gold);}
-.gnav-menu>li:hover .gnav-dropdown{display:block;}
-.gnav-dropdown{
-  display:none;position:absolute;top:100%;left:0;
-  background:var(--navy-mid);border-top:2px solid var(--gold);
-  min-width:240px;z-index:100;
-  box-shadow:0 8px 32px rgba(0,0,0,0.35);
+.gnav-logo{flex-shrink:0;display:flex;align-items:center;text-decoration:none}
+.gnav-logo img{height:42px;width:auto;display:block}
+
+nav.gnav-primary{display:flex;align-items:center;gap:2px;margin-left:auto}
+nav.gnav-primary a{
+  color:rgba(255,255,255,.8);font-size:13px;font-weight:700;
+  padding:6px 12px;border-radius:4px;
+  letter-spacing:.04em;text-transform:uppercase;
+  transition:color .2s,background .2s;
+  white-space:nowrap;text-decoration:none;
 }
-.gnav-dropdown a{
-  display:block;padding:11px 20px;font-size:13px;font-weight:400;
-  color:rgba(255,255,255,0.78);text-decoration:none;letter-spacing:0.02em;
-  border-bottom:1px solid rgba(255,255,255,0.07);transition:background 0.15s,color 0.15s;
+nav.gnav-primary a:hover,
+nav.gnav-primary a.gnav-active{color:var(--ts-gold);background:rgba(201,168,76,.08)}
+
+.gnav-cta-wrap{display:flex;align-items:center;gap:10px;margin-left:16px;flex-shrink:0}
+.gnav-call-pill{
+  display:flex;align-items:center;gap:10px;
+  background:var(--ts-gold);color:var(--ts-navy);
+  border-radius:4px;padding:9px 18px;
+  transition:background .2s;text-decoration:none;font-family:var(--ts-font-sans);
 }
-.gnav-dropdown a:hover{background:rgba(201,168,76,0.12);color:var(--gold);}
-.gnav-right{display:flex;align-items:center;gap:12px;}
-.gnav-phone{
-  font-size:14px;font-weight:700;color:var(--gold-light);
-  text-decoration:none;letter-spacing:0.02em;
-  display:flex;align-items:center;gap:6px;
+.gnav-call-pill:hover{background:var(--ts-gold-light)}
+.gnav-call-pill svg{width:15px;height:15px;flex-shrink:0;fill:currentColor}
+.gnav-call-stack{display:flex;flex-direction:column;line-height:1.15}
+.gnav-label-sm{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;opacity:.8}
+.gnav-label-lg{font-size:14px;font-weight:700}
+
+.gnav-hamburger{
+  display:none;color:var(--ts-white);padding:6px;
+  background:none;border:none;cursor:pointer;line-height:0;
 }
-.gnav-phone svg{width:14px;height:14px;}
-.gnav-cta{
-  background:var(--gold);color:var(--navy);font-weight:700;
-  font-family:var(--font-sans);font-size:13px;letter-spacing:0.05em;
-  padding:9px 18px;border-radius:4px;text-decoration:none;
-  white-space:nowrap;transition:background 0.2s;text-transform:uppercase;
+.gnav-hamburger svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
+
+.gnav-mobile{
+  display:none;
+  position:absolute;top:72px;left:0;right:0;
+  background:var(--ts-navy-mid);
+  border-top:1px solid rgba(255,255,255,.08);
+  z-index:899;padding:12px 0;
+  font-family:var(--ts-font-sans);
 }
-.gnav-cta:hover{background:var(--gold-light);}
-.mob-nav-toggle{
-  display:none;background:none;border:none;cursor:pointer;
-  padding:8px;flex-direction:column;gap:5px;
+.gnav-mobile.open{display:block}
+.gnav-mobile ul{padding:0 24px;list-style:none;margin:0}
+.gnav-mobile li{border-bottom:1px solid rgba(255,255,255,.06)}
+.gnav-mobile a{
+  display:block;color:rgba(255,255,255,.85);
+  padding:13px 0;font-size:14px;font-weight:700;text-decoration:none;
+  letter-spacing:.04em;text-transform:uppercase;
 }
-.mob-nav-toggle span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s;}
+.gnav-mobile a:hover{color:var(--ts-gold)}
+
+.gnav-mob-call{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:990;
+  background:var(--ts-navy);border-top:2px solid var(--ts-gold);
+}
+.gnav-mob-call a{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;flex:1;padding:14px 12px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  font-family:var(--ts-font-sans);
+}
+.gnav-mob-call a.gnav-call-btn{background:var(--ts-gold);color:var(--ts-navy)}
+.gnav-mob-call a.gnav-consult-btn{color:rgba(255,255,255,.85)}
+.gnav-mob-call svg{fill:none;stroke:currentColor;stroke-width:2}
+
 @media(max-width:900px){
-  .gnav-menu,.gnav-phone{display:none;}
-  .mob-nav-toggle{display:flex;}
-  .gnav-inner{height:62px;}
-  .mob-nav{
-    display:none;position:absolute;top:100%;left:0;right:0;
-    background:var(--navy-mid);border-top:2px solid var(--gold);
-    padding:16px 0;z-index:9998;
-  }
-  .mob-nav.open{display:block;}
-  .mob-nav a{
-    display:block;padding:11px 24px;font-size:14px;font-weight:600;
-    color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.04em;
-    text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.07);
-  }
-  .mob-nav a:hover{color:var(--gold);}
-  .mob-nav .mob-sub a{padding-left:40px;font-size:13px;font-weight:400;text-transform:none;letter-spacing:0.01em;}
-  .mob-cta-wrap{padding:16px 24px 8px;}
-  .mob-cta{
-    display:block;text-align:center;background:var(--gold);color:var(--navy);
-    font-weight:700;font-size:14px;padding:12px;border-radius:4px;
-    text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;
-  }
+  nav.gnav-primary{display:none}
+  .gnav-hamburger{display:flex}
+  .gnav-utility-right{display:none}
+  .gnav-mob-call{display:flex}
+  body{padding-bottom:58px}
+}
+@media(max-width:600px){
+  .gnav-utility-left{display:none}
 }
 </style>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-<nav class="gnav" aria-label="Main navigation">
-  <div class="gnav-inner">
-    <div class="gnav-logo">
-      <a href="/"><img src="/images/Tardiff-Saldo-header-logo-color-inverse-RETINA.png" alt="Tardiff &amp; Saldo Law Offices logo" width="180" height="42"></a>
+<div class="gnav-utility">
+  <div class="gnav-utility-inner">
+    <div class="gnav-utility-left">
+      <span class="gnav-utility-item">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        1235 Palm St, San Luis Obispo, CA
+      </span>
+      <span class="gnav-utility-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Mon&ndash;Fri &nbsp;9am&ndash;5pm
+      </span>
     </div>
-    <ul class="gnav-menu">
-      <li>
-        <a href="/services/trusts-estates/">Trusts &amp; Estates</a>
-        <div class="gnav-dropdown">
-          <a href="/services/trusts-estates/">Trusts &amp; Estate Planning</a>
-          <a href="/services/estate-planning/">Living Trusts &amp; Wills</a>
-          <a href="/services/probate/">Probate Law</a>
-        </div>
-      </li>
-      <li>
-        <a href="/services/business-law/">Business Law</a>
-      </li>
-      <li>
-        <a href="/services/civil-litigation/">Civil Litigation</a>
-        <div class="gnav-dropdown">
-          <a href="/services/civil-litigation/">Civil Litigation Overview</a>
-          <a href="/services/personal-injury/">Personal Injury</a>
-          <a href="/services/auto-accidents/">Auto Accidents</a>
-          <a href="/services/wrongful-death/">Wrongful Death</a>
-          <a href="/services/appellate-law/">Appellate Law</a>
-        </div>
-      </li>
+    <div class="gnav-utility-right">
+      <a href="/contact.html">Free Consultation</a>
+      <span class="gnav-utility-divider"></span>
+      <a href="/about.html">30+ Years Experience</a>
+    </div>
+  </div>
+</div>
+
+<header class="gnav" id="gnav-header">
+  <div class="gnav-inner">
+    <a class="gnav-logo" href="/">
+      <img src="/images/Tardiff-Saldo-header-logo-color-inverse-RETINA.png" alt="Tardiff &amp; Saldo Law Offices">
+    </a>
+    <nav class="gnav-primary" id="gnav-primary">
+      <a href="/services/trusts-estates/">Trusts &amp; Estates</a>
+      <a href="/services/business-law/">Business Law</a>
+      <a href="/services/civil-litigation/">Civil Litigation</a>
+      <a href="/locations/">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="gnav-cta-wrap">
+      <a class="gnav-call-pill" href="tel:8884612215" aria-label="Call Tardiff and Saldo">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        <span class="gnav-call-stack">
+          <span class="gnav-label-sm">Free Consultation</span>
+          <span class="gnav-label-lg">(888) 461-2215</span>
+        </span>
+      </a>
+      <button class="gnav-hamburger" id="gnav-ham" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="gnav-mobile" id="gnav-mobile" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="/services/trusts-estates/">Trusts &amp; Estates</a></li>
+      <li><a href="/services/estate-planning/">Living Trusts &amp; Wills</a></li>
+      <li><a href="/services/probate/">Probate</a></li>
+      <li><a href="/services/business-law/">Business Law</a></li>
+      <li><a href="/services/civil-litigation/">Civil Litigation</a></li>
+      <li><a href="/services/personal-injury/">Personal Injury</a></li>
+      <li><a href="/services/auto-accidents/">Auto Accidents</a></li>
+      <li><a href="/services/wrongful-death/">Wrongful Death</a></li>
+      <li><a href="/services/appellate-law/">Appellate Law</a></li>
       <li><a href="/locations/">Locations</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
-    <div class="gnav-right">
-      <a class="gnav-phone" href="tel:8884612215">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        (888) 461-2215
-      </a>
-      <a class="gnav-cta" href="/contact.html" id="gnav-cta-btn">Free Consultation</a>
-    </div>
-    <button class="mob-nav-toggle" aria-label="Toggle menu" onclick="this.closest('.gnav').querySelector('.mob-nav').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mob-nav">
-    <a href="/services/trusts-estates/">Trusts &amp; Estates</a>
-    <div class="mob-sub">
-      <a href="/services/estate-planning/">Living Trusts &amp; Wills</a>
-      <a href="/services/probate/">Probate Law</a>
-    </div>
-    <a href="/services/business-law/">Business Law</a>
-    <a href="/services/civil-litigation/">Civil Litigation</a>
-    <div class="mob-sub">
-      <a href="/services/personal-injury/">Personal Injury</a>
-      <a href="/services/auto-accidents/">Auto Accidents</a>
-      <a href="/services/wrongful-death/">Wrongful Death</a>
-      <a href="/services/appellate-law/">Appellate Law</a>
-    </div>
-    <a href="/locations/">Locations</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <div class="mob-cta-wrap">
-      <a class="mob-cta" href="/contact.html">Free Consultation</a>
-    </div>
-  </div>
-</nav>
+  </nav>
+</header>
+
+<div class="gnav-mob-call" role="navigation" aria-label="Mobile call bar">
+  <a class="gnav-call-btn" href="tel:8884612215">
+    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    Call (888) 461-2215
+  </a>
+  <a class="gnav-consult-btn" href="/contact.html">
+    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Free Consult
+  </a>
+</div>

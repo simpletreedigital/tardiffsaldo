@@ -1,137 +1,151 @@
 <style>
-.gfooter{
-  background:var(--navy,#0F1F3D);
-  border-top:3px solid var(--gold,#C9A84C);
-  font-family:var(--font-sans,'Lato',Arial,sans-serif);
-  padding:60px 1.5rem 0;
-  color:rgba(255,255,255,0.7);
+/* ── GLOBAL FOOTER — Tardiff & Saldo ── */
+footer.gfooter{
+  background:#0F1F3D;
+  color:rgba(255,255,255,.7);
+  padding:56px 0 0;
+  font-family:'Lato',Arial,sans-serif;
 }
-.gf-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
-  padding-bottom:48px;
+.gf-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.gf-top{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  align-items:start;
 }
-.gf-brand img{height:38px;margin-bottom:20px;display:block;}
-.gf-brand p{font-size:14px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:280px;margin-bottom:20px;}
-.gf-nap{font-size:13px;line-height:2;color:rgba(255,255,255,0.6);}
-.gf-nap a{color:var(--gold-light,#E2C97A);text-decoration:none;}
-.gf-nap a:hover{text-decoration:underline;}
-.gf-social{display:flex;gap:10px;margin-top:16px;}
+.gf-brand img{height:38px;width:auto;margin-bottom:16px;display:block}
+.gf-brand p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;margin:0 0 16px;max-width:280px}
+.gf-nap{font-size:13px;line-height:2;color:rgba(255,255,255,.55)}
+.gf-nap a{color:#E2C97A;text-decoration:none}
+.gf-nap a:hover{text-decoration:underline}
+.gf-social{display:flex;gap:8px;margin-top:14px}
 .gf-social a{
-  width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);
   display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;
+  color:rgba(255,255,255,.55);transition:all .2s;text-decoration:none;
 }
-.gf-social a:hover{background:var(--gold,#C9A84C);border-color:var(--gold,#C9A84C);color:var(--navy,#0F1F3D);}
-.gf-social svg{width:15px;height:15px;}
+.gf-social a:hover{border-color:#C9A84C;color:#C9A84C}
+.gf-social svg{width:14px;height:14px}
+
 .gf-col h4{
-  font-family:var(--font-sans,'Lato',Arial,sans-serif);
-  font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--gold,#C9A84C);margin-bottom:16px;
+  color:#C9A84C;
+  font-family:'Lato',Arial,sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  margin:0 0 14px;
 }
-.gf-col ul{list-style:none;}
-.gf-col ul li{margin-bottom:8px;}
-.gf-col ul li a{font-size:13.5px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;}
-.gf-col ul li a:hover{color:var(--gold-light,#E2C97A);}
-.gf-bar{
-  border-top:1px solid rgba(255,255,255,0.1);
-  padding:18px 1.5rem;
-  max-width:1200px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+.gf-col ul{list-style:none;padding:0;margin:0}
+.gf-col ul li{margin-bottom:8px}
+.gf-col ul li a{
+  font-size:13.5px;color:rgba(255,255,255,.6);
+  text-decoration:none;transition:color .2s;
 }
-.gf-bar p{font-size:12px;color:rgba(255,255,255,0.35);}
-.gf-bar-links{display:flex;gap:20px;}
-.gf-bar-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;}
-.gf-bar-links a:hover{color:rgba(255,255,255,0.6);}
-.gfooter-wrap .gf-bar{max-width:100%;border-top:1px solid rgba(255,255,255,0.1);margin-top:0;}
-@media(max-width:900px){
-  .gf-inner{grid-template-columns:1fr 1fr;gap:32px;}
-  .gf-brand{grid-column:1/-1;}
+.gf-col ul li a:hover{color:#E2C97A}
+
+.gf-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;
+  font-size:12px;color:rgba(255,255,255,.35);
+  flex-wrap:wrap;gap:8px;
 }
-@media(max-width:560px){
-  .gf-inner{grid-template-columns:1fr;gap:28px;}
-  .gf-bar{flex-direction:column;align-items:flex-start;}
+.gf-legal{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.gf-legal a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.gf-legal a:hover{color:#C9A84C}
+.gf-disclaimer{
+  font-size:11px;color:rgba(255,255,255,.3);
+  line-height:1.6;padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.07);
+  margin-top:0;
 }
+.gf-disclaimer strong{color:rgba(255,255,255,.45)}
+
+@media(max-width:960px){.gf-top{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.gf-top{grid-template-columns:1fr}}
 </style>
 
 <footer class="gfooter">
   <div class="gf-inner">
-    <div class="gf-brand">
-      <a href="/"><img src="/images/Tardiff-Saldo-header-logo-color-inverse-RETINA.png" alt="Tardiff &amp; Saldo Law Offices" width="160" height="38"></a>
-      <p>A Different Kind of Law Firm. Serving San Luis Obispo County with over 30 years of combined experience in estate planning, business law, and civil litigation.</p>
-      <address class="gf-nap" itemscope itemtype="https://schema.org/LegalService">
-        <span itemprop="name" style="display:none">Tardiff &amp; Saldo Law Offices</span>
-        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-          <span itemprop="streetAddress">1235 Palm St</span><br>
-          <span itemprop="addressLocality">San Luis Obispo</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">93401</span>
+    <div class="gf-top">
+
+      <div class="gf-brand">
+        <a href="/"><img src="/images/Tardiff-Saldo-header-logo-color-inverse-RETINA.png" alt="Tardiff &amp; Saldo Law Offices"></a>
+        <p>A Different Kind of Law Firm. Estate planning, business law, and civil litigation from Central Coast attorneys with 30+ years combined experience.</p>
+        <address class="gf-nap" style="font-style:normal">
+          1235 Palm St, San Luis Obispo, CA 93401<br>
+          <a href="tel:8884612215">(888) 461-2215</a><br>
+          Mon &ndash; Fri &nbsp;9:00am &ndash; 5:00pm
+        </address>
+        <div class="gf-social">
+          <a href="https://www.facebook.com/TardiffSaldoLaw" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/tardiffsaldolaw/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@TardiffSaldoLawOffices-el8es" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
         </div>
-        <a href="tel:8884612215" itemprop="telephone">(888) 461-2215</a><br>
-        Mon &ndash; Fri &nbsp;9:00am &ndash; 5:00pm
-      </address>
-      <div class="gf-social">
-        <a href="https://www.facebook.com/TardiffSaldoLaw" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/tardiffsaldolaw/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@TardiffSaldoLawOffices-el8es" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
-        </a>
+      </div>
+
+      <div class="gf-col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="/services/trusts-estates/">Trusts &amp; Estates</a></li>
+          <li><a href="/services/estate-planning/">Living Trusts &amp; Wills</a></li>
+          <li><a href="/services/probate/">Probate Law</a></li>
+          <li><a href="/services/business-law/">Business Law</a></li>
+          <li><a href="/services/civil-litigation/">Civil Litigation</a></li>
+          <li><a href="/services/personal-injury/">Personal Injury</a></li>
+          <li><a href="/services/auto-accidents/">Auto Accidents</a></li>
+          <li><a href="/services/wrongful-death/">Wrongful Death</a></li>
+          <li><a href="/services/appellate-law/">Appellate Law</a></li>
+        </ul>
+      </div>
+
+      <div class="gf-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/locations/san-luis-obispo/">San Luis Obispo</a></li>
+          <li><a href="/locations/paso-robles/">Paso Robles</a></li>
+          <li><a href="/locations/arroyo-grande/">Arroyo Grande</a></li>
+          <li><a href="/locations/atascadero/">Atascadero</a></li>
+          <li><a href="/locations/morro-bay/">Morro Bay</a></li>
+          <li><a href="/locations/">All Locations</a></li>
+        </ul>
+      </div>
+
+      <div class="gf-col">
+        <h4>Firm</h4>
+        <ul>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/contact.html">Free Consultation</a></li>
+          <li><a href="https://book.tardiffsaldo.com/widget/bookings/tardiffsaldo" target="_blank" rel="noopener">Book Online</a></li>
+        </ul>
+        <h4 style="margin-top:20px">Credentials</h4>
+        <ul>
+          <li><a href="https://www.calbar.ca.gov/" target="_blank" rel="noopener">CA State Bar</a></li>
+          <li><a href="https://www.calawyers.org/" target="_blank" rel="noopener">CLA Member</a></li>
+          <li><a href="https://slochamber.org/" target="_blank" rel="noopener">SLO Chamber</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="gf-bottom">
+      <div>&copy; <span id="gf-year"></span> Tardiff &amp; Saldo Law Offices (Appellate Advocacy Group). All rights reserved.</div>
+      <div class="gf-legal">
+        <a href="/contact.html">Privacy Policy</a>
+        <a href="/contact.html">Terms of Use</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
-
-    <div class="gf-col">
-      <h4>Practice Areas</h4>
-      <ul>
-        <li><a href="/services/trusts-estates/">Trusts &amp; Estates</a></li>
-        <li><a href="/services/estate-planning/">Living Trusts &amp; Wills</a></li>
-        <li><a href="/services/probate/">Probate Law</a></li>
-        <li><a href="/services/business-law/">Business Law</a></li>
-        <li><a href="/services/civil-litigation/">Civil Litigation</a></li>
-        <li><a href="/services/personal-injury/">Personal Injury</a></li>
-        <li><a href="/services/auto-accidents/">Auto Accidents</a></li>
-        <li><a href="/services/wrongful-death/">Wrongful Death</a></li>
-        <li><a href="/services/appellate-law/">Appellate Law</a></li>
-      </ul>
-    </div>
-
-    <div class="gf-col">
-      <h4>Service Areas</h4>
-      <ul>
-        <li><a href="/locations/san-luis-obispo/">San Luis Obispo</a></li>
-        <li><a href="/locations/paso-robles/">Paso Robles</a></li>
-        <li><a href="/locations/arroyo-grande/">Arroyo Grande</a></li>
-        <li><a href="/locations/atascadero/">Atascadero</a></li>
-        <li><a href="/locations/morro-bay/">Morro Bay</a></li>
-        <li><a href="/locations/">All Locations</a></li>
-      </ul>
-    </div>
-
-    <div class="gf-col">
-      <h4>Firm</h4>
-      <ul>
-        <li><a href="/about.html">About Us</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/contact.html">Free Consultation</a></li>
-        <li><a href="https://book.tardiffsaldo.com/widget/bookings/tardiffsaldo" target="_blank" rel="noopener">Book Online</a></li>
-      </ul>
-      <h4 style="margin-top:24px;">Credentials</h4>
-      <ul>
-        <li><a href="https://www.calbar.ca.gov/" target="_blank" rel="noopener">CA State Bar</a></li>
-        <li><a href="https://slochamber.org/" target="_blank" rel="noopener">SLO Chamber</a></li>
-        <li><a href="https://www.calawyers.org/" target="_blank" rel="noopener">CLA Member</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="gf-bar">
-    <p>&copy; <span id="gf-year"></span> Tardiff &amp; Saldo Law Offices (Appellate Advocacy Group). All rights reserved. Attorney advertising. This website is for informational purposes only and does not constitute legal advice or create an attorney-client relationship.</p>
-    <div class="gf-bar-links">
-      <a href="/contact.html">Privacy Policy</a>
-      <a href="/contact.html">Terms of Use</a>
-    </div>
+    <p class="gf-disclaimer">
+      <strong>Attorney Advertising.</strong> Information on this website is for general informational purposes only and does not constitute legal advice or create an attorney-client relationship. Past results do not guarantee future outcomes. Each legal matter is unique. Licensed by the State Bar of California.
+    </p>
   </div>
 </footer>
-<script>document.getElementById('gf-year').textContent=new Date().getFullYear();</script>
