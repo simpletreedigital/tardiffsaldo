@@ -15,6 +15,9 @@
   <url><loc>https://tardiffsaldo.com/locations/arroyo-grande/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tardiffsaldo.com/locations/atascadero/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tardiffsaldo.com/locations/morro-bay/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tardiffsaldo.com/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/blog/prop-19-slo-county/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tardiffsaldo.com/blog/prop-19-california/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tardiffsaldo.com/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tardiffsaldo.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
