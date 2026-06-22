@@ -98,7 +98,44 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
           <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--text-mid);line-height:1.65;margin-bottom:12px;"><span style="width:20px;height:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;margin-top:2px;display:inline-block;"></span><span><strong>Free consultations</strong> on all practice areas, same-week appointments often available</span></li>
         </ul>
       </div>
-      <div><img src="/images/Lawyers-shaking-hands.jpg" alt="Tardiff and Saldo Law Offices founding attorneys San Luis Obispo 93401" loading="lazy" style="border-radius:8px;box-shadow:0 16px 48px rgba(0,0,0,0.12);"></div>
+      <div>
+        <div class="form-card" id="form-card">
+          <div class="form-header">
+            <h2>Get Your Free Consultation</h2>
+            <p>No pressure. Honest answers. Same-week appointments often available.</p>
+          </div>
+          <div class="form-body">
+            <div class="form-row-half">
+              <div class="form-row"><label for="ts-fname">First Name*</label><input type="text" id="ts-fname" placeholder="First"></div>
+              <div class="form-row"><label for="ts-lname">Last Name</label><input type="text" id="ts-lname" placeholder="Last"></div>
+            </div>
+            <div class="form-row"><label for="ts-phone">Phone*</label><input type="tel" id="ts-phone" placeholder="(805) 555-0100"></div>
+            <div class="form-row"><label for="ts-email">Email</label><input type="email" id="ts-email" placeholder="you@email.com"></div>
+            <div class="form-row">
+              <label for="ts-service">Area of Need</label>
+              <select id="ts-service">
+                <option value="">Select a practice area</option>
+                <option value="Trusts &amp; Estate Planning">Trusts &amp; Estate Planning</option>
+                <option value="Probate">Probate</option>
+                <option value="Business Law">Business Law</option>
+                <option value="Civil Litigation">Civil Litigation</option>
+                <option value="Personal Injury">Personal Injury</option>
+                <option value="Auto Accident">Auto Accident</option>
+                <option value="Wrongful Death">Wrongful Death</option>
+                <option value="Appellate Law">Appellate Law</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row"><label for="ts-message">Brief Description</label><textarea id="ts-message" placeholder="Tell us about your situation..."></textarea></div>
+            <div class="consent-row">
+              <input type="checkbox" id="ts-sms-consent">
+              <label for="ts-sms-consent">I consent to receive non-marketing texts from Tardiff and Saldo Law Offices. Message and data rates may apply. Reply STOP to opt out. Must be 18+.</label>
+            </div>
+            <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Request Free Consultation</button>
+            <p class="form-disc">Mon &ndash; Fri, 9am &ndash; 5pm. Same-week appointments often available.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -65,6 +65,11 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
   box-shadow:0 16px 40px rgba(0,0,0,.4);
   z-index:800;padding:8px 0;
 }
+/* Open on hover (desktop) OR on .open class (keyboard/click) */
+@media(min-width:961px){
+  .gnav-item:hover .gnav-dropdown{display:block;}
+  .gnav-item:hover .gnav-chevron{transform:rotate(180deg);}
+}
 .gnav-item.open .gnav-dropdown{display:block;}
 
 .gnav-dropdown a{
