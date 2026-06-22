@@ -1,19 +1,11 @@
 <style>
-/* ── GLOBAL NAV — Tardiff & Saldo ── */
 :root{
-  --ts-navy:#0F1F3D;
-  --ts-navy-mid:#162848;
-  --ts-navy-light:#1E3460;
-  --ts-gold:#C9A84C;
-  --ts-gold-light:#E2C97A;
-  --ts-white:#FFFFFF;
+  --ts-navy:#0F1F3D;--ts-navy-mid:#162848;--ts-navy-light:#1E3460;
+  --ts-gold:#C9A84C;--ts-gold-light:#E2C97A;--ts-white:#FFFFFF;
   --ts-font-serif:'Playfair Display',Georgia,serif;
   --ts-font-sans:'Lato',Arial,sans-serif;
 }
-.gnav-utility{
-  background:var(--ts-navy);color:rgba(255,255,255,.7);font-size:12.5px;
-  line-height:1;border-bottom:1px solid rgba(255,255,255,.07);font-family:var(--ts-font-sans);
-}
+.gnav-utility{background:var(--ts-navy);color:rgba(255,255,255,.7);font-size:12.5px;line-height:1;border-bottom:1px solid rgba(255,255,255,.07);font-family:var(--ts-font-sans);}
 .gnav-utility-inner{max-width:1200px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .gnav-utility-left{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .gnav-utility-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:rgba(255,255,255,.6)}
@@ -23,21 +15,18 @@
 .gnav-utility-right a:hover{color:var(--ts-white)}
 .gnav-utility-divider{width:1px;height:12px;background:rgba(255,255,255,.2);display:inline-block}
 
-header.gnav{
-  position:sticky;top:0;z-index:900;
-  background:var(--ts-navy);border-bottom:3px solid var(--ts-gold);
-  height:72px;font-family:var(--ts-font-sans);
-}
+header.gnav{position:sticky;top:0;z-index:900;background:var(--ts-navy);border-bottom:3px solid var(--ts-gold);height:72px;font-family:var(--ts-font-sans);}
 header.gnav .gnav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:100%;}
 .gnav-logo{flex-shrink:0;display:flex;align-items:center;text-decoration:none}
 .gnav-logo img{height:42px;width:auto;display:block}
 
-/* ── PRIMARY NAV & DROPDOWNS ── */
 nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 
-.gnav-item{position:relative;display:flex;align-items:center;}
+/* Each nav item is position:relative so the dropdown anchors to it */
+.gnav-item{position:relative;display:flex;align-items:stretch;}
 
-.gnav-item > a,.gnav-item > button{
+.gnav-item > a,
+.gnav-item > button{
   color:rgba(255,255,255,.8);font-size:12.5px;font-weight:700;
   padding:6px 10px;border-radius:4px;
   letter-spacing:.04em;text-transform:uppercase;
@@ -47,54 +36,68 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
   display:flex;align-items:center;gap:4px;
   height:72px;
 }
-.gnav-item > a:hover,.gnav-item > button:hover,
-.gnav-item > a.gnav-active,.gnav-item > button.gnav-active{
-  color:var(--ts-gold);background:rgba(201,168,76,.08)
-}
-.gnav-chevron{width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:2.5;transition:transform .2s;flex-shrink:0;}
-.gnav-item.open .gnav-chevron{transform:rotate(180deg);}
+.gnav-item > a:hover,
+.gnav-item > button:hover,
+.gnav-item > a.gnav-active,
+.gnav-item > button.gnav-active{color:var(--ts-gold);background:rgba(201,168,76,.08)}
 
-/* Dropdown panel */
+.gnav-chevron{width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:2.5;transition:transform .25s;flex-shrink:0;}
+
+/* ── DROPDOWN ── */
 .gnav-dropdown{
-  display:none;
-  position:absolute;top:calc(100% + 3px);left:0;
+  position:absolute;
+  top:100%;          /* flush to bottom of header — no gap */
+  left:0;
   background:var(--ts-navy-mid);
-  border:1px solid rgba(255,255,255,.1);border-top:2px solid var(--ts-gold);
+  border:1px solid rgba(255,255,255,.12);
+  border-top:2px solid var(--ts-gold);
   border-radius:0 0 8px 8px;
-  min-width:240px;
-  box-shadow:0 16px 40px rgba(0,0,0,.4);
-  z-index:800;padding:8px 0;
+  min-width:248px;
+  box-shadow:0 16px 40px rgba(0,0,0,.45);
+  z-index:1000;
+  padding:8px 0;
+  /* Hidden by default — use opacity+visibility so hover transition is instant */
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .15s, visibility .15s;
 }
-/* Open on hover (desktop) OR on .open class (keyboard/click) */
+
+/* HOVER on desktop: show dropdown when hovering the .gnav-item */
 @media(min-width:961px){
-  .gnav-item:hover .gnav-dropdown{display:block;}
+  .gnav-item:hover > .gnav-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
   .gnav-item:hover .gnav-chevron{transform:rotate(180deg);}
 }
-.gnav-item.open .gnav-dropdown{display:block;}
+
+/* Also show when .open class is toggled (keyboard / mobile click) */
+.gnav-item.open > .gnav-dropdown{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.gnav-item.open .gnav-chevron{transform:rotate(180deg);}
 
 .gnav-dropdown a{
-  display:block;color:rgba(255,255,255,.75);font-size:13px;font-weight:600;
+  display:block;color:rgba(255,255,255,.78);font-size:13px;font-weight:600;
   padding:10px 18px;text-decoration:none;white-space:nowrap;
-  transition:color .2s,background .2s;letter-spacing:.02em;
+  transition:color .15s,background .15s;letter-spacing:.02em;
   border-bottom:1px solid rgba(255,255,255,.05);
 }
 .gnav-dropdown a:last-child{border-bottom:0;}
-.gnav-dropdown a:hover{color:var(--ts-gold);background:rgba(255,255,255,.05);}
-
+.gnav-dropdown a:hover{color:var(--ts-gold);background:rgba(255,255,255,.06);}
 .gnav-dropdown-label{
   font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   color:rgba(255,255,255,.3);padding:10px 18px 4px;display:block;
 }
 .gnav-dropdown-divider{height:1px;background:rgba(255,255,255,.1);margin:4px 0;}
 
-/* CTA */
+/* CTA pill */
 .gnav-cta-wrap{display:flex;align-items:center;gap:10px;margin-left:12px;flex-shrink:0}
-.gnav-call-pill{
-  display:flex;align-items:center;gap:10px;
-  background:var(--ts-gold);color:var(--ts-navy);
-  border-radius:4px;padding:9px 16px;
-  transition:background .2s;text-decoration:none;font-family:var(--ts-font-sans);
-}
+.gnav-call-pill{display:flex;align-items:center;gap:10px;background:var(--ts-gold);color:var(--ts-navy);border-radius:4px;padding:9px 16px;transition:background .2s;text-decoration:none;font-family:var(--ts-font-sans);}
 .gnav-call-pill:hover{background:var(--ts-gold-light)}
 .gnav-call-pill svg{width:15px;height:15px;flex-shrink:0;fill:currentColor}
 .gnav-call-stack{display:flex;flex-direction:column;line-height:1.15}
@@ -105,7 +108,7 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 .gnav-hamburger{display:none;color:var(--ts-white);padding:6px;background:none;border:none;cursor:pointer;line-height:0;}
 .gnav-hamburger svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
 
-/* Mobile slide-down */
+/* Mobile nav panel */
 .gnav-mobile{
   display:none;position:absolute;top:72px;left:0;right:0;
   background:var(--ts-navy-mid);border-top:1px solid rgba(255,255,255,.08);
@@ -117,7 +120,6 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 .gnav-mobile li{border-bottom:1px solid rgba(255,255,255,.06)}
 .gnav-mobile a{display:block;color:rgba(255,255,255,.85);padding:13px 0;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;}
 .gnav-mobile a:hover{color:var(--ts-gold)}
-.gnav-mobile-sublabel{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);padding:10px 0 4px;display:block;}
 .gnav-mobile-sub a{padding:10px 0 10px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.65);text-transform:none;}
 .gnav-mobile-sub a:hover{color:var(--ts-gold)}
 .gnav-mobile-sub li{border-bottom:1px solid rgba(255,255,255,.04);}
@@ -170,7 +172,6 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 
     <nav class="gnav-primary" id="gnav-primary">
 
-      <!-- Trusts & Estates with dropdown -->
       <div class="gnav-item" id="gnav-trusts">
         <button onclick="toggleDrop('gnav-trusts')" aria-expanded="false" aria-haspopup="true">
           Trusts &amp; Estates
@@ -188,22 +189,18 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
         </div>
       </div>
 
-      <!-- Business Law (no dropdown for now) -->
       <div class="gnav-item">
         <a href="/services/business-law/">Business Law</a>
       </div>
 
-      <!-- Civil Litigation (no dropdown for now) -->
       <div class="gnav-item">
         <a href="/services/civil-litigation/">Civil Litigation</a>
       </div>
 
-      <!-- Locations -->
       <div class="gnav-item">
         <a href="/locations/san-luis-obispo/">Locations</a>
       </div>
 
-      <!-- Resources/Blog with dropdown -->
       <div class="gnav-item" id="gnav-resources">
         <button onclick="toggleDrop('gnav-resources')" aria-expanded="false" aria-haspopup="true">
           Resources
@@ -217,12 +214,10 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
         </div>
       </div>
 
-      <!-- About -->
       <div class="gnav-item">
         <a href="/about.html">About</a>
       </div>
 
-      <!-- Contact -->
       <div class="gnav-item">
         <a href="/contact.html">Contact</a>
       </div>
@@ -243,7 +238,6 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
     </div>
   </div>
 
-  <!-- Mobile nav panel -->
   <nav class="gnav-mobile" id="gnav-mobile" aria-label="Mobile navigation">
     <ul>
       <li>
@@ -293,7 +287,6 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 </div>
 
 <script>
-// Dropdown toggle — closes others when opening a new one
 function toggleDrop(id) {
   var items = document.querySelectorAll('.gnav-item');
   items.forEach(function(item) {
@@ -309,8 +302,6 @@ function toggleDrop(id) {
     }
   });
 }
-
-// Close dropdowns on outside click
 document.addEventListener('click', function(e) {
   if (!e.target.closest('.gnav-item')) {
     document.querySelectorAll('.gnav-item.open').forEach(function(item) {
@@ -320,8 +311,6 @@ document.addEventListener('click', function(e) {
     });
   }
 });
-
-// Escape key closes dropdowns
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     document.querySelectorAll('.gnav-item.open').forEach(function(item) {
@@ -331,6 +320,4 @@ document.addEventListener('keydown', function(e) {
     });
   }
 });
-
-// Burger menu and active links are wired by nav-footer-loader.js after injection.
 </script>
