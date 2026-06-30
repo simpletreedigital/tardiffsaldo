@@ -135,10 +135,15 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
   nav.gnav-primary{display:none}
   .gnav-hamburger{display:flex}
   .gnav-utility-right{display:none}
+  .gnav-call-pill{display:none}
   .gnav-mob-call{display:flex}
   body{padding-bottom:58px}
 }
 @media(max-width:600px){.gnav-utility-left{display:none}}
+
+/* Prevent any horizontal scroll/overflow on mobile */
+html,body{overflow-x:hidden;max-width:100%;}
+.gnav-inner{max-width:100%;}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
