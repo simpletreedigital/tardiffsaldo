@@ -67,6 +67,13 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:960px){.page-hero-inner,.content-layout{grid-template-columns:1fr;gap:40px;}.sticky-sidebar{position:static;}}
 @media(max-width:600px){section{padding:52px 1.5rem;}.page-hero{padding:56px 1.5rem;}.form-row-half{grid-template-columns:1fr;}}
 
+
+.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block img{width:100%;height:auto;display:block;}
+.content-img-block.img-half{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.content-img-block.img-half img{border-radius:8px;}
+@media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -140,6 +147,9 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </section>
 
+<div class="content-img-block" style="margin:40px 0;">
+  <img src="/images/title-bar-2400-San-Luis-Obispo-at-sunset.jpg" alt="San Luis Obispo County Central Coast California home of Tardiff and Saldo Law Offices 93401" loading="lazy" style="width:100%;border-radius:8px;max-height:320px;object-fit:cover;">
+</div>
 <section style="background:var(--navy);padding:72px 1.5rem;">
   <div class="wrap">
     <div class="section-label" style="color:var(--gold);">Our Team</div>
