@@ -151,6 +151,22 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   .services-grid,.diff-grid,.reviews-grid,.locs-grid,.team-grid{grid-template-columns:1fr;}
   .form-row-half{grid-template-columns:1fr;}
 }
+
+.faq-cards{display:flex;flex-direction:column;gap:12px;max-width:860px;}
+.faq-card{background:var(--white);border:1.5px solid #E8E2D0;border-radius:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.faq-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,168,76,0.12);}
+.faq-card.open{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,168,76,0.12);}
+.faq-card-q{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;gap:16px;}
+.faq-card-q h3{font-family:var(--font-sans);font-size:16px;font-weight:700;color:var(--navy);margin:0;line-height:1.4;}
+.faq-card-icon{width:28px;height:28px;min-width:28px;border-radius:50%;background:var(--off-white);border:1.5px solid #DDD;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,transform .3s;flex-shrink:0;}
+.faq-card.open .faq-card-icon{background:var(--gold);border-color:var(--gold);transform:rotate(45deg);}
+.faq-card-icon svg{width:14px;height:14px;stroke:var(--navy);fill:none;stroke-width:2.5;}
+.faq-card.open .faq-card-icon svg{stroke:var(--navy);}
+.faq-card-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}
+.faq-card.open .faq-card-a{max-height:500px;}
+.faq-card-a-inner{padding:0 24px 22px;font-size:15px;color:var(--text-mid);line-height:1.8;border-top:1px solid #F0EBE0;}
+.faq-card-a-inner p{margin:14px 0 0;}
+
 </style>
 </head>
 <body>
@@ -389,31 +405,67 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   <div class="wrap">
     <div class="section-label">Common Questions</div>
     <h2 class="section-title">Trust and Estate Planning FAQs</h2>
-    <div style="max-width:820px;">
+    <p class="section-intro" style="margin-bottom:36px;">Answers to the questions SLO County families ask most before their first consultation.</p>
+    <div class="faq-cards">
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need a trust if I already have a will?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">A will alone means probate in California. For any SLO County homeowner, that is a significant problem. Probate takes 12 to 18 months minimum and costs statutory fees calculated on the gross estate value, not your equity. On a $1 million home, combined attorney and executor fees exceed $46,000 before court costs and appraisals. A properly funded living trust avoids probate entirely. Assets transfer to your beneficiaries privately, without court involvement, typically within weeks of your death rather than over a year.</div>
+      <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-card-q" onclick="toggleFaqCard(this.parentElement)" role="button" aria-expanded="false">
+          <h3 itemprop="name">Do I need a trust if I already have a will?</h3>
+          <div class="faq-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="faq-card-a">
+          <div class="faq-card-a-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">A will alone means probate in California. For any SLO County homeowner, that is a significant problem. Probate takes 12 to 18 months minimum and costs statutory fees calculated on the gross estate value, not your equity. On a $1 million home, combined attorney and executor fees exceed $46,000 before court costs and appraisals. A properly funded living trust avoids probate entirely. Assets transfer to your beneficiaries privately, without court involvement, typically within weeks of your death rather than over a year.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I know if I need a trust in San Luis Obispo County?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">If you own real property in California, you almost certainly benefit from a living trust. California probate applies to estates with individual-name assets above $184,500, and the statutory fees are based on gross value, not equity. Given current property values throughout SLO County, Paso Robles wine country, and the coastal communities, most homeowners are well above that threshold. We assess your specific situation in a free consultation and give you a straight answer about what you need and why.</div>
+      <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-card-q" onclick="toggleFaqCard(this.parentElement)" role="button" aria-expanded="false">
+          <h3 itemprop="name">How do I know if I need a trust in San Luis Obispo County?</h3>
+          <div class="faq-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="faq-card-a">
+          <div class="faq-card-a-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">If you own real property in California, you almost certainly benefit from a living trust. California probate applies to estates with individual-name assets above $184,500, and the statutory fees are based on gross value, not equity. Given current property values throughout the county, Paso Robles wine country, and the coastal communities, most homeowners are well above that threshold. We assess your specific situation in a free consultation and give you a straight answer about what you need and why.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What makes Tardiff and Saldo different from other estate planning attorneys in SLO?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">Most estate planning firms are transactional only. We are also litigators. Tyler Saldo and Dustin Tardiff have argued trust disputes, probate contests, and estate claims in San Luis Obispo County Superior Court. That trial experience shapes every document we draft. We know which provisions fail under adversarial pressure because we have been on the other side of them in court. We also handle the deed transfer and full trust funding as part of every plan, which is the step that most online services and some attorneys skip.</div>
+      <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-card-q" onclick="toggleFaqCard(this.parentElement)" role="button" aria-expanded="false">
+          <h3 itemprop="name">What makes Tardiff and Saldo different from other estate planning attorneys in SLO?</h3>
+          <div class="faq-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="faq-card-a">
+          <div class="faq-card-a-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Most estate planning firms are transactional only. We are also litigators. Tyler Saldo and Dustin Tardiff have argued trust disputes, probate contests, and estate claims in San Luis Obispo County Superior Court. That trial experience shapes every document we draft. We know which provisions fail under adversarial pressure because we have been on the other side of them in court. We also handle the deed transfer and full trust funding as part of every plan, which is the step that most online services and some attorneys skip.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What does a complete estate plan from Tardiff and Saldo include?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">A complete plan from our office includes a revocable living trust, pour-over will, durable power of attorney, advance health care directive, HIPAA authorization, and a trust transfer deed recorded with the county assessor. We also review and coordinate beneficiary designations on financial accounts, IRAs, life insurance, and payable-on-death accounts so that all of your assets pass in a coordinated way. We address Prop 19 implications for property owners and discuss any Medi-Cal or elder law considerations relevant to your situation.</div>
+      <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-card-q" onclick="toggleFaqCard(this.parentElement)" role="button" aria-expanded="false">
+          <h3 itemprop="name">What does a complete estate plan from Tardiff and Saldo include?</h3>
+          <div class="faq-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="faq-card-a">
+          <div class="faq-card-a-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">A complete plan from our office includes a revocable living trust, pour-over will, durable power of attorney, advance health care directive, HIPAA authorization, and a trust transfer deed recorded with the county. We also review and coordinate beneficiary designations on financial accounts, IRAs, life insurance, and payable-on-death accounts so that all of your assets pass in a coordinated way. We address Prop 19 implications for property owners and discuss any Medi-Cal or elder law considerations relevant to your situation.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does a trust protect my assets from creditors?<span class="faq-indicator">+</span></div>
-        <div class="faq-a">A revocable living trust does not protect assets from your own creditors while you are alive. Because you retain control and can revoke it, the law treats trust assets as your own for creditor purposes. The primary benefits of a revocable living trust are probate avoidance, incapacity planning, and privacy. Certain irrevocable trust structures can provide creditor protection in specific situations, and we advise on those options when relevant to a client's circumstances.</div>
+      <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-card-q" onclick="toggleFaqCard(this.parentElement)" role="button" aria-expanded="false">
+          <h3 itemprop="name">Does a trust protect my assets from creditors?</h3>
+          <div class="faq-card-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="faq-card-a">
+          <div class="faq-card-a-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">A revocable living trust does not protect assets from your own creditors while you are alive. Because you retain control and can revoke it, the law treats trust assets as your own for creditor purposes. The primary benefits of a revocable living trust are probate avoidance, incapacity planning, and privacy. Certain irrevocable trust structures can provide creditor protection in specific situations, and we advise on those options when relevant to a client's circumstances.</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -483,6 +535,20 @@ async function handleFormSubmit(){
 {"@type":"Question","name":"What makes Tardiff and Saldo different from other estate planning attorneys in SLO?","acceptedAnswer":{"@type":"Answer","text":"We are litigators who also do estate planning. We have argued trust disputes and probate contests in SLO County Superior Court. That trial experience shapes every document we draft. We also handle deed transfer and full trust funding as part of every plan."}},
 {"@type":"Question","name":"What does a complete estate plan from Tardiff and Saldo include?","acceptedAnswer":{"@type":"Answer","text":"A complete plan includes a revocable living trust, pour-over will, durable power of attorney, advance health care directive, HIPAA authorization, and a trust transfer deed recorded with the county. We also coordinate beneficiary designations on all financial accounts."}}
 ]}
+
+function toggleFaqCard(card){
+  var isOpen = card.classList.contains('open');
+  document.querySelectorAll('.faq-card.open').forEach(function(c){
+    c.classList.remove('open');
+    var btn = c.querySelector('.faq-card-q');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  });
+  if(!isOpen){
+    card.classList.add('open');
+    var btn = card.querySelector('.faq-card-q');
+    if(btn) btn.setAttribute('aria-expanded','true');
+  }
+}
 </script>
 </body>
 </html>

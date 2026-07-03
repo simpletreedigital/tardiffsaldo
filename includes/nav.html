@@ -16,19 +16,18 @@
 .gnav-utility-divider{width:1px;height:12px;background:rgba(255,255,255,.2);display:inline-block}
 
 header.gnav{position:sticky;top:0;z-index:900;background:var(--ts-navy);border-bottom:3px solid var(--ts-gold);height:72px;font-family:var(--ts-font-sans);}
-header.gnav .gnav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:100%;}
-.gnav-logo{flex-shrink:0;display:flex;align-items:center;text-decoration:none}
+header.gnav .gnav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:4px;height:100%;}
+.gnav-logo{flex-shrink:0;display:flex;align-items:center;text-decoration:none;margin-right:8px;}
 .gnav-logo img{height:42px;width:auto;display:block}
 
-nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
+nav.gnav-primary{display:flex;align-items:stretch;gap:0;margin-left:auto}
 
-/* Each nav item is position:relative so the dropdown anchors to it */
 .gnav-item{position:relative;display:flex;align-items:stretch;}
 
 .gnav-item > a,
 .gnav-item > button{
-  color:rgba(255,255,255,.8);font-size:12.5px;font-weight:700;
-  padding:6px 10px;border-radius:4px;
+  color:rgba(255,255,255,.82);font-size:12px;font-weight:700;
+  padding:6px 9px;border-radius:4px;
   letter-spacing:.04em;text-transform:uppercase;
   transition:color .2s,background .2s;
   white-space:nowrap;text-decoration:none;
@@ -43,66 +42,72 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 
 .gnav-chevron{width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:2.5;transition:transform .25s;flex-shrink:0;}
 
-/* ── DROPDOWN ── */
+/* ── DROPDOWN PANEL ── */
 .gnav-dropdown{
   position:absolute;
-  top:100%;          /* flush to bottom of header — no gap */
+  top:100%;
   left:0;
   background:var(--ts-navy-mid);
   border:1px solid rgba(255,255,255,.12);
   border-top:2px solid var(--ts-gold);
   border-radius:0 0 8px 8px;
-  min-width:248px;
+  min-width:240px;
   box-shadow:0 16px 40px rgba(0,0,0,.45);
   z-index:1000;
   padding:8px 0;
-  /* Hidden by default — use opacity+visibility so hover transition is instant */
   opacity:0;
   visibility:hidden;
   pointer-events:none;
   transition:opacity .15s, visibility .15s;
 }
 
-/* HOVER on desktop: show dropdown when hovering the .gnav-item */
+/* Wide two-column dropdown for Practice Areas */
+.gnav-dropdown.gnav-dropdown-wide{
+  min-width:480px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding:12px 0;
+  gap:0;
+}
+.gnav-dropdown-col{padding:4px 0;}
+.gnav-dropdown-col + .gnav-dropdown-col{border-left:1px solid rgba(255,255,255,.08);}
+
+/* Show on hover desktop */
 @media(min-width:961px){
   .gnav-item:hover > .gnav-dropdown{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
+    opacity:1;visibility:visible;pointer-events:auto;
   }
   .gnav-item:hover .gnav-chevron{transform:rotate(180deg);}
 }
 
-/* Also show when .open class is toggled (keyboard / mobile click) */
+/* Show on .open (keyboard / click) */
 .gnav-item.open > .gnav-dropdown{
-  opacity:1;
-  visibility:visible;
-  pointer-events:auto;
+  opacity:1;visibility:visible;pointer-events:auto;
 }
 .gnav-item.open .gnav-chevron{transform:rotate(180deg);}
 
 .gnav-dropdown a{
-  display:block;color:rgba(255,255,255,.78);font-size:13px;font-weight:600;
-  padding:10px 18px;text-decoration:none;white-space:nowrap;
+  display:block;color:rgba(255,255,255,.78);font-size:12.5px;font-weight:600;
+  padding:9px 18px;text-decoration:none;white-space:nowrap;
   transition:color .15s,background .15s;letter-spacing:.02em;
   border-bottom:1px solid rgba(255,255,255,.05);
 }
 .gnav-dropdown a:last-child{border-bottom:0;}
 .gnav-dropdown a:hover{color:var(--ts-gold);background:rgba(255,255,255,.06);}
 .gnav-dropdown-label{
-  font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(255,255,255,.3);padding:10px 18px 4px;display:block;
+  font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);padding:10px 18px 4px;display:block;
 }
 .gnav-dropdown-divider{height:1px;background:rgba(255,255,255,.1);margin:4px 0;}
 
 /* CTA pill */
-.gnav-cta-wrap{display:flex;align-items:center;gap:10px;margin-left:12px;flex-shrink:0}
-.gnav-call-pill{display:flex;align-items:center;gap:10px;background:var(--ts-gold);color:var(--ts-navy);border-radius:4px;padding:9px 16px;transition:background .2s;text-decoration:none;font-family:var(--ts-font-sans);}
+.gnav-cta-wrap{display:flex;align-items:center;gap:10px;margin-left:10px;flex-shrink:0}
+.gnav-call-pill{display:flex;align-items:center;gap:10px;background:var(--ts-gold);color:var(--ts-navy);border-radius:4px;padding:9px 14px;transition:background .2s;text-decoration:none;font-family:var(--ts-font-sans);}
 .gnav-call-pill:hover{background:var(--ts-gold-light)}
-.gnav-call-pill svg{width:15px;height:15px;flex-shrink:0;fill:currentColor}
+.gnav-call-pill svg{width:14px;height:14px;flex-shrink:0;fill:currentColor}
 .gnav-call-stack{display:flex;flex-direction:column;line-height:1.15}
-.gnav-label-sm{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;opacity:.8}
-.gnav-label-lg{font-size:14px;font-weight:700}
+.gnav-label-sm{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;opacity:.8}
+.gnav-label-lg{font-size:13px;font-weight:700}
 
 /* Hamburger */
 .gnav-hamburger{display:none;color:var(--ts-white);padding:6px;background:none;border:none;cursor:pointer;line-height:0;}
@@ -112,17 +117,20 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 .gnav-mobile{
   display:none;position:absolute;top:72px;left:0;right:0;
   background:var(--ts-navy-mid);border-top:1px solid rgba(255,255,255,.08);
-  z-index:899;padding:8px 0 16px;font-family:var(--ts-font-sans);
+  z-index:899;padding:8px 0 20px;font-family:var(--ts-font-sans);
   max-height:calc(100vh - 72px);overflow-y:auto;
 }
 .gnav-mobile.open{display:block;}
 .gnav-mobile ul{padding:0 24px;list-style:none;margin:0}
 .gnav-mobile li{border-bottom:1px solid rgba(255,255,255,.06)}
-.gnav-mobile a{display:block;color:rgba(255,255,255,.85);padding:13px 0;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;}
+.gnav-mobile > nav > ul > li > a,
+.gnav-mob-section-label{display:block;color:rgba(255,255,255,.85);padding:13px 0;font-size:13.5px;font-weight:700;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;}
+.gnav-mob-section-label{color:rgba(255,255,255,.4);font-size:9.5px;letter-spacing:.14em;padding:12px 0 4px;border-bottom:none;}
 .gnav-mobile a:hover{color:var(--ts-gold)}
-.gnav-mobile-sub a{padding:10px 0 10px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.65);text-transform:none;}
-.gnav-mobile-sub a:hover{color:var(--ts-gold)}
+.gnav-mobile-sub{padding-left:0;margin:0;}
 .gnav-mobile-sub li{border-bottom:1px solid rgba(255,255,255,.04);}
+.gnav-mobile-sub a{padding:9px 0 9px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.68);text-transform:none;display:block;text-decoration:none;}
+.gnav-mobile-sub a:hover{color:var(--ts-gold)}
 
 /* Fixed mobile call bar */
 .gnav-mob-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:990;background:var(--ts-navy);border-top:2px solid var(--ts-gold);}
@@ -141,9 +149,7 @@ nav.gnav-primary{display:flex;align-items:center;gap:0;margin-left:auto}
 }
 @media(max-width:600px){.gnav-utility-left{display:none}}
 
-/* Prevent any horizontal scroll/overflow on mobile */
 html,body{overflow-x:hidden;max-width:100%;}
-.gnav-inner{max-width:100%;}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,36 +183,56 @@ html,body{overflow-x:hidden;max-width:100%;}
 
     <nav class="gnav-primary" id="gnav-primary">
 
-      <div class="gnav-item" id="gnav-trusts">
-        <button onclick="toggleDrop('gnav-trusts')" aria-expanded="false" aria-haspopup="true">
-          Trusts &amp; Estates
+      <!-- PRACTICE AREAS - wide two-column dropdown -->
+      <div class="gnav-item" id="gnav-practice">
+        <button onclick="toggleDrop('gnav-practice')" aria-expanded="false" aria-haspopup="true">
+          Practice Areas
           <svg class="gnav-chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="gnav-dropdown" role="menu">
-          <span class="gnav-dropdown-label">Practice Areas</span>
-          <a href="/services/trusts-estates/" role="menuitem">Trusts &amp; Estate Planning</a>
-          <a href="/services/estate-planning/" role="menuitem">Living Trusts &amp; Wills</a>
-          <a href="/services/probate/" role="menuitem">Probate Law</a>
-          <a href="/services/elder-law/" role="menuitem">Elder Law &amp; Financial Abuse</a>
-          <div class="gnav-dropdown-divider"></div>
-          <span class="gnav-dropdown-label">Resources</span>
-          <a href="/blog/prop-19-slo-county/" role="menuitem">Prop 19 &mdash; SLO County Guide</a>
-          <a href="/blog/prop-19-california/" role="menuitem">Prop 19 &mdash; California Guide</a>
+        <div class="gnav-dropdown gnav-dropdown-wide" role="menu">
+          <div class="gnav-dropdown-col">
+            <span class="gnav-dropdown-label">Trusts &amp; Estates</span>
+            <a href="/services/trusts-estates/" role="menuitem">Trusts &amp; Estate Planning</a>
+            <a href="/services/estate-planning/" role="menuitem">Living Trusts &amp; Wills</a>
+            <a href="/services/probate/" role="menuitem">Probate Law</a>
+            <a href="/services/elder-law/" role="menuitem">Elder Law &amp; Financial Abuse</a>
+            <div class="gnav-dropdown-divider"></div>
+            <span class="gnav-dropdown-label">Business</span>
+            <a href="/services/business-law/" role="menuitem">Business Law</a>
+          </div>
+          <div class="gnav-dropdown-col">
+            <span class="gnav-dropdown-label">Civil Litigation</span>
+            <a href="/services/civil-litigation/" role="menuitem">Civil Litigation Overview</a>
+            <a href="/services/personal-injury/" role="menuitem">Personal Injury</a>
+            <a href="/services/auto-accidents/" role="menuitem">Auto Accidents</a>
+            <a href="/services/wrongful-death/" role="menuitem">Wrongful Death</a>
+            <a href="/services/dog-bite-attorney/" role="menuitem">Dog Bite Attorney</a>
+            <a href="/services/appellate-law/" role="menuitem">Appellate Law</a>
+          </div>
         </div>
       </div>
 
-      <div class="gnav-item">
-        <a href="/services/business-law/">Business Law</a>
+      <!-- LOCATIONS dropdown -->
+      <div class="gnav-item" id="gnav-locations">
+        <button onclick="toggleDrop('gnav-locations')" aria-expanded="false" aria-haspopup="true">
+          Locations
+          <svg class="gnav-chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="gnav-dropdown" role="menu">
+          <span class="gnav-dropdown-label">SLO County</span>
+          <a href="/locations/san-luis-obispo/" role="menuitem">San Luis Obispo</a>
+          <a href="/locations/paso-robles/" role="menuitem">Paso Robles</a>
+          <a href="/locations/arroyo-grande/" role="menuitem">Arroyo Grande</a>
+          <a href="/locations/atascadero/" role="menuitem">Atascadero</a>
+          <a href="/locations/morro-bay/" role="menuitem">Morro Bay</a>
+          <div class="gnav-dropdown-divider"></div>
+          <span class="gnav-dropdown-label">South &amp; Beyond</span>
+          <a href="/locations/nipomo/" role="menuitem">Nipomo</a>
+          <a href="/locations/santa-maria/" role="menuitem">Santa Maria</a>
+        </div>
       </div>
 
-      <div class="gnav-item">
-        <a href="/services/civil-litigation/">Civil Litigation</a>
-      </div>
-
-      <div class="gnav-item">
-        <a href="/locations/san-luis-obispo/">Locations</a>
-      </div>
-
+      <!-- RESOURCES dropdown -->
       <div class="gnav-item" id="gnav-resources">
         <button onclick="toggleDrop('gnav-resources')" aria-expanded="false" aria-haspopup="true">
           Resources
@@ -220,10 +246,12 @@ html,body{overflow-x:hidden;max-width:100%;}
         </div>
       </div>
 
+      <!-- ABOUT -->
       <div class="gnav-item">
         <a href="/about.html">About</a>
       </div>
 
+      <!-- CONTACT -->
       <div class="gnav-item">
         <a href="/contact.html">Contact</a>
       </div>
@@ -244,8 +272,10 @@ html,body{overflow-x:hidden;max-width:100%;}
     </div>
   </div>
 
+  <!-- Mobile nav panel -->
   <nav class="gnav-mobile" id="gnav-mobile" aria-label="Mobile navigation">
     <ul>
+      <!-- Trusts & Estates -->
       <li>
         <a href="/services/trusts-estates/">Trusts &amp; Estates</a>
         <ul class="gnav-mobile-sub">
@@ -253,11 +283,11 @@ html,body{overflow-x:hidden;max-width:100%;}
           <li><a href="/services/estate-planning/">Living Trusts &amp; Wills</a></li>
           <li><a href="/services/probate/">Probate Law</a></li>
           <li><a href="/services/elder-law/">Elder Law &amp; Financial Abuse</a></li>
-          <li><a href="/blog/prop-19-slo-county/">Prop 19 &mdash; SLO County</a></li>
-          <li><a href="/blog/prop-19-california/">Prop 19 &mdash; California</a></li>
         </ul>
       </li>
+      <!-- Business Law -->
       <li><a href="/services/business-law/">Business Law</a></li>
+      <!-- Civil Litigation -->
       <li>
         <a href="/services/civil-litigation/">Civil Litigation</a>
         <ul class="gnav-mobile-sub">
@@ -268,7 +298,20 @@ html,body{overflow-x:hidden;max-width:100%;}
           <li><a href="/services/appellate-law/">Appellate Law</a></li>
         </ul>
       </li>
-      <li><a href="/locations/san-luis-obispo/">Locations</a></li>
+      <!-- Locations -->
+      <li>
+        <a href="/locations/san-luis-obispo/">Locations</a>
+        <ul class="gnav-mobile-sub">
+          <li><a href="/locations/san-luis-obispo/">San Luis Obispo</a></li>
+          <li><a href="/locations/paso-robles/">Paso Robles</a></li>
+          <li><a href="/locations/arroyo-grande/">Arroyo Grande</a></li>
+          <li><a href="/locations/atascadero/">Atascadero</a></li>
+          <li><a href="/locations/morro-bay/">Morro Bay</a></li>
+          <li><a href="/locations/nipomo/">Nipomo</a></li>
+          <li><a href="/locations/santa-maria/">Santa Maria</a></li>
+        </ul>
+      </li>
+      <!-- Resources -->
       <li>
         <a href="/blog/">Resources</a>
         <ul class="gnav-mobile-sub">
