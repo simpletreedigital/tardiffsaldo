@@ -82,7 +82,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
 
@@ -101,6 +102,14 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .search-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .search-tag{background:var(--white);border:1.5px solid #DDD;border-radius:20px;padding:5px 14px;font-size:12.5px;color:var(--text-mid);}
 
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
 </style>
 </head>
 <body>
@@ -112,6 +121,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/civil-litigation/">Civil Litigation</a><span>/</span><a href="/services/dog-bite-attorney/">Dog Bite Attorney</a><span>/</span>Atascadero</div>
       <h1>Dog Bite Attorney Serving <em>Atascadero</em>, California</h1>
       <p>Attacked by a dog in the Atascadero area? California's strict liability law is on your side. No fee unless we recover. Free case review today.</p>
+      <ul class="hero-checks">
+        <li>Free case review, no fee unless we recover</li>
+        <li>California strict liability, no prior bite history needed</li>
+        <li>No upfront costs on all animal attack cases</li>
+        <li>Scarring, lost wages, and psychological trauma all documented</li>
+        <li>30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Case Review</a>
@@ -156,10 +178,10 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
     <p>The Central Coast is an active, outdoor community. Atascadero lake park, heilmann regional park, and residential neighborhoods throughout the city are popular destinations for residents and visitors, and dog attacks happen across all of these settings. Atascadero bite cases frequently arise in residential neighborhoods east of El Camino Real, around the lake park, and on the Heilmann trail system. The city's semi-rural character means larger lots and more encounters with inadequately fenced dogs. Once an attack occurs, the critical question is not usually whether the owner is liable under California law. It is whether you have representation that documents your damages fully and negotiates a settlement that reflects the real cost of what happened, or files suit in San Luis Obispo County Superior Court if the insurer won't settle fairly.</p>
 
-    <img src="/images/dog-bite-attorney-5.jpg" alt="dog bite attorney Atascadero California 93422 Heilmann Park trail animal attack injury lawyer" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+    <img src="/images/dog-bite-attorney-5.jpg" alt="dog bite attorney Atascadero California 93422 Heilmann Park trail animal attack injury lawyer" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
     <h2 style="font-family:var(--font-serif);font-size:28px;color:var(--navy);margin:36px 0 14px;">What to Do After a Dog Attack in the Atascadero Area</h2>
-<img src="/images/dog-bite-attorney-5.jpg" alt="dog bite attorney Atascadero California 93422 North Central SLO County animal attack lawyer" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+<img src="/images/dog-bite-attorney-5.jpg" alt="dog bite attorney Atascadero California 93422 North Central SLO County animal attack lawyer" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
     <ul style="list-style:none;margin-bottom:24px;">
       <li style="display:flex;gap:12px;margin-bottom:14px;font-size:15px;color:var(--text-mid);line-height:1.65;"><span style="width:22px;height:22px;min-width:22px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;margin-top:2px;"></span><span><strong>Get medical care immediately.</strong> Go to Twin Cities Community Hospital in Templeton, approximately six miles north via Highway 101. Dog bite wounds can become infected within 24 to 48 hours. The medical record created at treatment is the foundation of your claim.</span></li>
@@ -180,7 +202,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     </div>
 
     <h2 style="font-family:var(--font-serif);font-size:28px;color:var(--navy);margin:36px 0 14px;">No Fee Unless We Recover</h2>
-<img src="/images/dog-bite-attorney-2.jpg" alt="dog attack injury lawyer Atascadero California 93422 Heilmann Park trail" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+<img src="/images/dog-bite-attorney-2.jpg" alt="dog attack injury lawyer Atascadero California 93422 Heilmann Park trail" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
     <p>Dog bite cases are handled on a contingency basis. You pay nothing upfront and owe nothing if we do not recover for you. Our fee comes out of the settlement or judgment, which means our financial interests are directly aligned with yours.</p>
 

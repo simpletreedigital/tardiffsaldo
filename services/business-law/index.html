@@ -79,9 +79,46 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
+
+
+.def-grid{width:100%;border-collapse:collapse;display:table;margin:24px 0;}
+.def-row{display:table-row;}
+.def-row:not(:last-child) .def-icon,.def-row:not(:last-child) .def-term,.def-row:not(:last-child) .def-desc{border-bottom:1px solid #EDEBE6;}
+.def-icon{display:table-cell;width:34px;padding:16px 12px 16px 0;vertical-align:top;}
+.def-icon-dot{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,0.12);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;display:block;flex-shrink:0;margin-top:1px;}
+.def-term{display:table-cell;width:180px;padding:16px 20px 16px 0;vertical-align:top;font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);line-height:1.45;white-space:normal;}
+.def-desc{display:table-cell;padding:16px 0;vertical-align:top;font-size:15px;color:var(--text-mid);line-height:1.75;}
+@media(max-width:640px){
+  .def-grid{display:block;}
+  .def-row{display:block;padding:14px 0;border-bottom:1px solid #EDEBE6;}
+  .def-row:last-child{border-bottom:0;}
+  .def-icon{display:inline-block;vertical-align:middle;width:auto;padding:0;margin-right:8px;}
+  .def-term{display:inline;padding:0;font-size:14px;}
+  .def-term::after{content:'';display:block;height:6px;}
+  .def-desc{display:block;padding:6px 0 0 0;font-size:14.5px;}
+}
+
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+.area-card{background:var(--white);border:1.5px solid #E8E2D0;border-radius:8px;padding:16px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,box-shadow .2s;}
+.area-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,168,76,0.14);}
+.area-card-label{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;}
+.area-card h3{font-size:13px;font-weight:700;color:var(--navy);margin:0;line-height:1.35;}
+.area-card-arrow{font-size:11px;color:var(--text-mid);margin-top:2px;}
+@media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
 
 </style>
 </head>
@@ -94,6 +131,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span>Business Law</div>
       <h1>Business Law Attorney in <em>San Luis Obispo</em></h1>
       <p>Contracts drafted by litigators who have argued them in court. Formation, agreements, disputes, and M&amp;A for SLO County businesses. The difference between transactional counsel and ours is that we know what happens when documents fail.</p>
+      <ul class="hero-checks">
+        <li>Free consultation on all business matters</li>
+        <li>Contracts drafted by litigators who argue them in court</li>
+        <li>Formation, contracts, buy-sell, M&A, and disputes</li>
+        <li>Fixed-fee options for routine business matters</li>
+        <li>30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Consultation</a>
@@ -151,15 +201,12 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <p>SLO County has a diverse business community: agriculture and wine production in Paso Robles and Templeton, tourism and hospitality along the coast, professional services and retail in San Luis Obispo, construction and development throughout the county, and technology and healthcare businesses in the city. We work across all of these sectors and understand the specific legal needs they generate.</p>
 
         <h2>Business Law Services We Provide</h2>
-        <ul>
-          <li><strong>Business Formation:</strong> LLC, corporation, and partnership formation in California. Entity selection is not just a tax question. It affects personal liability exposure, management structure, transferability, and exit planning. We advise on the right structure for your specific situation and register with the <a href="https://www.sos.ca.gov/business-programs/business-entities/" target="_blank" rel="noopener">California Secretary of State</a>.</li>
-          <li><strong>Operating Agreements and Shareholder Agreements:</strong> The governing document for LLCs and corporations sets the rules for management, voting, profit distribution, and what happens when an owner wants to leave, dies, or becomes disabled. Most disputes between owners arise because this document was thin, was a template, or was never updated as the business evolved.</li>
-          <li><strong>Buy-Sell Agreements:</strong> A buy-sell agreement is the business equivalent of an estate plan: it specifies what happens when a triggering event occurs. Triggering events include a partner's death, disability, voluntary departure, involuntary departure, bankruptcy, or divorce. Without it, the options when a partner exits are often all bad. We draft these as standalone agreements and as provisions within operating agreements.</li>
-          <li><strong>Contract Drafting and Review:</strong> Vendor agreements, service contracts, commercial leases, licensing agreements, non-compete and non-disclosure agreements, and employment contracts. We review existing contracts before you sign them and draft new ones. In both cases, we flag the provisions that tend to become disputed and explain the actual risk before you commit.</li>
-          <li><strong>Mergers and Acquisitions:</strong> Asset purchases, stock purchases, due diligence, representation and warranty provisions, escrow arrangements, and post-closing matters. SLO County sees significant M&amp;A activity in the wine, agriculture, and hospitality sectors. We handle transactions from LOI through closing.</li>
-          <li><strong>Business Disputes and Litigation:</strong> Breach of contract, fraud, misappropriation of trade secrets, unfair competition, and shareholder/partner disputes. When business disputes can't be resolved through negotiation or mediation, we are prepared to take them to trial. Our civil litigation background gives us credibility at the negotiating table that transactional-only firms don't have.</li>
-          <li><strong>Business Succession Planning:</strong> For family businesses and closely held companies, the transition of ownership across generations is often the most complex planning issue they face. We coordinate with estate planning to ensure business succession and personal estate plans are consistent and complete.</li>
-        </ul>
+        <div class="def-grid">
+                <div class="def-row">
+          <div class="def-icon"><div class="def-icon-dot"></div></div>
+          <div class="def-term">Business Formation:</div>
+          <div class="def-desc">LLC, corporation, and partnership formation in California. Entity selection is not just a tax question. It affects personal liability exposure, management structure, transferability, and exit planning. We advise on the right structure for your specific situation and register with the <a href="https://www.sos.ca.gov/business-programs/business-entities/" target="_blank" rel="noopener">California Secretary of State</a>.</div>
+        </div>
 
         <div class="case-study">
   <div class="case-study-label">Client Case Study</div>
@@ -222,6 +269,52 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     </div>
   </div>
 </section>
+
+<section style="background:var(--off-white);padding:56px 1.5rem;border-top:1px solid #E8E2D0;">
+  <div class="wrap">
+    <div class="section-label">Service Areas</div>
+    <h2 class="section-title">Serving Clients Across the Central Coast</h2>
+    <p style="color:var(--text-mid);font-size:15px;line-height:1.75;max-width:760px;margin-bottom:24px;">Our office is in downtown San Luis Obispo. We serve clients throughout SLO County and into Santa Barbara County by phone, video, and in-person appointment.</p>
+    <div class="area-grid">
+      <a class="area-card" href="/locations/san-luis-obispo/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Attorney San Luis Obispo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/paso-robles/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Lawyer Paso Robles</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/arroyo-grande/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Law Attorney Arroyo Grande</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/atascadero/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Lawyer Atascadero</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/morro-bay/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Attorney Morro Bay</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/nipomo/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Law Lawyer Nipomo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/santa-maria/">
+        <div class="area-card-label">Business Law</div>
+        <h3>Business Attorney Santa Maria</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="gbp-map-section" style="background:var(--off-white);padding:48px 1.5rem;border-top:1px solid #E8E2D0;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">

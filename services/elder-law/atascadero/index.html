@@ -80,7 +80,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
 
@@ -99,6 +100,14 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .warning-box ul{margin:0;padding-left:18px;}
 .warning-box li{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:4px;}
 
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
 </style>
 </head>
 <body>
@@ -110,6 +119,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/trusts-estates/">Trusts &amp; Estates</a><span>/</span><a href="/services/elder-law/">Elder Law</a><span>/</span>Atascadero</div>
       <h1>Elder Law Attorney Serving <em>Atascadero</em>, California</h1>
       <p>Elder financial abuse, conservatorship, and Medi-Cal planning for older adults and their families in the Atascadero area. Free consultation at (888) 461-2215.</p>
+      <ul class="hero-checks">
+        <li>Free confidential consultation</li>
+        <li>EADACPA fee shifting may recover attorney fees from the abuser</li>
+        <li>Emergency petitions when assets are at immediate risk</li>
+        <li>Civil and criminal approach coordinated when appropriate</li>
+        <li>30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Consultation</a>
@@ -157,7 +179,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
     <p>California's Elder Abuse and Dependent Adult Civil Protection Act provides strong remedies for victims and their families. Under Welfare and Institutions Code section 15657.5, a plaintiff who prevails on a financial abuse claim recovers attorney's fees and costs from the defendant as a matter of right, not at judicial discretion. This fee-shifting provision makes it economically practical to pursue claims across a wide range of financial loss amounts. We handle these matters for Atascadero area families from our downtown San Luis Obispo office, and most consultations can be conducted by phone or video.</p>
 
-    <img src="/images/elder-abuse-attorney-6.jpg" alt="Elder law attorney Atascadero California 93422 financial abuse conservatorship Medi-Cal planning" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+    <img src="/images/elder-abuse-attorney-6.jpg" alt="Elder law attorney Atascadero California 93422 financial abuse conservatorship Medi-Cal planning" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
     <h2 style="font-family:var(--font-serif);font-size:28px;color:var(--navy);margin:36px 0 14px;">Signs of Elder Financial Abuse to Watch For</h2>
     <ul style="list-style:none;margin-bottom:24px;">

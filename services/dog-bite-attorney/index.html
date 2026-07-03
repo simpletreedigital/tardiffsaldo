@@ -82,7 +82,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
 
@@ -101,6 +102,42 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .search-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .search-tag{background:var(--white);border:1.5px solid #DDD;border-radius:20px;padding:5px 14px;font-size:12.5px;color:var(--text-mid);}
 
+
+.def-grid{width:100%;border-collapse:collapse;display:table;margin:24px 0;}
+.def-row{display:table-row;}
+.def-row:not(:last-child) .def-icon,.def-row:not(:last-child) .def-term,.def-row:not(:last-child) .def-desc{border-bottom:1px solid #EDEBE6;}
+.def-icon{display:table-cell;width:34px;padding:16px 12px 16px 0;vertical-align:top;}
+.def-icon-dot{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,0.12);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;display:block;flex-shrink:0;margin-top:1px;}
+.def-term{display:table-cell;width:180px;padding:16px 20px 16px 0;vertical-align:top;font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);line-height:1.45;white-space:normal;}
+.def-desc{display:table-cell;padding:16px 0;vertical-align:top;font-size:15px;color:var(--text-mid);line-height:1.75;}
+@media(max-width:640px){
+  .def-grid{display:block;}
+  .def-row{display:block;padding:14px 0;border-bottom:1px solid #EDEBE6;}
+  .def-row:last-child{border-bottom:0;}
+  .def-icon{display:inline-block;vertical-align:middle;width:auto;padding:0;margin-right:8px;}
+  .def-term{display:inline;padding:0;font-size:14px;}
+  .def-term::after{content:'';display:block;height:6px;}
+  .def-desc{display:block;padding:6px 0 0 0;font-size:14.5px;}
+}
+
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+.area-card{background:var(--white);border:1.5px solid #E8E2D0;border-radius:8px;padding:16px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,box-shadow .2s;}
+.area-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,168,76,0.14);}
+.area-card-label{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;}
+.area-card h3{font-size:13px;font-weight:700;color:var(--navy);margin:0;line-height:1.35;}
+.area-card-arrow{font-size:11px;color:var(--text-mid);margin-top:2px;}
+@media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -112,6 +149,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/civil-litigation/">Civil Litigation</a><span>/</span>Dog Bite Attorney</div>
       <h1>Dog Bite Attorney in <em>San Luis Obispo</em> &amp; Central Coast California</h1>
       <p>California's strict liability law holds dog owners responsible for bites regardless of the animal's history. No fee unless we recover. Free case review available today.</p>
+      <ul class="hero-checks">
+        <li>Free case review, no fee unless we recover</li>
+        <li>California strict liability, no prior bite history needed</li>
+        <li>No upfront costs on all animal attack cases</li>
+        <li>Scarring, lost wages, and psychological trauma all documented</li>
+        <li>30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Case Review</a>
@@ -177,16 +227,14 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         </div>
 
         <h2>What Compensation Are You Entitled to After a Dog Bite in California?</h2>
-<img src="/images/dog-bite-attorney-1.jpg" alt="dog bite attorney San Luis Obispo California 93401 animal attack injury lawyer Central Coast" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+<img src="/images/dog-bite-attorney-1.jpg" alt="dog bite attorney San Luis Obispo California 93401 animal attack injury lawyer Central Coast" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
-        <ul>
-          <li><strong>Medical expenses:</strong> Emergency care, wound treatment, antibiotics, reconstructive or plastic surgery, physical therapy, and any future treatment related to the injury.</li>
-          <li><strong>Lost wages:</strong> Income you were unable to earn during recovery, including self-employment income documented through returns and business records.</li>
-          <li><strong>Loss of earning capacity:</strong> When injuries affect your ability to work in your field long-term, that reduction in capacity is a compensable damage in California.</li>
-          <li><strong>Pain and suffering:</strong> Physical pain, emotional distress, anxiety, post-traumatic stress, and the effect on your daily life and relationships.</li>
-          <li><strong>Scarring and disfigurement:</strong> Visible scarring carries significant value in California dog bite claims, particularly on the face, hands, or forearms. We engage plastic surgeons to provide written assessments of permanent scarring when its value warrants documentation.</li>
-          <li><strong>Psychological trauma:</strong> Fear of dogs, avoidance of public spaces, nightmares, and behavioral changes following an attack are compensable, particularly in children. Professional psychological treatment is well-documented in California bite settlements.</li>
-        </ul>
+        <div class="def-grid">
+                <div class="def-row">
+          <div class="def-icon"><div class="def-icon-dot"></div></div>
+          <div class="def-term">Medical expenses:</div>
+          <div class="def-desc">Emergency care, wound treatment, antibiotics, reconstructive or plastic surgery, physical therapy, and any future treatment related to the injury.</div>
+        </div>
 
         <h2>How Dog Bite Claims Work in Practice</h2>
         <p>The majority of California dog bite claims settle without going to trial. In most cases, the dog owner's homeowners insurance covers the claim. We file the injury claim directly with the insurer, document damages thoroughly with medical records and photographs, and when appropriate engage expert testimony for permanent injuries. We then negotiate toward a settlement that reflects the real value of your case.</p>
@@ -194,16 +242,15 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <p>The first offer from an insurance company is almost never fair. Adjusters make low initial offers because they know most unrepresented claimants will accept before understanding what their case is worth. When insurers won't settle fairly, we are prepared to file suit in SLO County Superior Court or Santa Barbara County Superior Court and take the case as far as necessary.</p>
 
         <h2>What to Do Immediately After a Dog Bite</h2>
-        <ul>
-          <li><strong>Get medical treatment right away.</strong> Even wounds that look minor can become infected within 24 to 48 hours. Emergency treatment also creates the medical record that is foundational to any compensation claim. Sierra Vista Regional Medical Center and French Hospital Medical Center are the main trauma facilities in SLO County.</li>
-          <li><strong>Get the owner's information.</strong> Name, address, phone, and homeowners or renters insurance information if possible. If the owner will not provide it, call law enforcement.</li>
-          <li><strong>Report the bite to animal control.</strong> SLO County Animal Services can be reached at (805) 781-4400. For Santa Barbara County incidents, contact Santa Barbara County Animal Services at (805) 934-6456. A report creates an official record and may reveal prior incidents with the same animal.</li>
-          <li><strong>Document everything.</strong> Photographs of injuries taken immediately and in the days after the attack are critical. Photograph the scene. Get contact information for any witnesses.</li>
-          <li><strong>Do not give a recorded statement to the owner's insurance company.</strong> You are not required to, and what you say before retaining counsel can reduce your recovery significantly.</li>
-        </ul>
+        <div class="def-grid">
+                <div class="def-row">
+          <div class="def-icon"><div class="def-icon-dot"></div></div>
+          <div class="def-term">Get medical treatment right away.</div>
+          <div class="def-desc">Even wounds that look minor can become infected within 24 to 48 hours. Emergency treatment also creates the medical record that is foundational to any compensation claim. Sierra Vista Regional Medical Center and French Hospital Medical Center are the main trauma facilities in SLO County.</div>
+        </div>
 
         
-<img src="/images/dog-bite-attorney-4.jpg" alt="California dog bite law Civil Code 3342 strict liability attorney San Luis Obispo County 93401" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+<img src="/images/dog-bite-attorney-4.jpg" alt="California dog bite law Civil Code 3342 strict liability attorney San Luis Obispo County 93401" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 <div class="case-study">
           <div class="case-study-label">Client Case Study</div>
           <h3>Neighborhood Dog Attack: From Disputed Claim to Full Recovery</h3>
@@ -271,6 +318,52 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </section>
 </main>
+
+<section style="background:var(--off-white);padding:56px 1.5rem;border-top:1px solid #E8E2D0;">
+  <div class="wrap">
+    <div class="section-label">Service Areas</div>
+    <h2 class="section-title">Serving Clients Across the Central Coast</h2>
+    <p style="color:var(--text-mid);font-size:15px;line-height:1.75;max-width:760px;margin-bottom:24px;">Our office is in downtown San Luis Obispo. We serve clients throughout SLO County and into Santa Barbara County by phone, video, and in-person appointment.</p>
+    <div class="area-grid">
+      <a class="area-card" href="/services/dog-bite-attorney/san-luis-obispo/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Dog Bite Attorney San Luis Obispo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/dog-bite-attorney/paso-robles/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Dog Bite Lawyer Paso Robles</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/dog-bite-attorney/arroyo-grande/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Dog Bite Attorney Arroyo Grande</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/dog-bite-attorney/atascadero/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Animal Attack Lawyer Atascadero</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/dog-bite-attorney/santa-barbara/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Dog Bite Attorney Santa Barbara</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/morro-bay/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Dog Attack Lawyer Morro Bay</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/nipomo/">
+        <div class="area-card-label">Dog Bite</div>
+        <h3>Dog Bite Attorney Nipomo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="gbp-map-section" style="background:var(--off-white);padding:48px 1.5rem;border-top:1px solid #E8E2D0;">
   <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
     <div>

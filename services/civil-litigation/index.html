@@ -79,9 +79,46 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
+
+
+.def-grid{width:100%;border-collapse:collapse;display:table;margin:24px 0;}
+.def-row{display:table-row;}
+.def-row:not(:last-child) .def-icon,.def-row:not(:last-child) .def-term,.def-row:not(:last-child) .def-desc{border-bottom:1px solid #EDEBE6;}
+.def-icon{display:table-cell;width:34px;padding:16px 12px 16px 0;vertical-align:top;}
+.def-icon-dot{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,0.12);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;display:block;flex-shrink:0;margin-top:1px;}
+.def-term{display:table-cell;width:180px;padding:16px 20px 16px 0;vertical-align:top;font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);line-height:1.45;white-space:normal;}
+.def-desc{display:table-cell;padding:16px 0;vertical-align:top;font-size:15px;color:var(--text-mid);line-height:1.75;}
+@media(max-width:640px){
+  .def-grid{display:block;}
+  .def-row{display:block;padding:14px 0;border-bottom:1px solid #EDEBE6;}
+  .def-row:last-child{border-bottom:0;}
+  .def-icon{display:inline-block;vertical-align:middle;width:auto;padding:0;margin-right:8px;}
+  .def-term{display:inline;padding:0;font-size:14px;}
+  .def-term::after{content:'';display:block;height:6px;}
+  .def-desc{display:block;padding:6px 0 0 0;font-size:14.5px;}
+}
+
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+.area-card{background:var(--white);border:1.5px solid #E8E2D0;border-radius:8px;padding:16px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,box-shadow .2s;}
+.area-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,168,76,0.14);}
+.area-card-label{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;}
+.area-card h3{font-size:13px;font-weight:700;color:var(--navy);margin:0;line-height:1.35;}
+.area-card-arrow{font-size:11px;color:var(--text-mid);margin-top:2px;}
+@media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
 
 </style>
 </head>
@@ -94,6 +131,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span>Civil Litigation</div>
       <h1>Civil Litigation Attorney in <em>San Luis Obispo</em></h1>
       <p>Genuine trial experience changes how every negotiation goes. Insurers, opposing counsel, and the courts all evaluate whether your attorney is actually prepared to go to verdict. Ours are. Free case review.</p>
+      <ul class="hero-checks">
+        <li>Free case review, no obligation</li>
+        <li>Trial-tested attorneys, not settlement mills</li>
+        <li>Contingency fee for personal injury and wrongful death</li>
+        <li>Central Coast natives who know the local courts</li>
+        <li>30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Case Review</a>
@@ -151,16 +201,12 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <p>Our litigation background covers both sides of that equation. We have tried civil cases and argued appeals. When we take on a personal injury case, a business dispute, or a wrongful death claim, the other side knows we are fully prepared to take it to verdict if the offer doesn't reflect the real value of the case. That credibility drives better settlements without the cost and uncertainty of trial.</p>
 
         <h2>Civil Litigation Practice Areas</h2>
-        <ul>
-          <li><strong><a href="/services/personal-injury/" style="color:var(--navy);">Personal Injury:</a></strong> Slip and fall, premises liability, bicycle accidents, TBI, product liability, and dog bites throughout SLO County. Contingency basis, no fee unless we recover.</li>
-          <li><strong><a href="/services/auto-accidents/" style="color:var(--navy);">Auto Accidents:</a></strong> Car, truck, motorcycle, and rideshare accidents on Highway 101, Highway 1, Highway 46, and local roads. We handle disputed liability, underinsured motorist claims, and commercial vehicle cases. Contingency basis.</li>
-          <li><strong><a href="/services/wrongful-death/" style="color:var(--navy);">Wrongful Death:</a></strong> Representing surviving families with both compassion and strategic strength. We pursue all available sources of recovery. Contingency basis.</li>
-          <li><strong><a href="/services/appellate-law/" style="color:var(--navy);">Appellate Law:</a></strong> Civil and criminal appeals at the California Court of Appeal, Second Appellate District. Writs of mandate and extraordinary relief. We advise trial counsel on issue preservation as well as handling full appeals.</li>
-          <li><strong>Business Litigation:</strong> Breach of contract, fraud, trade secret misappropriation, unfair competition, and shareholder or partner disputes that reach the litigation stage. When a business dispute escalates past negotiation, our trial experience ensures you are fully prepared to go to court. See our <a href="/services/business-law/" style="color:var(--gold);font-weight:700;">Business Law page</a> for contract drafting and transactional services.</li>
-          <li><strong><a href="/services/dog-bite-attorney/" style="color:var(--navy);">Dog Bites and Animal Attacks:</a></strong> California Civil Code section 3342 makes dog owners strictly liable for bites in public spaces or on private property the victim was lawfully visiting. We handle dog bite claims throughout the Central Coast on a contingency basis. See our <a href="/services/dog-bite-attorney/" style="color:var(--gold);font-weight:700;">dog bite attorney page</a> for a full overview of your rights.</li>
-          <li><strong>Insurance Disputes and Bad Faith:</strong> When insurers unreasonably deny, delay, or undervalue legitimate claims, California law provides remedies including punitive damages in bad faith cases. We evaluate insurance coverage disputes and take them to litigation when warranted.</li>
-          <li><strong>Construction Defect and Property Disputes:</strong> Construction defect claims, neighbor disputes, easement and property line conflicts, and landlord-tenant litigation involving commercial property in SLO County.</li>
-        </ul>
+        <div class="def-grid">
+                <div class="def-row">
+          <div class="def-icon"><div class="def-icon-dot"></div></div>
+          <div class="def-term"><a href="/services/personal-injury/" style="color:var(--navy);">Personal Injury:</a></div>
+          <div class="def-desc">Slip and fall, premises liability, bicycle accidents, TBI, product liability, and dog bites throughout SLO County. Contingency basis, no fee unless we recover.</div>
+        </div>
 
         <h2>How We Approach Civil Litigation</h2>
         <p>Our approach to litigation is both aggressive and disciplined. Aggressive in pursuing every viable theory, preserving all issues for potential appeal, and pushing back hard when insurers or opposing counsel undervalue or delay. Disciplined in assessing the realistic range of outcomes honestly before recommending litigation, managing costs relative to the likely recovery, and making sure clients make informed decisions at every stage.</p>
@@ -213,6 +259,52 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     </div>
   </div>
 </section>
+
+<section style="background:var(--off-white);padding:56px 1.5rem;border-top:1px solid #E8E2D0;">
+  <div class="wrap">
+    <div class="section-label">Service Areas</div>
+    <h2 class="section-title">Serving Clients Across the Central Coast</h2>
+    <p style="color:var(--text-mid);font-size:15px;line-height:1.75;max-width:760px;margin-bottom:24px;">Our office is in downtown San Luis Obispo. We serve clients throughout SLO County and into Santa Barbara County by phone, video, and in-person appointment.</p>
+    <div class="area-grid">
+      <a class="area-card" href="/locations/san-luis-obispo/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Civil Litigation Attorney San Luis Obispo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/paso-robles/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Civil Litigation Lawyer Paso Robles</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/arroyo-grande/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Litigation Attorney Arroyo Grande</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/atascadero/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Civil Litigation Lawyer Atascadero</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/morro-bay/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Civil Litigation Attorney Morro Bay</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/nipomo/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Litigation Lawyer Nipomo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/santa-maria/">
+        <div class="area-card-label">Civil Litigation</div>
+        <h3>Civil Litigation Attorney Santa Maria</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="gbp-map-section" style="background:var(--off-white);padding:48px 1.5rem;border-top:1px solid #E8E2D0;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">

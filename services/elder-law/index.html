@@ -80,7 +80,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
 
@@ -99,6 +100,42 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .warning-box ul{margin:0;padding-left:18px;}
 .warning-box li{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:4px;}
 
+
+.def-grid{width:100%;border-collapse:collapse;display:table;margin:24px 0;}
+.def-row{display:table-row;}
+.def-row:not(:last-child) .def-icon,.def-row:not(:last-child) .def-term,.def-row:not(:last-child) .def-desc{border-bottom:1px solid #EDEBE6;}
+.def-icon{display:table-cell;width:34px;padding:16px 12px 16px 0;vertical-align:top;}
+.def-icon-dot{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,0.12);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;display:block;flex-shrink:0;margin-top:1px;}
+.def-term{display:table-cell;width:180px;padding:16px 20px 16px 0;vertical-align:top;font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);line-height:1.45;white-space:normal;}
+.def-desc{display:table-cell;padding:16px 0;vertical-align:top;font-size:15px;color:var(--text-mid);line-height:1.75;}
+@media(max-width:640px){
+  .def-grid{display:block;}
+  .def-row{display:block;padding:14px 0;border-bottom:1px solid #EDEBE6;}
+  .def-row:last-child{border-bottom:0;}
+  .def-icon{display:inline-block;vertical-align:middle;width:auto;padding:0;margin-right:8px;}
+  .def-term{display:inline;padding:0;font-size:14px;}
+  .def-term::after{content:'';display:block;height:6px;}
+  .def-desc{display:block;padding:6px 0 0 0;font-size:14.5px;}
+}
+
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+.area-card{background:var(--white);border:1.5px solid #E8E2D0;border-radius:8px;padding:16px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,box-shadow .2s;}
+.area-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,168,76,0.14);}
+.area-card-label{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;}
+.area-card h3{font-size:13px;font-weight:700;color:var(--navy);margin:0;line-height:1.35;}
+.area-card-arrow{font-size:11px;color:var(--text-mid);margin-top:2px;}
+@media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -110,6 +147,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/trusts-estates/">Trusts &amp; Estates</a><span>/</span>Elder Law</div>
       <h1>Elder Law Attorney in <em>San Luis Obispo</em>, California</h1>
       <p>Protecting older adults and their families from financial exploitation, conservatorship abuse, and caregiver misconduct throughout the Central Coast. Free consultation at (888) 461-2215.</p>
+      <ul class="hero-checks">
+        <li>Free confidential consultation</li>
+        <li>EADACPA fee shifting may recover attorney fees from the abuser</li>
+        <li>Emergency petitions filed when assets are at immediate risk</li>
+        <li>Coordinated civil and criminal approach when appropriate</li>
+        <li>Central Coast natives, 30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Consultation</a>
@@ -161,7 +211,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
         <p>We handle elder law matters with the urgency they require. When financial abuse is discovered, time matters. Assets are spent, transferred, or hidden. Accounts are drained. Deeds are recorded. Every week of delay makes recovery harder. If you suspect an older adult is being exploited or has already been harmed, contact us as soon as possible. We can take emergency action when the situation requires it.</p>
 
-        <img src="/images/elder-abuse-attorney-1.jpg" alt="Elder law attorney San Luis Obispo California 93401 protecting seniors from financial abuse EADACPA" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+        <img src="/images/elder-abuse-attorney-1.jpg" alt="Elder law attorney San Luis Obispo California 93401 protecting seniors from financial abuse EADACPA" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
         <div class="warning-box">
           <h4>Warning Signs of Elder Financial Abuse</h4>
@@ -178,21 +228,14 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
         <h2>Elder Law Services We Provide</h2>
 
-        <ul>
-          <li><strong>Elder Financial Abuse Claims:</strong> When an older adult has been exploited, we pursue civil claims under the EADACPA. This statute provides for full recovery of attorney's fees and costs in qualifying cases, which makes it economically practical to pursue claims even when the financial loss alone might not justify litigation. We have handled elder abuse matters ranging from $30,000 to over $500,000 in loss. The fee-shifting provision changes the math on every one of them.</li>
+        <div class="def-grid">
+                <div class="def-row">
+          <div class="def-icon"><div class="def-icon-dot"></div></div>
+          <div class="def-term">Elder Financial Abuse Claims:</div>
+          <div class="def-desc">When an older adult has been exploited, we pursue civil claims under the EADACPA. This statute provides for full recovery of attorney's fees and costs in qualifying cases, which makes it economically practical to pursue claims even when the financial loss alone might not justify litigation. We have handled elder abuse matters ranging from $30,000 to over $500,000 in loss. The fee-shifting provision changes the math on every one of them.</div>
+        </div>
 
-          <li><strong>Trust and Will Contests Arising from Undue Influence:</strong> Many elder financial abuse cases involve a trusted person, a caregiver, a romantic companion, or an estranged family member who gains influence over an older adult and causes them to change their estate plan. We challenge these transfers in court when they result from undue influence, fraud, or lack of capacity. Our litigation background makes us effective in these cases, which combine estate law with civil fraud theory and require both transactional knowledge and trial skill.</li>
-
-          <li><strong>Conservatorship:</strong> When an older adult can no longer manage their own affairs and does not have an adequate power of attorney or successor trustee in place, a court-supervised conservatorship may be necessary. We represent petitioning family members in SLO County Superior Court and advise ongoing conservators on their statutory duties. We also challenge conservatorships that are being abused by the conservator.</li>
-
-          <li><strong>Medi-Cal Planning:</strong> Private nursing home care in SLO County runs $120,000 to $160,000 per year or more. Medi-Cal can cover these costs for qualifying individuals, but the eligibility rules are specific and the five-year lookback period for asset transfers catches many families off guard. We advise on lawful Medi-Cal planning strategies before and during the application process.</li>
-
-          <li><strong>Power of Attorney Review and Challenges:</strong> A durable power of attorney is among the most powerful documents in everyday legal use. We review existing powers for scope and validity, advise families when an agent is exceeding their authority, and file legal action to revoke or challenge powers of attorney obtained through fraud or undue influence.</li>
-
-          <li><strong>Estate Planning for Aging Adults:</strong> For older clients who do not yet have an estate plan, or whose existing plan does not address long-term care, capacity scenarios, or Medi-Cal considerations, we create comprehensive plans that account for the specific legal challenges that come with aging. This includes healthcare directives, successor trustee planning for cognitive decline, and coordination of all documents so that the family has clarity when they need it most.</li>
-        </ul>
-
-        <img src="/images/elder-abuse-attorney-2.jpg" alt="Elder financial abuse attorney California WIC 15610.30 EADACPA consultation San Luis Obispo County 93401" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);margin:28px 0;">
+        <img src="/images/elder-abuse-attorney-2.jpg" alt="Elder financial abuse attorney California WIC 15610.30 EADACPA consultation San Luis Obispo County 93401" loading="lazy" style="width:100%;max-height:300px;object-fit:cover;object-position:center;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.09);display:block;margin:28px 0;">
 
         <h2>California Elder Financial Abuse Law: What Makes These Cases Different</h2>
 
@@ -272,6 +315,52 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </section>
 </main>
+
+<section style="background:var(--off-white);padding:56px 1.5rem;border-top:1px solid #E8E2D0;">
+  <div class="wrap">
+    <div class="section-label">Service Areas</div>
+    <h2 class="section-title">Serving Clients Across the Central Coast</h2>
+    <p style="color:var(--text-mid);font-size:15px;line-height:1.75;max-width:760px;margin-bottom:24px;">Our office is in downtown San Luis Obispo. We serve clients throughout SLO County and into Santa Barbara County by phone, video, and in-person appointment.</p>
+    <div class="area-grid">
+      <a class="area-card" href="/services/elder-law/san-luis-obispo/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Law Attorney San Luis Obispo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/elder-law/paso-robles/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Abuse Lawyer Paso Robles</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/elder-law/arroyo-grande/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Financial Abuse Attorney Arroyo Grande</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/elder-law/atascadero/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Law Lawyer Atascadero</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/morro-bay/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Law Attorney Morro Bay</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/nipomo/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Law Attorney Nipomo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/services/elder-law/santa-barbara/">
+        <div class="area-card-label">Elder Law</div>
+        <h3>Elder Abuse Attorney Santa Barbara</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="gbp-map-section" style="background:var(--off-white);padding:48px 1.5rem;border-top:1px solid #E8E2D0;">
   <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
     <div>

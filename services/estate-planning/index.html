@@ -79,9 +79,46 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
+
+
+.def-grid{width:100%;border-collapse:collapse;display:table;margin:24px 0;}
+.def-row{display:table-row;}
+.def-row:not(:last-child) .def-icon,.def-row:not(:last-child) .def-term,.def-row:not(:last-child) .def-desc{border-bottom:1px solid #EDEBE6;}
+.def-icon{display:table-cell;width:34px;padding:16px 12px 16px 0;vertical-align:top;}
+.def-icon-dot{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,0.12);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;display:block;flex-shrink:0;margin-top:1px;}
+.def-term{display:table-cell;width:180px;padding:16px 20px 16px 0;vertical-align:top;font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--navy);line-height:1.45;white-space:normal;}
+.def-desc{display:table-cell;padding:16px 0;vertical-align:top;font-size:15px;color:var(--text-mid);line-height:1.75;}
+@media(max-width:640px){
+  .def-grid{display:block;}
+  .def-row{display:block;padding:14px 0;border-bottom:1px solid #EDEBE6;}
+  .def-row:last-child{border-bottom:0;}
+  .def-icon{display:inline-block;vertical-align:middle;width:auto;padding:0;margin-right:8px;}
+  .def-term{display:inline;padding:0;font-size:14px;}
+  .def-term::after{content:'';display:block;height:6px;}
+  .def-desc{display:block;padding:6px 0 0 0;font-size:14.5px;}
+}
+
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+.area-card{background:var(--white);border:1.5px solid #E8E2D0;border-radius:8px;padding:16px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,box-shadow .2s;}
+.area-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,168,76,0.14);}
+.area-card-label{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;}
+.area-card h3{font-size:13px;font-weight:700;color:var(--navy);margin:0;line-height:1.35;}
+.area-card-arrow{font-size:11px;color:var(--text-mid);margin-top:2px;}
+@media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
 
 </style>
 </head>
@@ -94,6 +131,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/services/trusts-estates/">Trusts &amp; Estates</a><span>/</span>Living Trusts &amp; Wills</div>
       <h1>Living Trust Attorney in <em>San Luis Obispo</em></h1>
       <p>A living trust keeps your estate out of probate court, out of public record, and in your control. A will alone doesn't do that. We create complete, properly funded trust packages for SLO County families on a flat-fee basis.</p>
+      <ul class="hero-checks">
+        <li>Free consultation, no pressure</li>
+        <li>Living trust, deed transfer, and all supporting documents</li>
+        <li>Most plans complete within two to three weeks</li>
+        <li>Central Coast natives, 30+ years combined experience</li>
+        <li>Payment plans available</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Consultation</a>
@@ -154,13 +204,12 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
         <h2>Revocable Living Trust: What It Does and Doesn't Do</h2>
         <p>A revocable living trust accomplishes several things your will cannot:</p>
-        <ul>
-          <li><strong>Avoids Probate:</strong> Assets held in the trust transfer to your beneficiaries through the trustee without court involvement. This is private, faster, and significantly less expensive than probate for a typical SLO County estate.</li>
-          <li><strong>Maintains Your Control:</strong> You are the trustee of your own trust during your lifetime. You can buy, sell, mortgage, and manage all trust assets exactly as you do now. Revocable means you can change or revoke it at any time.</li>
-          <li><strong>Provides Incapacity Planning:</strong> If you become unable to manage your affairs, your named successor trustee steps in without court involvement. Without a trust, the family may need to petition for a court-supervised conservatorship, which is expensive and reduces your autonomy.</li>
-          <li><strong>Keeps Your Affairs Private:</strong> A will filed in probate becomes a public document. The trust administration process is entirely private. No public record of your assets, your beneficiaries, or your wishes.</li>
-          <li><strong>Coordinates Multi-State Property:</strong> If you own property in multiple states, a will creates an ancillary probate proceeding in each state. A trust eliminates this because the property is held by the trust, not by an individual in a specific state.</li>
-        </ul>
+        <div class="def-grid">
+                <div class="def-row">
+          <div class="def-icon"><div class="def-icon-dot"></div></div>
+          <div class="def-term">Avoids Probate:</div>
+          <div class="def-desc">Assets held in the trust transfer to your beneficiaries through the trustee without court involvement. This is private, faster, and significantly less expensive than probate for a typical SLO County estate.</div>
+        </div>
 
         <p>What a revocable living trust does not do: it does not reduce or eliminate estate taxes on its own, it does not protect assets from your own creditors while you are alive, and it does not eliminate the need for a will entirely. You still need a pour-over will to capture any assets not in the trust at your death.</p>
 
@@ -227,6 +276,52 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     </div>
   </div>
 </section>
+
+<section style="background:var(--off-white);padding:56px 1.5rem;border-top:1px solid #E8E2D0;">
+  <div class="wrap">
+    <div class="section-label">Service Areas</div>
+    <h2 class="section-title">Serving Clients Across the Central Coast</h2>
+    <p style="color:var(--text-mid);font-size:15px;line-height:1.75;max-width:760px;margin-bottom:24px;">Our office is in downtown San Luis Obispo. We serve clients throughout SLO County and into Santa Barbara County by phone, video, and in-person appointment.</p>
+    <div class="area-grid">
+      <a class="area-card" href="/locations/san-luis-obispo/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Living Trust Attorney San Luis Obispo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/paso-robles/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Wills and Trust Lawyer Paso Robles</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/arroyo-grande/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Living Trust Attorney Arroyo Grande</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/atascadero/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Trust Lawyer Atascadero</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/morro-bay/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Will and Trust Attorney Morro Bay</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/nipomo/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Living Trust Lawyer Nipomo</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+      <a class="area-card" href="/locations/santa-maria/estate-planning/">
+        <div class="area-card-label">Living Trusts and Wills</div>
+        <h3>Estate Planning Attorney Santa Maria</h3>
+        <div class="area-card-arrow">View local page &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="gbp-map-section" style="background:var(--off-white);padding:48px 1.5rem;border-top:1px solid #E8E2D0;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
