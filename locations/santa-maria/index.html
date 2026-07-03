@@ -79,7 +79,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:700px){.case-grid{grid-template-columns:1fr;}}
 
 
-.content-img-block{margin:32px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);}
+.content-img-block{margin:28px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.09);max-height:300px;}
+.content-img-block img{width:100%;height:100%;max-height:300px;object-fit:cover;object-position:center;display:block;}
 .content-img-block img{width:100%;height:auto;display:block;}
 @media(max-width:600px){.content-img-block.img-half{grid-template-columns:1fr;}}
 
@@ -95,6 +96,14 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:768px){.pa-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.pa-grid{grid-template-columns:1fr;}}
 
+
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;padding:0;}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,0.88);}
+.hero-checks li::before{content:'';width:20px;height:20px;min-width:20px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid var(--gold);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;}
+.hero-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+.badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
 </style>
 </head>
 <body>
@@ -106,6 +115,19 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/locations/san-luis-obispo/">Locations</a><span>/</span>Santa Maria</div>
       <h1>Attorney Serving <em>Santa Maria</em>, CA</h1>
       <p>Estate planning, business law, and civil litigation for families and businesses in Santa Maria and throughout North Santa Barbara County. Free consultations from our downtown San Luis Obispo office.</p>
+      <ul class="hero-checks">
+        <li>Free consultation, no pressure</li>
+        <li>Serving all of SLO County and Santa Barbara County</li>
+        <li>Most consultations available by phone or video</li>
+        <li>Litigators who know what fails in court</li>
+        <li>Central Coast natives, 30+ years combined experience</li>
+      </ul>
+      <div class="hero-badges">
+        <div class="badge-item"><div class="badge-dot"></div>CA State Bar Licensed</div>
+        <div class="badge-item"><div class="badge-dot"></div>CLA Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>SLO Chamber Member</div>
+        <div class="badge-item"><div class="badge-dot"></div>BBB Accredited</div>
+      </div>
       <div class="hero-btns">
         <a class="btn-gold" href="tel:8884612215">Call (888) 461-2215</a>
         <a class="btn-ow" href="#form-card">Free Consultation</a>
