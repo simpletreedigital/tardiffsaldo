@@ -28,6 +28,19 @@
   <url><loc>https://tardiffsaldo.com/locations/morro-bay/estate-planning/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://tardiffsaldo.com/locations/nipomo/estate-planning/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tardiffsaldo.com/locations/santa-maria/estate-planning/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Elder Law City Pages -->
+  <url><loc>https://tardiffsaldo.com/services/elder-law/san-luis-obispo/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/elder-law/paso-robles/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/elder-law/arroyo-grande/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/elder-law/atascadero/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/elder-law/santa-barbara/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Dog Bite Attorney Pages -->
+  <url><loc>https://tardiffsaldo.com/services/dog-bite-attorney/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/dog-bite-attorney/san-luis-obispo/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/dog-bite-attorney/paso-robles/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/dog-bite-attorney/arroyo-grande/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/dog-bite-attorney/atascadero/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tardiffsaldo.com/services/dog-bite-attorney/santa-barbara/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- Blog -->
   <url><loc>https://tardiffsaldo.com/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tardiffsaldo.com/blog/prop-19-slo-county/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
