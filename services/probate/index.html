@@ -122,6 +122,20 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
 
+  .content-layout{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
+}
+
+/* Mobile: stack all grid layouts */
+@media(max-width:767px){
+  .content-layout{grid-template-columns:1fr !important;gap:32px !important;}
+  .content-layout .sticky-sidebar{order:2;}
+  .content-layout .content-body{order:1;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:24px !important;}
+  .content-img-block{margin:20px 0;}
+  .content-img-block img{max-height:220px;}
+}
+
 </style>
 </head>
 <body>

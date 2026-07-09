@@ -122,6 +122,20 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:768px){.area-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
 
+  .content-layout{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
+}
+
+/* Mobile: stack all grid layouts */
+@media(max-width:767px){
+  .content-layout{grid-template-columns:1fr !important;gap:32px !important;}
+  .content-layout .sticky-sidebar{order:2;}
+  .content-layout .content-body{order:1;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:24px !important;}
+  .content-img-block{margin:20px 0;}
+  .content-img-block img{max-height:220px;}
+}
+
 </style>
 </head>
 <body>
@@ -132,12 +146,12 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     <div>
       <div class="breadcrumb"><a href="/">Home</a><span>/</span>Trusts &amp; Estate Planning</div>
       <h1>Trust &amp; Estate Planning Attorney in <em>San Luis Obispo</em></h1>
-      <p>Most everyone needs a trust. We have litigated poorly written estate plans in court, and we know exactly how to structure yours so your family never ends up there. Flat-fee pricing, free consultation, payment plans available.</p>
+      <p>Most everyone needs a trust. Our estate planning attorneys are also litigators who have seen trust disputes in court. That perspective shapes every document we create. Flat-fee pricing, free consultation, payment plans available.</p>
       <ul class="hero-checks">
         <li>Free consultation, no pressure</li>
         <li>Flat-fee estate plans with transparent pricing</li>
         <li>Deed transfer and trust funding included in every plan</li>
-        <li>Litigators who know what fails in court</li>
+        <li>Litigators who know how to build plans that hold up in court</li>
         <li>Payment plans available</li>
       </ul>
       <div class="hero-badges">
@@ -202,7 +216,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
         <p>Under California Probate Code sections 10810 through 10814, combined statutory attorney and executor fees on a $1 million estate exceed $46,000. Add court costs, filing fees, probate referee appraisals, and the process easily runs $50,000 to $60,000 before distribution. It also takes 12 to 18 months minimum, during which the property is frozen. A properly funded revocable living trust avoids every bit of that.</p>
 
-        <p>At Tardiff &amp; Saldo, we have both drafted estate plans and litigated the ones that were done poorly. That dual perspective is uncommon, and it directly improves the documents we create. We know which provisions fail under pressure because we have argued them in <a href="https://www.slocounty.ca.gov/Departments/Superior-Court.aspx" target="_blank" rel="noopener">San Luis Obispo County Superior Court</a>.</p>
+        <p>At Tardiff &amp; Saldo, we have both drafted estate plans and argued them in court. That dual perspective is uncommon, and it directly shapes every document we create. We know which provisions hold up under pressure because we have been on both sides of these cases in <a href="https://www.slocounty.ca.gov/Departments/Superior-Court.aspx" target="_blank" rel="noopener">San Luis Obispo County Superior Court</a>.</p>
 
         <h2>What a Complete Estate Plan from Tardiff &amp; Saldo Includes</h2>
         <p>We structure every estate plan as an integrated package. The following documents work together as a system, and we do not deliver them piecemeal.</p>
@@ -236,7 +250,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <div class="def-row">
           <div class="def-icon"><div class="def-icon-dot"></div></div>
           <div class="def-term">Trust Transfer Deed:</div>
-          <div class="def-desc">Re-records your home into the trust. This step is where most DIY estate plans fail. A trust that does not legally hold the property it was created to protect accomplishes nothing for probate avoidance. We handle the deed as part of every plan.</div>
+          <div class="def-desc">Re-records your home into the trust. This is the step that actually creates probate protection for real property. A trust that does not legally hold the property cannot protect it. We handle the deed as part of every plan.</div>
         </div>
         </div>
 

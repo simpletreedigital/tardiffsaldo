@@ -92,6 +92,12 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
 .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
+
+@media(max-width:767px){
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+  .content-layout{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
+}
 </style>
 </head>
 <body>

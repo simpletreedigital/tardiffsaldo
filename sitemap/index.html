@@ -83,6 +83,12 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .sitemap-sub li a::before{background:rgba(201,168,76,.4);}
 @media(max-width:860px){.sitemap-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:520px){.sitemap-grid{grid-template-columns:1fr;}}
+
+@media(max-width:767px){
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+  .content-layout{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
+}
 </style>
 </head>
 <body>

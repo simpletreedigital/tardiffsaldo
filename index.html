@@ -74,7 +74,7 @@ section{padding:72px 1.5rem;}
 h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
 .section-intro{font-size:17px;color:var(--text-mid);line-height:1.75;max-width:640px;margin-bottom:40px;}
 
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
 .svc-card{border:1px solid #E8E2D0;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;background:var(--white);}
 .svc-card:hover{box-shadow:0 8px 32px rgba(15,31,61,0.1);transform:translateY(-3px);}
 .svc-card-img{aspect-ratio:16/9;overflow:hidden;}
@@ -88,7 +88,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .diff-section{background:var(--navy);}
 .diff-section .section-title{color:var(--white);}
 .diff-section .section-intro{color:rgba(255,255,255,0.7);}
-.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
 .diff-card{border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:32px 28px;}
 .diff-icon{width:48px;height:48px;border-radius:50%;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
 .diff-icon svg{width:22px;height:22px;color:var(--gold);}
@@ -102,7 +102,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .video-caption{font-size:14px;font-weight:700;color:var(--navy);margin-top:12px;}
 
 .reviews-section{background:var(--off-white);}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .review-card{background:var(--white);border-radius:8px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
 .stars{color:var(--gold);font-size:18px;letter-spacing:2px;margin-bottom:12px;}
 .review-text{font-size:14px;color:var(--text-mid);line-height:1.75;font-style:italic;margin-bottom:16px;}
@@ -116,7 +116,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .team-strip{background:var(--navy);}
 .team-strip .section-title{color:var(--white);}
 .team-strip .section-intro{color:rgba(255,255,255,0.7);}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:680px;margin:0 auto;}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:680px;margin:0 auto;}
 .team-card{text-align:center;}
 .team-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:2px solid rgba(201,168,76,0.3);margin-bottom:12px;}
 .team-card h3{font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
@@ -141,8 +141,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 @media(max-width:960px){
   .hero-inner{grid-template-columns:1fr;gap:40px;}
   .services-grid,.diff-grid,.reviews-grid{grid-template-columns:1fr 1fr;}
-  .locs-grid{grid-template-columns:repeat(3,1fr);}
-  .team-grid{grid-template-columns:repeat(3,1fr);}
+  .locs-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
   .video-grid{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
@@ -167,6 +167,20 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .faq-card-a-inner{padding:0 24px 22px;font-size:15px;color:var(--text-mid);line-height:1.8;border-top:1px solid #F0EBE0;}
 .faq-card-a-inner p{margin:14px 0 0;}
 
+  .content-layout{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
+}
+
+/* Mobile: stack all grid layouts */
+@media(max-width:767px){
+  .content-layout{grid-template-columns:1fr !important;gap:32px !important;}
+  .content-layout .sticky-sidebar{order:2;}
+  .content-layout .content-body{order:1;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:24px !important;}
+  .content-img-block{margin:20px 0;}
+  .content-img-block img{max-height:220px;}
+}
+
 </style>
 </head>
 <body>
@@ -176,7 +190,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow">San Luis Obispo County</div>
-      <h1>Trust &amp; Estate Attorney in <em>San Luis Obispo</em> Who Knows What Fails in Court</h1>
+      <h1>Trust &amp; Estate Attorney in <em>San Luis Obispo</em> Who Knows What Holds Up in Court</h1>
       <p class="hero-sub">Most everyone needs a trust. We have argued poorly drafted estate plans in court, and that experience shapes every document we create. Central Coast natives serving SLO County families for over 30 years.</p>
       <ul class="hero-checks">
         <li>Free consultations, no pressure</li>
@@ -250,7 +264,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <div>
         <p style="color:var(--text-mid);line-height:1.8;font-size:16px;margin-bottom:18px;">Home values across San Luis Obispo County have climbed steadily for more than a decade. A home near downtown SLO, in Paso Robles wine country, or along the Morro Bay coastline can easily reach $900,000 to $1.5 million or more. Without a properly funded living trust, that property goes through California probate at your death. Probate is public, takes 12 to 18 months, and carries statutory fees calculated on the gross value of your estate, not your equity.</p>
         <p style="color:var(--text-mid);line-height:1.8;font-size:16px;margin-bottom:18px;">Under California Probate Code sections 10810 through 10814, combined attorney and executor fees on a $1 million estate exceed $46,000 before court costs, appraisal fees, and publication expenses. A properly funded living trust sidesteps every bit of that, and the assets transfer directly to your beneficiaries without any court involvement.</p>
-        <p style="color:var(--text-mid);line-height:1.8;font-size:16px;">At Tardiff and Saldo, we have drafted estate plans and we have argued the poorly written ones in court. That experience directly shapes every document we create. We include deed preparation and recording as part of every trust plan because a trust that has never had property moved into it provides no probate protection for that property.</p>
+        <p style="color:var(--text-mid);line-height:1.8;font-size:16px;">At Tardiff and Saldo, we have drafted estate plans and we have argued them in court when disputes arise. That experience directly shapes every document we create. We include deed preparation and recording as part of every trust plan because a trust that has never had property moved into it provides no probate protection for that property.</p>
       </div>
       <div>
         <img src="/images/Estate-Planning-Lawyers.jpg" alt="Trust and estate planning attorney San Luis Obispo 93401 reviewing living trust documents" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
@@ -287,7 +301,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     </div>
 
     <h2 style="font-family:var(--font-serif);font-size:clamp(22px,2.5vw,32px);color:var(--navy);margin-bottom:16px;">We Also Handle Business Law and Civil Litigation</h2>
-    <p style="color:var(--text-mid);line-height:1.8;font-size:16px;margin-bottom:20px;">Tardiff and Saldo is a full-service firm. The same litigation background that informs our estate planning work also supports a complete business law and civil litigation practice. Our contracts and business agreements are drafted by attorneys who have argued them in court, which means we know exactly which provisions fail under adversarial review and structure ours to hold up. Our civil litigation team handles personal injury, auto accidents, wrongful death, and appellate work throughout SLO County on a contingency basis.</p>
+    <p style="color:var(--text-mid);line-height:1.8;font-size:16px;margin-bottom:20px;">Tardiff and Saldo is a full-service firm. The same litigation background that informs our estate planning work also supports a complete business law and civil litigation practice. Our contracts and business agreements are drafted by attorneys who have argued them in court, which means we know exactly how to structure provisions that hold up under adversarial review. Our civil litigation team handles personal injury, auto accidents, wrongful death, and appellate work throughout SLO County on a contingency basis.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
       <a href="/services/business-law/" style="display:flex;align-items:center;gap:12px;padding:18px 20px;border:1.5px solid #E8E2D0;border-radius:6px;text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.background='var(--gold-pale)'" onmouseout="this.style.borderColor='#E8E2D0';this.style.background='transparent'">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
@@ -376,7 +390,6 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
     <div class="team-grid">
       <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-Tyler-1.jpg" alt="Tyler Saldo founding attorney San Luis Obispo" loading="lazy"><h3>Tyler Saldo</h3><p>Founding Attorney</p></div>
       <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-Dustin-1.jpg" alt="Dustin Tardiff founding attorney SLO" loading="lazy"><h3>Dustin Tardiff</h3><p>Founding Attorney</p></div>
-      <div class="team-card"><img src="/images/Tardiff-Saldo-legal-team-headshot-John-1.jpg" alt="John Halverson legal professional Tardiff Saldo" loading="lazy"><h3>John Halverson</h3><p>Legal Professional</p></div>
     </div>
     <div style="text-align:center;margin-top:40px;"><a class="btn-gold" href="/about.html">Meet the Full Team &rarr;</a></div>
   </div>
@@ -439,7 +452,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         </div>
         <div class="faq-card-a">
           <div class="faq-card-a-inner" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Most estate planning firms are transactional only. We are also litigators. Tyler Saldo and Dustin Tardiff have argued trust disputes, probate contests, and estate claims in San Luis Obispo County Superior Court. That trial experience shapes every document we draft. We know which provisions fail under adversarial pressure because we have been on the other side of them in court. We also handle the deed transfer and full trust funding as part of every plan, which is the step that most online services and some attorneys skip.</p>
+            <p itemprop="text">Most estate planning firms are transactional only. We are also litigators. Tyler Saldo and Dustin Tardiff have argued trust disputes, probate contests, and estate claims in San Luis Obispo County Superior Court. That trial experience shapes every document we draft. We know how to structure provisions that hold up under adversarial pressure because we have argued these cases in court. We also handle the deed transfer and full trust funding as part of every plan, which is the step that most online services and some attorneys skip.</p>
           </div>
         </div>
       </div>

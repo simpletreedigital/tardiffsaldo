@@ -104,6 +104,20 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .badge-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.03em;}
 .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
+  .content-layout{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
+}
+
+/* Mobile: stack all grid layouts */
+@media(max-width:767px){
+  .content-layout{grid-template-columns:1fr !important;gap:32px !important;}
+  .content-layout .sticky-sidebar{order:2;}
+  .content-layout .content-body{order:1;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:24px !important;}
+  .content-img-block{margin:20px 0;}
+  .content-img-block img{max-height:220px;}
+}
+
 </style>
 </head>
 <body>
@@ -119,7 +133,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <li>Free consultation, no pressure</li>
         <li>Serving all of SLO County and Santa Barbara County</li>
         <li>Most consultations available by phone or video</li>
-        <li>Litigators who know what fails in court</li>
+        <li>Litigators who know how to build plans that hold up in court</li>
         <li>Central Coast natives, 30+ years combined experience</li>
       </ul>
       <div class="hero-badges">
@@ -181,7 +195,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 
     <h2 style="font-family:var(--font-serif);font-size:26px;color:var(--navy);margin:40px 0 14px;">Estate Planning for Paso Robles Residents</h2>
     <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Paso Robles wine country property has appreciated substantially. Vineyard parcels, hillside estates, and residential properties in the Westside and Downtown districts regularly sell above $700,000, and wine country properties with acreage can far exceed that. For Paso Robles property owners, a living trust is the difference between a smooth private transfer to your heirs and a 14-month public probate proceeding. We offer flat-fee trust packages and free consultations, available by phone or video for North County clients who prefer to minimize the drive.</p>
-    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Most everyone needs a trust. We have litigated poorly written estate plans in court, and that experience shapes every document we create. See our <a href="/services/trusts-estates/" style="color:var(--gold);font-weight:700;">trusts and estate planning page</a> and our <a href="/services/estate-planning/" style="color:var(--gold);font-weight:700;">living trusts and wills page</a> for the complete picture. When a loved one has already passed without a trust, our <a href="/services/probate/" style="color:var(--gold);font-weight:700;">probate team</a> handles the administration.</p>
+    <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Most everyone needs a trust. Our estate planning attorneys are also litigators who bring courtroom experience to every document they create. See our <a href="/services/trusts-estates/" style="color:var(--gold);font-weight:700;">trusts and estate planning page</a> and our <a href="/services/estate-planning/" style="color:var(--gold);font-weight:700;">living trusts and wills page</a> for the complete picture. When a loved one has already passed without a trust, our <a href="/services/probate/" style="color:var(--gold);font-weight:700;">probate team</a> handles the administration.</p>
 
     <h2 style="font-family:var(--font-serif);font-size:26px;color:var(--navy);margin:40px 0 14px;">Personal Injury and Accident Cases in Paso Robles</h2>
     <p style="color:var(--text-mid);line-height:1.8;margin-bottom:18px;font-size:16px;">Personal injury cases in Paso Robles and North County commonly involve Highway 101 accidents through the city, intersections on Spring Street and 24th Street, accidents on Highway 46 east toward Cholame and west toward the coast, and agricultural road accidents during harvest season when heavy equipment traffic increases. We handle these cases with knowledge of local road conditions and evidentiary sources.</p>
@@ -223,7 +237,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <a class="pa-card" href="/services/business-law/">
         <div class="pa-card-icon"><svg viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Business Law Attorney Paso Robles</h3>
-        <p>Contracts, formation, buy-sell agreements, and shareholder disputes, drafted by litigators who know what fails in court.</p>
+        <p>Contracts, formation, buy-sell agreements, and shareholder disputes, drafted by litigators who know how to build agreements that hold up in court.</p>
         <div class="pa-card-arrow">Learn more &rarr;</div>
       </a>
       <a class="pa-card" href="/services/personal-injury/">
