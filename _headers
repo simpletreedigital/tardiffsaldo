@@ -2,11 +2,23 @@
   Access-Control-Allow-Origin: *
   Cache-Control: no-cache, must-revalidate
 
+/
+  Cache-Control: no-cache, must-revalidate
+
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+/*/
+  Cache-Control: no-cache, must-revalidate
+
 /blog/*
   Cache-Control: public, max-age=3600
 
-/*.html
-  Cache-Control: public, max-age=1800
-
 /sitemap.xml
   Cache-Control: public, max-age=3600
+
+/images/*
+  Cache-Control: public, max-age=604800
