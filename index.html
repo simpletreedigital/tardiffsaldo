@@ -116,8 +116,8 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .team-strip{background:var(--navy);}
 .team-strip .section-title{color:var(--white);}
 .team-strip .section-intro{color:rgba(255,255,255,0.7);}
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:680px;margin:0 auto;}
-.team-card{text-align:center;}
+.team-grid{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.team-card{text-align:center;width:220px;flex-shrink:0;}
 .team-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:2px solid rgba(201,168,76,0.3);margin-bottom:12px;}
 .team-card h3{font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
 .team-card p{font-size:12px;color:rgba(255,255,255,0.5);}
@@ -163,7 +163,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 .faq-card-icon svg{width:14px;height:14px;stroke:var(--navy);fill:none;stroke-width:2.5;}
 .faq-card.open .faq-card-icon svg{stroke:var(--navy);}
 .faq-card-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}
-.faq-card.open .faq-card-a{max-height:500px;}
+.faq-card.open .faq-card-a{max-height:2000px;}
 .faq-card-a-inner{padding:0 24px 22px;font-size:15px;color:var(--text-mid);line-height:1.8;border-top:1px solid #F0EBE0;}
 .faq-card-a-inner p{margin:14px 0 0;}
 
@@ -298,6 +298,14 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
           <a class="svc-link" href="/services/elder-law/">Elder Law &rarr;</a>
         </div>
       </div>
+      <div class="svc-card">
+        <div class="svc-card-img"><img src="/images/Lawyer-signing-documents.jpg" alt="Probate attorney San Luis Obispo County Superior Court estate administration 93401" loading="lazy"></div>
+        <div class="svc-card-body">
+          <h3>Probate &amp; Estate Administration</h3>
+          <p>When a family member passes without a trust, probate is required. Our office is two blocks from the SLO County Courthouse. We manage the entire process from first petition through final distribution.</p>
+          <a class="svc-link" href="/services/probate/">Probate Law &rarr;</a>
+        </div>
+      </div>
     </div>
 
     <h2 style="font-family:var(--font-serif);font-size:clamp(22px,2.5vw,32px);color:var(--navy);margin-bottom:16px;">We Also Handle Business Law and Civil Litigation</h2>
@@ -345,6 +353,11 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <h3>Transparent Pricing &amp; Payment Plans</h3>
         <p>Flat-fee estate planning packages so you know exactly what you're paying upfront. Payment plans available. No surprise invoices.</p>
       </div>
+      <div class="diff-card">
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Full-Service Under One Roof</h3>
+        <p>Estate planning, probate, elder law, business, and civil litigation, all from one firm. When your legal situation crosses practice areas, you don't need to find a second attorney.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -377,6 +390,11 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-text">"I needed a business attorney who actually knew California law. These guys have tried cases locally. Their contracts reflect that experience."</p>
         <div class="reviewer">Linda R. <span>Arroyo Grande</span></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Tardiff &amp; Saldo know their stuff. After a relative passed away, their house, pension, and bank accounts were a mess due to a poorly planned estate by a different attorney. We should have gone to Tyler. Tyler sat down with us and patiently sorted through the documents, and provided us with a path forward. I definitely recommend talking to Tardiff &amp; Saldo about estate planning BEFORE someone passes away."</p>
+        <div class="reviewer">Dan <span>San Luis Obispo County</span></div>
       </div>
     </div>
   </div>
