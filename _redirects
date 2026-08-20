@@ -1,2 +1,26 @@
 /services/ /services/trusts-estates/ 301
 /locations/ /locations/san-luis-obispo/ 301
+
+# Legacy WordPress cleanup - orphaned URLs still being crawled by Google
+# (first detected in GSC 8/16/22, predates the current site rebuild)
+/feed/ /blog/ 301
+/*/feed/ /blog/ 301
+/comments/feed/ /blog/ 301
+/author/* /about.html 301
+/category/* /blog/ 301
+/tag/* /blog/ 301
+/page/* /blog/ 301
+/wp-admin/* /blog/ 301
+/wp-content/* /blog/ 301
+/wp-includes/* /blog/ 301
+/wp-json/* /blog/ 301
+/xmlrpc.php /blog/ 301
+
+# Off-topic / stale legacy blog posts - not relevant to current practice content
+/how-taxes-may-differ-during-covid-19/ /blog/ 301
+/aclu-madera-county-school-district-reach-settlement-in-lgbtq-students-free-speech-suit/ /blog/ 301
+/the-secure-acts-impact-on-estate-planning/ /services/estate-planning/ 301
+
+# Malformed legacy URL (schema type appended to path from old Avada build)
+/areas-of-practice/slip-and-fall/LegalService /services/civil-litigation/ 301
+/areas-of-practice/* /services/civil-litigation/ 301
