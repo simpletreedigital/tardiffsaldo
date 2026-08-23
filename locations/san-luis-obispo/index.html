@@ -181,7 +181,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
       <input type="checkbox" id="ts-sms-consent">
       <label for="ts-sms-consent">I consent to receive non-marketing texts from Tardiff and Saldo Law Offices. Message and data rates may apply. Reply STOP to opt out. Must be 18+.</label>
     </div>
-    <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Request Free Consultation</button>
+    <button class="btn-submit" id="ts-submit-btn" data-source="San Luis Obispo Location Page" onclick="handleFormSubmit()">Request Free Consultation</button>
     <p class="form-disc">Mon &ndash; Fri, 9am &ndash; 5pm. Our office is at 1235 Palm St, San Luis Obispo.</p>
   </div>
 </div>
@@ -335,21 +335,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
   </div>
 </div>
 </main>
-<script>
-);if(!isOpen)item.classList.add('open');}
-async function handleFormSubmit(){
-  var fname=document.getElementById('ts-fname').value.trim();var lname=document.getElementById('ts-lname').value.trim();
-  var phone=document.getElementById('ts-phone').value.trim();var email=document.getElementById('ts-email').value.trim();
-  var service=document.getElementById('ts-service').value;var message=document.getElementById('ts-message').value.trim();
-  var sms=document.getElementById('ts-sms-consent').checked;
-  if(!fname||(!phone&&!email)){alert('Please fill in your name and at least one way to reach you.');return;}
-  var btn=document.getElementById('ts-submit-btn');btn.textContent='Submitting...';btn.disabled=true;
-  try{await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'San Luis Obispo Location Page'})});
-  }catch(e){console.error(e);}
-  window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead'});
-  window.location.href='https://tardiffsaldo.com/thank-you/';
-}
-</script>
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LegalService","name":"Tardiff & Saldo Law Offices","url":"https://tardiffsaldo.com/locations/san-luis-obispo/","telephone":"+18884612215","address":{"@type":"PostalAddress","streetAddress":"1235 Palm St","addressLocality":"San Luis Obispo","addressRegion":"CA","postalCode":"93401","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":35.2828,"longitude":-120.6596},"areaServed":{"@type":"City","name":"San Luis Obispo","containedInPlace":{"@type":"State","name":"California"}},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}}
 </script>

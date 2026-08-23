@@ -11,7 +11,8 @@
 /tag/* /blog/ 301
 /page/* /blog/ 301
 /wp-admin/* /blog/ 301
-/wp-content/* /blog/ 301
+/wp-content/plugins/* /blog/ 301
+/wp-content/themes/* /blog/ 301
 /wp-includes/* /blog/ 301
 /wp-json/* /blog/ 301
 /xmlrpc.php /blog/ 301

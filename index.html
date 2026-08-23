@@ -9,7 +9,6 @@
 <link rel="icon" type="image/png" href="/images/Tardiff-Saldo-site-favicon.png">
 <script src="/includes/nav-footer-loader.js"></script>
 <script>function toggleFaq(el){var item=el.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}</script>
-<script>);if(!isOpen)item.classList.add('open');}</script>
 <style>
 :root{
   --navy:#0F1F3D;--navy-mid:#162848;--navy-light:#1E3460;
@@ -232,7 +231,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
           <input type="checkbox" id="ts-sms-consent">
           <label for="ts-sms-consent">By checking this box I consent to receive non-marketing text messages from Tardiff and Saldo Law Offices about appointment confirmations, reminders, and follow-up communications. Message and data rates may apply. Text STOP to opt out. Must be 18+.</label>
         </div>
-        <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Request Free Consultation</button>
+        <button class="btn-submit" id="ts-submit-btn" data-source="Homepage Form" onclick="handleFormSubmit()">Request Free Consultation</button>
         <p class="form-disc">Free consultations Mon &ndash; Fri, 9am &ndash; 5pm. Same-week appointments often available.</p>
       </div>
     </div>
@@ -490,29 +489,6 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LegalService","name":"Tardiff & Saldo Law Offices","url":"https://tardiffsaldo.com","telephone":"+18884612215","email":"hello@tardiffsaldo.com","description":"Trust and estate attorneys in San Luis Obispo serving SLO County families. Living trusts, probate, elder law, business law, and civil litigation. Central Coast natives with 30+ years combined experience.","address":{"@type":"PostalAddress","streetAddress":"1235 Palm St","addressLocality":"San Luis Obispo","addressRegion":"CA","postalCode":"93401","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":35.28452,"longitude":-120.65859},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},"areaServed":["San Luis Obispo","Paso Robles","Arroyo Grande","Atascadero","Morro Bay","Nipomo","Santa Maria"],"sameAs":["https://www.facebook.com/TardiffSaldoLaw","https://www.instagram.com/tardiffsaldolaw/","https://www.youtube.com/@TardiffSaldoLawOffices-el8es"]}
 </script>
-<script>
-async function handleFormSubmit(){
-  var fname=document.getElementById('ts-fname').value.trim();
-  var lname=document.getElementById('ts-lname').value.trim();
-  var phone=document.getElementById('ts-phone').value.trim();
-  var email=document.getElementById('ts-email').value.trim();
-  var service=document.getElementById('ts-service').value;
-  var message=document.getElementById('ts-message').value.trim();
-  var sms=document.getElementById('ts-sms-consent').checked;
-  if(!fname||(!phone&&!email)){alert('Please fill in your name and at least one way to reach you.');return;}
-  var btn=document.getElementById('ts-submit-btn');
-  btn.textContent='Submitting...';btn.disabled=true;
-  try{
-    await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Homepage Form'})
-    });
-  }catch(e){console.error(e);}
-  window.dataLayer=window.dataLayer||[];
-  window.dataLayer.push({event:'generate_lead'});
-  window.location.href='https://tardiffsaldo.com/thank-you/';
-}
-</script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -521,8 +497,9 @@ async function handleFormSubmit(){
 {"@type":"Question","name":"What makes Tardiff and Saldo different from other estate planning attorneys in SLO?","acceptedAnswer":{"@type":"Answer","text":"We are litigators who also do estate planning. We have argued trust disputes and probate contests in SLO County Superior Court. That trial experience shapes every document we draft. We also handle deed transfer and full trust funding as part of every plan."}},
 {"@type":"Question","name":"What does a complete estate plan from Tardiff and Saldo include?","acceptedAnswer":{"@type":"Answer","text":"A complete plan includes a revocable living trust, pour-over will, durable power of attorney, advance health care directive, HIPAA authorization, and a trust transfer deed recorded with the county. We also coordinate beneficiary designations on all financial accounts."}}
 ]}
+</script>
 
-);if(!isOpen)item.classList.add('open');}
+<script>
 function toggleFaqCard(card){
   var isOpen = card.classList.contains('open');
   document.querySelectorAll('.faq-card.open').forEach(function(c){

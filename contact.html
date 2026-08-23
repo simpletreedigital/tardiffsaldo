@@ -152,7 +152,7 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
         <input type="checkbox" id="ts-sms-consent">
         <label for="ts-sms-consent">By checking this box I consent to receive non-marketing text messages from Tardiff and Saldo Law Offices about appointment confirmations, reminders, and follow-up communications. Message and data rates may apply. Text STOP to opt out. Must be 18+.</label>
       </div>
-      <button class="btn-submit" id="ts-submit-btn" onclick="handleFormSubmit()">Send My Request</button>
+      <button class="btn-submit" id="ts-submit-btn" data-source="Contact Page Form" onclick="handleFormSubmit()">Send My Request</button>
       <p class="form-disc">Free consultations Mon &ndash; Fri, 9am &ndash; 5pm. Attorney-client relationship not formed until a retainer agreement is signed.</p>
     </div>
   </div>
@@ -194,18 +194,6 @@ h2.section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);fo
 </main>
 <script>
 function toggleFaq(el){var item=el.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}
-async function handleFormSubmit(){
-  var fname=document.getElementById('ts-fname').value.trim();var lname=document.getElementById('ts-lname').value.trim();
-  var phone=document.getElementById('ts-phone').value.trim();var email=document.getElementById('ts-email').value.trim();
-  var service=document.getElementById('ts-service').value;var message=document.getElementById('ts-message').value.trim();
-  var sms=document.getElementById('ts-sms-consent').checked;
-  if(!fname||(!phone&&!email)){alert('Please fill in your name and at least one way to reach you.');return;}
-  var btn=document.getElementById('ts-submit-btn');btn.textContent='Submitting...';btn.disabled=true;
-  try{await fetch('https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fname,last_name:lname,phone:phone,email:email,service:service,message:message,sms_consent:sms,source:'Contact Page Form'})});
-  }catch(e){console.error(e);}
-  window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead'});
-  window.location.href='https://tardiffsaldo.com/thank-you/';
-}
 </script>
 </body>
 </html>
