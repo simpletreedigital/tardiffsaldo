@@ -21,9 +21,13 @@
     var wrap = document.createElement('div');
     wrap.innerHTML = html;
     var ref = document.body.firstChild;
+    var inserted = [];
     while (wrap.firstChild) {
-      document.body.insertBefore(wrap.firstChild, ref);
+      var node = wrap.firstChild;
+      document.body.insertBefore(node, ref);
+      inserted.push(node);
     }
+    activateScripts(inserted);
     wireNav();
   }
 
@@ -31,11 +35,39 @@
   function injectFooter(html) {
     var wrap = document.createElement('div');
     wrap.innerHTML = html;
+    var inserted = [];
     while (wrap.firstChild) {
-      document.body.appendChild(wrap.firstChild);
+      var node = wrap.firstChild;
+      document.body.appendChild(node);
+      inserted.push(node);
     }
+    activateScripts(inserted);
     var yr = document.getElementById('gf-year');
     if (yr) yr.textContent = new Date().getFullYear();
+  }
+
+
+  /* ── re-create <script> nodes so they actually execute ──
+     Scripts parsed via innerHTML are flagged "already started" by the HTML
+     spec and never run, even once moved into the document. Cloning them into
+     fresh elements is the only way to make them execute. This is why the GHL
+     chat widget silently stopped loading. GTM is NOT handled here - it lives
+     directly in each page's <head> so it loads as early as possible. */
+  function activateScripts(nodes) {
+    nodes.forEach(function (node) {
+      if (node.nodeType !== 1) return;
+      var scripts = node.tagName === 'SCRIPT'
+        ? [node]
+        : Array.prototype.slice.call(node.querySelectorAll('script'));
+      scripts.forEach(function (old) {
+        var s = document.createElement('script');
+        for (var i = 0; i < old.attributes.length; i++) {
+          s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+        }
+        if (old.textContent) s.text = old.textContent;
+        old.parentNode.replaceChild(s, old);
+      });
+    });
   }
 
   /* ── active link highlighting ── */
