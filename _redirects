@@ -1,5 +1,7 @@
 /services/ /services/trusts-estates/ 301
-/locations/ /locations/san-luis-obispo/ 301
+/locations/ / 301
+/locations/san-luis-obispo/ / 301
+/locations/san-luis-obispo/estate-planning/ /services/estate-planning/ 301
 
 # Legacy WordPress cleanup - orphaned URLs still being crawled by Google
 # (first detected in GSC 8/16/22, predates the current site rebuild)
