@@ -51,6 +51,28 @@
     }
   }
 
+  // Best-effort fallback so utm_source is never blank just because a visitor's
+  // landing URL lacked query params (e.g. a bookmarked or copy-pasted link).
+  // Real Google Ads clicks always carry utm_source via the campaign's final
+  // URL suffix, so this only fills gaps — it never overrides a captured value.
+  function deriveSource(attribution) {
+    if (attribution.utm_source) return attribution.utm_source;
+    if (attribution.gclid) return 'google';
+    var ref = '';
+    try { ref = document.referrer || ''; } catch (e) {}
+    if (!ref) return 'direct';
+    try {
+      var host = new URL(ref).hostname.replace(/^www\./, '');
+      if (/google\./.test(host)) return 'google';
+      if (/bing\./.test(host)) return 'bing';
+      if (/facebook\.|instagram\./.test(host)) return 'facebook';
+      if (/chatgpt\.com|openai\.com/.test(host)) return host;
+      return host;
+    } catch (e) {
+      return 'direct';
+    }
+  }
+
   window.addEventListener('DOMContentLoaded', captureAttribution);
 
   window.handleFormSubmit = async function () {
@@ -100,13 +122,15 @@
       message: message,
       sms_consent: sms,
       source: sourceLabel,
-      utm_source: attribution.utm_source || '',
-      utm_medium: attribution.utm_medium || '',
+      utm_source: deriveSource(attribution),
+      utm_medium: attribution.utm_medium || (attribution.gclid ? 'cpc' : ''),
       utm_campaign: attribution.utm_campaign || '',
       utm_content: attribution.utm_content || '',
       utm_term: attribution.utm_term || '',
       gclick_id: attribution.gclid || '',
-      page_url: window.location.href
+      page_url: window.location.href,
+      landing_page_url: attribution.landing_page_url || window.location.href,
+      referrer: (function () { try { return document.referrer || ''; } catch (e) { return ''; } })()
     };
 
     try {
