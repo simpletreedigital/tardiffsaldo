@@ -143,8 +143,27 @@
       console.error(e);
     }
 
+    // Use GTM's eventCallback/eventTimeout instead of an immediate redirect.
+    // A bare `dataLayer.push` followed by `location.href = ...` is a known
+    // race condition: the push returns synchronously, but GTM processes
+    // triggers and fires the Google Ads conversion tag asynchronously, so an
+    // immediate navigation can abort the conversion pixel's network request
+    // before it's sent (silently dropping the conversion). eventCallback
+    // fires once GTM has finished dispatching this event to all its tags;
+    // eventTimeout is a safety cap so a visitor is never stuck if GTM is
+    // slow to load or fails outright.
+    var redirected = false;
+    function goToThankYou() {
+      if (redirected) return;
+      redirected = true;
+      window.location.href = THANK_YOU_URL;
+    }
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'generate_lead' });
-    window.location.href = THANK_YOU_URL;
+    window.dataLayer.push({
+      event: 'generate_lead',
+      eventCallback: goToThankYou,
+      eventTimeout: 1500
+    });
+    setTimeout(goToThankYou, 1500);
   };
 })();
