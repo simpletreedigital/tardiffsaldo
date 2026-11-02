@@ -51,6 +51,8 @@
     }
   }
 
+  var SEARCH_ENGINE_HOSTS = /google\.|bing\.|yahoo\.|duckduckgo\.|ecosia\.|baidu\./;
+
   // Best-effort fallback so utm_source is never blank just because a visitor's
   // landing URL lacked query params (e.g. a bookmarked or copy-pasted link).
   // Real Google Ads clicks always carry utm_source via the campaign's final
@@ -73,7 +75,44 @@
     }
   }
 
+  // A visitor with no UTM params and no gclid is either organic search,
+  // a referral from another site, or direct/bookmarked traffic. None of
+  // that is paid, so without this, SEO leads land in GHL with a blank
+  // utm_medium and are indistinguishable from direct traffic.
+  function deriveMedium(attribution) {
+    if (attribution.utm_medium) return attribution.utm_medium;
+    if (attribution.gclid) return 'cpc';
+    var ref = '';
+    try { ref = document.referrer || ''; } catch (e) {}
+    if (!ref) return 'direct';
+    try {
+      var host = new URL(ref).hostname.replace(/^www\./, '');
+      if (host === window.location.hostname) return 'direct';
+      if (SEARCH_ENGINE_HOSTS.test(host)) return 'organic';
+      return 'referral';
+    } catch (e) {
+      return 'direct';
+    }
+  }
+
   window.addEventListener('DOMContentLoaded', captureAttribution);
+
+  // TrustedForm populates #xxTrustedFormCertUrl asynchronously (usually
+  // within ~1s of page load). Give it a brief window to finish on fast
+  // submissions rather than sending the cert field blank.
+  function waitForTrustedFormCert(maxWaitMs) {
+    var deadline = Date.now() + maxWaitMs;
+    return new Promise(function (resolve) {
+      (function poll() {
+        var el = document.getElementById('xxTrustedFormCertUrl');
+        if ((el && el.value) || Date.now() >= deadline) {
+          resolve((el && el.value) || '');
+        } else {
+          setTimeout(poll, 100);
+        }
+      })();
+    });
+  }
 
   window.handleFormSubmit = async function () {
     var fname = (document.getElementById('ts-fname') || {}).value || '';
@@ -104,6 +143,7 @@
     }
 
     var attribution = getAttribution();
+    var trustedFormCertUrl = await waitForTrustedFormCert(1000);
 
     // Store for GTM Enhanced Conversions (used across site + landing pages)
     try {
@@ -123,14 +163,15 @@
       sms_consent: sms,
       source: sourceLabel,
       utm_source: deriveSource(attribution),
-      utm_medium: attribution.utm_medium || (attribution.gclid ? 'cpc' : ''),
+      utm_medium: deriveMedium(attribution),
       utm_campaign: attribution.utm_campaign || '',
       utm_content: attribution.utm_content || '',
       utm_term: attribution.utm_term || '',
       gclick_id: attribution.gclid || '',
       page_url: window.location.href,
       landing_page_url: attribution.landing_page_url || window.location.href,
-      referrer: (function () { try { return document.referrer || ''; } catch (e) { return ''; } })()
+      referrer: (function () { try { return document.referrer || ''; } catch (e) { return ''; } })(),
+      xxTrustedFormCertUrl: trustedFormCertUrl
     };
 
     try {

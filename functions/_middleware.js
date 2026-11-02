@@ -6,6 +6,25 @@
 // This file only controls whether/where that script gets loaded.
 
 const FORM_SCRIPT_SNIPPET = `
+<!-- TrustedForm (ActiveProspect) cert generation - populates the hidden
+     xxTrustedFormCertUrl field below for lead-form.js to read on submit -->
+<input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl">
+<script type="text/javascript">
+(function() {
+  var field = 'xxTrustedFormCertUrl';
+  var provideReferrer = false;
+  var invertFieldSensitivity = false;
+  var tf = document.createElement('script');
+  tf.type = 'text/javascript'; tf.async = true;
+  tf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) +
+      '&field=' + escape(field) + '&l=' + new Date().getTime() + Math.random() +
+      '&invert_field_sensitivity=' + invertFieldSensitivity;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(tf, s);
+})();
+</script>
+<noscript><img src='https://api.trustedform.com/ns.gif' /></noscript>
 <!-- Shared lead form handler (single source of truth, see /assets/js/lead-form.js) -->
 <script src="/assets/js/lead-form.js" defer></script>
 <!-- End lead form handler -->
