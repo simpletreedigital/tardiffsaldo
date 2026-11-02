@@ -4,7 +4,10 @@
 
 (function () {
   var STORAGE_KEY = 'ts_attribution';
-  var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/dCXNdvDmGZAHcKccUmzw/webhook-trigger/lBvBBUBX5OjPWKVhAIHN';
+  // Same-origin Cloudflare Pages Function (see /functions/api/lead.js) — calls GHL's
+  // API directly server-side with the real token, instead of posting to a public
+  // GHL inbound-webhook URL that then relied on a GHL workflow to map fields.
+  var WEBHOOK_URL = '/api/lead';
   var THANK_YOU_URL = 'https://tardiffsaldo.com/thank-you/';
 
   // Capture UTM/gclid params on every page load and persist them for the
