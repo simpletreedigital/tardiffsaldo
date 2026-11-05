@@ -132,20 +132,23 @@ nav.gnav-primary{display:flex;align-items:stretch;gap:0;margin-left:auto}
 .gnav-mobile-sub a{padding:9px 0 9px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.68);text-transform:none;display:block;text-decoration:none;}
 .gnav-mobile-sub a:hover{color:var(--ts-gold)}
 
-/* Fixed mobile call bar */
-.gnav-mob-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:990;background:var(--ts-navy);border-top:2px solid var(--ts-gold);}
+/* Fixed floating CTA bar (all breakpoints) */
+.gnav-mob-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:990;background:var(--ts-navy);border-top:2px solid var(--ts-gold);box-shadow:0 -4px 20px rgba(0,0,0,.18);}
 .gnav-mob-call a{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:14px 12px;font-size:14px;font-weight:700;text-decoration:none;font-family:var(--ts-font-sans);}
 .gnav-mob-call a.gnav-call-btn{background:var(--ts-gold);color:var(--ts-navy)}
-.gnav-mob-call a.gnav-consult-btn{color:rgba(255,255,255,.85)}
-.gnav-mob-call svg{fill:none;stroke:currentColor;stroke-width:2}
+.gnav-mob-call a.gnav-consult-btn{color:rgba(255,255,255,.9);background:var(--ts-navy-light)}
+.gnav-mob-call svg{fill:none;stroke:currentColor;stroke-width:2;flex-shrink:0}
+body{padding-bottom:58px}
+@media(min-width:600px){
+  .gnav-mob-call a{flex:0 1 auto;padding:14px 32px;font-size:15px;}
+  .gnav-mob-call{justify-content:center;gap:2px}
+}
 
 @media(max-width:960px){
   nav.gnav-primary{display:none}
   .gnav-hamburger{display:flex}
   .gnav-utility-right{display:none}
   .gnav-call-pill{display:none}
-  .gnav-mob-call{display:flex}
-  body{padding-bottom:58px}
 }
 @media(max-width:600px){.gnav-utility-left{display:none}}
 
@@ -181,7 +184,7 @@ html,body{overflow-x:hidden;max-width:100%;}
       </span>
     </div>
     <div class="gnav-utility-right">
-      <a href="/contact">Free Consultation</a>
+      <a href="/contact">Free Case Evaluation</a>
       <span class="gnav-utility-divider"></span>
       <a href="/about">30+ Years Experience</a>
     </div>
@@ -275,7 +278,7 @@ html,body{overflow-x:hidden;max-width:100%;}
       <a class="gnav-call-pill" href="tel:8884612215" aria-label="Call Tardiff and Saldo">
         <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
         <span class="gnav-call-stack">
-          <span class="gnav-label-sm">Free Consultation</span>
+          <span class="gnav-label-sm">Free Case Evaluation</span>
           <span class="gnav-label-lg">(888) 461-2215</span>
         </span>
       </a>
@@ -346,7 +349,7 @@ html,body{overflow-x:hidden;max-width:100%;}
   </a>
   <a class="gnav-consult-btn" href="/contact">
     <svg width="16" height="16" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-    Free Consult
+    Free Case Evaluation
   </a>
 </div>
 
